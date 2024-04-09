@@ -32,13 +32,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039634632047750943}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7677722926482528697}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1039634632046654239
 MeshFilter:
@@ -59,6 +60,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -97,9 +99,17 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039634632047750943}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 877c6bd5215f62940abcb32153ad0184, type: 3}
@@ -143,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Renderer: {fileID: 1039634632045556191}
   Color: {r: 1, g: 0.9, b: 0, a: 1}
-  PropertyName: _Color
+  PropertyName: _BaseColor
 --- !u!114 &990365368328960578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Renderer: {fileID: 1039634632045556191}
   Color: {r: 0.2, g: 1, b: 0.2, a: 1}
-  PropertyName: _Color
+  PropertyName: _BaseColor
 --- !u!114 &1243783654684472924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Renderer: {fileID: 963978433457323395}
   Color: {r: 0.5, g: 0.5, b: 1, a: 1}
-  PropertyName: _Color
+  PropertyName: _BaseColor
 --- !u!114 &4171272376077099670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Renderer: {fileID: 963978433457323395}
   Color: {r: 0, g: 0, b: 0, a: 1}
-  PropertyName: _Color
+  PropertyName: _BaseColor
 --- !u!114 &4180039209202667144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Renderer: {fileID: 1039634632045556191}
   Color: {r: 1, g: 1, b: 1, a: 1}
-  PropertyName: _Color
+  PropertyName: _BaseColor
 --- !u!1 &1967969578517626223
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,12 +239,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967969578517626223}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 1.1, y: 1, z: 1.1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039634632047457087}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2520846308263228265
 MeshFilter:
@@ -255,6 +266,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

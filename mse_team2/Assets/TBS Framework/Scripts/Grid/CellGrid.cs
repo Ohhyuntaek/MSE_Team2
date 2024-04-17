@@ -111,9 +111,11 @@ namespace TbsFramework.Grid
 
         public void Initialize()
         {
+            //OnLevelLoading() 이벤트 실행
             if (LevelLoading != null)
                 LevelLoading.Invoke(this, EventArgs.Empty);
 
+            //변수 초기화
             GameFinished = false;
             Players = new List<Player>();
             for (int i = 0; i < PlayersParent.childCount; i++)
@@ -126,6 +128,7 @@ namespace TbsFramework.Grid
                 }
             }
 
+            //Cells 초기화
             Cells = new List<Cell>();
             for (int i = 0; i < transform.childCount; i++)
             {
@@ -143,6 +146,7 @@ namespace TbsFramework.Grid
                 }
             }
 
+            //각 Cell에 이벤트 등록
             foreach (var cell in Cells)
             {
                 cell.CellClicked += OnCellClicked;
@@ -151,6 +155,7 @@ namespace TbsFramework.Grid
                 cell.GetComponent<Cell>().GetNeighbours(Cells);
             }
 
+            //UnitGenerator 초기화
             Units = new List<Unit>();
             var unitGenerator = GetComponent<IUnitGenerator>();
             if (unitGenerator != null)
@@ -212,6 +217,8 @@ namespace TbsFramework.Grid
         /// Adds unit to the game
         /// </summary>
         /// <param name="unit">Unit to add</param>
+        /// 
+        // 유닛 생성
         public void AddUnit(Transform unit, Cell targetCell = null, Player ownerPlayer = null)
         {
             unit.GetComponent<Unit>().UnitID = UnitId++;
@@ -260,12 +267,15 @@ namespace TbsFramework.Grid
         /// </summary>
         public void StartGame()
         {
+            //턴 실행, 현재 턴 정보 등록
             TransitionResult transitionResult = GetComponent<TurnResolver>().ResolveStart(this);
             PlayableUnits = transitionResult.PlayableUnits;
             CurrentPlayerNumber = transitionResult.NextPlayer.PlayerNumber;
 
+            //OnGameStarted() 이벤트 실행
             GameStarted?.Invoke(this, EventArgs.Empty);
 
+            //모든 어빌리티에 현재 턴 실행
             PlayableUnits().ForEach(u => { u.GetComponents<Ability>().ToList().ForEach(a => a.OnTurnStart(this)); u.OnTurnStart(); });
             CurrentPlayer.Play(this);
             Debug.Log("Game started");

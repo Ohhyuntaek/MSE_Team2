@@ -561,6 +561,10 @@ namespace TbsFramework.EditorUtils
             }
         }
 
+        /// <summary>
+        /// 마우스 포지션에 해당하는 셀 반환
+        /// </summary>
+        /// <returns></returns>
         private Cell GetSelectedCell()
         {
             var raycastHit2D = Physics2D.GetRayIntersection(HandleUtility.GUIPointToWorldRay(Event.current.mousePosition), Mathf.Infinity);
@@ -581,29 +585,35 @@ namespace TbsFramework.EditorUtils
 
         void GenerateBaseStructure()
         {
+            //예외 처리
             if (GridHelperUtils.CheckMissingParameters(parameterValues))
             {
                 return;
             }
 
+            //초기화
             GridHelperUtils.ClearScene(keepMainCamera);
 
             var mapType = mapTypes[mapTypeIndex];
 
+            //필드 초기화
             cellGrid = new GameObject("CellGrid");
             players = new GameObject("Players");
             units = new GameObject("Units");
             guiController = new GameObject("GUIController");
 
+            //라이팅 초기화
             directionalLight = new GameObject("DirectionalLight");
             var light = directionalLight.AddComponent<Light>();
             light.type = LightType.Directional;
             light.transform.Rotate(45f, 0, 0);
 
+            //이벤트 시스템 초기화
             var eventSystem = new GameObject("EventSystem");
             eventSystem.AddComponent<EventSystem>();
             eventSystem.AddComponent<StandaloneInputModule>();
 
+            //플레이어 객체 초기화
             for (int i = 0; i < nHumanPlayer; i++)
             {
                 var player = new GameObject(string.Format("Player_{0}", players.transform.childCount));
@@ -612,6 +622,7 @@ namespace TbsFramework.EditorUtils
                 player.transform.parent = players.transform;
             }
 
+            //AI 객체 초기화
             for (int i = 0; i < nComputerPlayer; i++)
             {
                 var aiPlayer = new GameObject(string.Format("AI_Player_{0}", players.transform.childCount));
@@ -620,22 +631,27 @@ namespace TbsFramework.EditorUtils
                 aiPlayer.transform.parent = players.transform;
             }
 
+            //CellGrid 객체 초기화
             var cellGridScript = cellGrid.AddComponent<CellGrid>();
             generator.CellsParent = cellGrid.transform;
             generator.Is2D = mapType.Equals(MAP_TYPE_2D);
 
             cellGrid.GetComponent<CellGrid>().PlayersParent = players.transform;
 
+            //UnitGenerator 객체 초기화
             var unitGenerator = cellGrid.AddComponent<CustomUnitGenerator>();
             unitGenerator.UnitsParent = units.transform;
             unitGenerator.CellsParent = cellGrid.transform;
 
+            //GUIController 객체 초기화
             var guiControllerScript = guiController.AddComponent<GUIController>();
             guiControllerScript.CellGrid = cellGridScript;
 
+            //나머지 컴포넌트 추가
             cellGrid.AddComponent<SubsequentTurnResolver>();
             cellGrid.AddComponent<DominationCondition>();
 
+            //..?
             foreach (var fieldName in parameterValues.Keys)
             {
                 FieldInfo prop = generator.GetType().GetField(fieldName);
@@ -645,9 +661,11 @@ namespace TbsFramework.EditorUtils
                 }
             }
 
+            //그리드 생성
             cellGrid.GetComponent<CellGrid>().Is2D = mapType.Equals(MAP_TYPE_2D);
             GridInfo gridInfo = generator.GenerateGrid();
 
+            //카메라 초기화
             var camera = Camera.main;
             if (camera == null || !keepMainCamera)
             {

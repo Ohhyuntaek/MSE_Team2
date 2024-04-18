@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Networking;
+using UnityEditor.PackageManager.Requests;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -16,19 +17,24 @@ public class PlayerManager : MonoBehaviour
     public TMP_InputField NicknameInput;
     public TMP_InputField PasswordInput;
 
+    public SignupSceneManager SignupSceneManager;
+
+
     public void SignupPlayer()
     {
         StartCoroutine(SignupRequest());
     }
 
-    /*public void LoginPlayer()
+    public void LoginPlayer()
     {
         StartCoroutine(LoginRequest());
-    }*/
+    }
 
     IEnumerator SignupRequest()
     {
+
         string json = getPlayerFromFields();
+        
         UnityWebRequest request = UnityWebRequest.Post(SignupURL, json, "application/json");
 
         yield return request.SendWebRequest();
@@ -43,16 +49,36 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("HTTP Error: " + request.error);
                 break;
             case UnityWebRequest.Result.Success:
-                Debug.Log("Player sign up successfully");
-                Debug.Log(request.downloadHandler.text);
+                Debug.Log("Request success");
+                SignupSceneManager.ShowSignupResult(request.downloadHandler.text);
+                
                 break;
         }
     }
 
-    /*IEnumerator LoginRequest()
+    IEnumerator LoginRequest()
     {
+        string json = getLoginInfoFromFields();
 
-    }*/
+        UnityWebRequest request = UnityWebRequest.Post(LoginURL, json, "application/json");
+
+        yield return request.SendWebRequest();
+
+        switch (request.result)
+        {
+            case UnityWebRequest.Result.ConnectionError:
+            case UnityWebRequest.Result.DataProcessingError:
+                Debug.Log("Error: " + request.error);
+                break;
+            case UnityWebRequest.Result.ProtocolError:
+                Debug.Log("HTTP Error: " + request.error);
+                break;
+            case UnityWebRequest.Result.Success:
+                Debug.Log("Request success");
+                Debug.Log(request.downloadHandler.text);
+                break;
+        }
+    }
     
     private string getPlayerFromFields()
     {
@@ -60,7 +86,18 @@ public class PlayerManager : MonoBehaviour
         p.SetID(IDInput.text);
         p.SetNickname(NicknameInput.text);
         p.SetPassword(PasswordInput.text);
-
+        
         return JsonUtility.ToJson(p);
     }
+
+    private string getLoginInfoFromFields() {
+
+        LoginInfo loginfo = new LoginInfo();
+        loginfo.SetID(IDInput.text);
+        loginfo.SetPassword(PasswordInput.text);
+
+        return JsonUtility.ToJson(loginfo);
+    }
+
+    
 }

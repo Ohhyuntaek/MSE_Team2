@@ -14,4 +14,9 @@ public class SceneHandler : MonoBehaviour
     {
         SceneManager.LoadScene("Login");
     }
+
+    public void OpenGameLobbyScene() 
+    {
+        SceneManager.LoadScene("GameLobby");    
+    }
 }

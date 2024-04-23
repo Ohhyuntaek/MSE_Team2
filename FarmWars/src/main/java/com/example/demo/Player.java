@@ -1,6 +1,8 @@
 package com.example.demo;
 
 public class Player {
+	private long PrivateCode;
+
 	private String ID;
 	private String Nickname;
 	private String Password;
@@ -11,6 +13,11 @@ public class Player {
 		this.ID = ID;
 		this.Nickname = Nickname;
 		this.Password = Password;
+	}
+	
+
+	public void setPrivateCode(long privateCode) {
+		PrivateCode = privateCode;
 	}
 	
 	public String getID() {

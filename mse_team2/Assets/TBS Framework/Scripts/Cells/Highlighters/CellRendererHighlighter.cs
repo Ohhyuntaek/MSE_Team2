@@ -11,6 +11,7 @@ namespace TbsFramework.Cells.Highlighters
         private MaterialPropertyBlock _mpb;
         private void Awake()
         {
+            // Color.a = 60;
             _mpb = new MaterialPropertyBlock();
             _mpb.SetColor(PropertyName, Color);
         }

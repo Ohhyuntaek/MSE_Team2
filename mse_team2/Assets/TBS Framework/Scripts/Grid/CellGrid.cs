@@ -93,7 +93,7 @@ namespace TbsFramework.Grid
         public List<Player> Players { get; private set; }
         public List<Cell> Cells { get; private set; }
         public List<Unit> Units { get; private set; }
-        private Func<List<Unit>> PlayableUnits = () => new List<Unit>();
+        public Func<List<Unit>> PlayableUnits = () => new List<Unit>();
 
         private void Start()
         {
@@ -145,7 +145,7 @@ namespace TbsFramework.Grid
                     Debug.LogError("Invalid object in cells parent game object");
                 }
             }
-
+            
             //각 Cell에 이벤트 등록
             foreach (var cell in Cells)
             {
@@ -185,7 +185,10 @@ namespace TbsFramework.Grid
         }
         private void OnCellClicked(object sender, EventArgs e)
         {
+            // 셀 클릭했을 때 실행되는 이벤트
             cellGridState.OnCellClicked(sender as Cell);
+            UITest a = FindObjectOfType<UITest>();
+            a.OnCellClicked(sender as Cell);
         }
 
         private void OnUnitClicked(object sender, EventArgs e)

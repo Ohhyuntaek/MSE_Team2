@@ -53,8 +53,6 @@ public class UITest : MonoBehaviour
     {
         if (isAbleSpawn == true)
         {
-            
-
             Unit unit = Instantiate(prefabManager.unitPrefabs[index], cell.transform.position, Quaternion.identity);
             cellGrid.AddUnit(unit.transform, cell, players[cellGrid.CurrentPlayerNumber]);
             isAbleSpawn = false;

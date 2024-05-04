@@ -1,45 +1,68 @@
 package com.example.demo;
 
-public class Player {
-	private long PrivateCode;
+import java.io.Serializable;
 
-	private String ID;
-	private String Nickname;
-	private String Password;
+public class Player implements Serializable{
 	
+	private long privateCode;
+
+	private String playerId;
+	private String playerNickname;
+	private String playerPassword;
+	
+	public Player() {	
+	}
 	
 	public Player(String ID, String Nickname, String Password) {
 		super();
-		this.ID = ID;
-		this.Nickname = Nickname;
-		this.Password = Password;
+		this.playerId = ID;
+		this.playerNickname = Nickname;
+		this.playerPassword = Password;
 	}
 	
-
-	public void setPrivateCode(long privateCode) {
-		PrivateCode = privateCode;
+	public Player(long PrivateCode, String ID, String Nickname, String Password) {
+		super();
+		this.privateCode = PrivateCode;
+		this.playerId = ID;
+		this.playerNickname = Nickname;
+		this.playerPassword = Password;
+	}
+	
+	public void setPrivateCode(long privatecode) {
+		privateCode = privatecode;
+	}
+	
+	public long getPrivateCode() {
+		return privateCode;
 	}
 	
 	public String getID() {
-		return ID;
+		return playerId;
 	}
+
 	public void setID(String iD) {
-		ID = iD;
-	}
-	public String getNickname() {
-		return Nickname;
-	}
-	public void setNickname(String nickname) {
-		Nickname = nickname;
-	}
-	public String getPassword() {
-		return Password;
-	}
-	public void setPassword(String password) {
-		Password = password;
+		playerId = iD;
 	}
 	
-	public String printThis() {
-		return "ID: "+this.ID+", Nickname: "+this.Nickname+", Password: "+this.Password;
+	public String getNickname() {
+		return playerNickname;
+	}
+	
+	public void setNickname(String nickname) {
+		playerNickname = nickname;
+	}
+	
+	public String getPassword() {
+		return playerPassword;
+	}
+	
+	public void setPassword(String password) {
+		playerPassword = password;
+	}
+	
+	@Override
+	public String toString() {
+		return "Player [PrivateCode=" + privateCode + ", ID=" + playerId + ", Nickname=" + playerNickname + ", Password=" + playerPassword
+				+ "]";
 	}
 }

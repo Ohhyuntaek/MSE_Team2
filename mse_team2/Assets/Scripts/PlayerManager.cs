@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
     {
 
         string json = getPlayerFromFields();
-        
+        print(json);
         UnityWebRequest request = UnityWebRequest.Post(SignupURL, json, "application/json");
 
         yield return request.SendWebRequest();
@@ -59,7 +59,7 @@ public class PlayerManager : MonoBehaviour
     IEnumerator LoginRequest()
     {
         string json = getLoginInfoFromFields();
-
+        
         UnityWebRequest request = UnityWebRequest.Post(LoginURL, json, "application/json");
 
         yield return request.SendWebRequest();
@@ -82,12 +82,12 @@ public class PlayerManager : MonoBehaviour
     
     private string getPlayerFromFields()
     {
-        Player p = new Player();
-        p.SetID(IDInput.text);
-        p.SetNickname(NicknameInput.text);
-        p.SetPassword(PasswordInput.text);
+        SignupInfo signinfo = new SignupInfo();
+        signinfo.SetID(IDInput.text);
+        signinfo.SetNickname(NicknameInput.text);
+        signinfo.SetPassword(PasswordInput.text);
         
-        return JsonUtility.ToJson(p);
+        return JsonUtility.ToJson(signinfo);
     }
 
     private string getLoginInfoFromFields() {

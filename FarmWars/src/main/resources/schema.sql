@@ -1,6 +1,6 @@
 create table Player (
-	PrivateCode identity,
-	ID varchar(20) unique not null,
-	Nickname varchar(20) not null,
-	Password varchar(20) not null
+	privateCode identity,
+	playerId varchar(20) unique not null,
+	playerNickname varchar(20) not null,
+	playerPassword varchar(20) not null
 );

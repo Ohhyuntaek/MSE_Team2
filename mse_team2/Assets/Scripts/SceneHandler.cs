@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+
+    public void OpenMainMenuScene(){
+        SceneManager.LoadScene("MainMenuScene");
+    }
     public void OpenSignupScene()
     {
         SceneManager.LoadScene("SignUp");
@@ -18,5 +22,13 @@ public class SceneHandler : MonoBehaviour
     public void OpenGameLobbyScene() 
     {
         SceneManager.LoadScene("GameLobby");    
+    }
+
+    public void QuitApp() {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
     }
 }

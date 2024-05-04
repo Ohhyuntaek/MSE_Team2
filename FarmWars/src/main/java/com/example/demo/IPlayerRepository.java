@@ -6,6 +6,7 @@ public interface IPlayerRepository {
 	Player add(Player player);
 	int update(Player player);
 	int delete(Player player);
-	Player findOne(long id);
+	Player findOne(long privateCode);
+	Player findOnebyID(String iD);
 	List<Player> findAll();
 }

@@ -84,6 +84,10 @@ public class PlayerManager : MonoBehaviour
             case UnityWebRequest.Result.Success:
                 Debug.Log("Request success");
                 Debug.Log(request.downloadHandler.text);
+                ParsedPlayer parsed_p = JsonUtility.FromJson<ParsedPlayer>(request.downloadHandler.text);
+                Player p = new Player(parsed_p);
+                // Debug.Log(Player.privateCode.ToString() + "\t" + Player.id
+                // + "\t" + Player.nickname+ "\t" + Player.password);
                 break;
         }
     }

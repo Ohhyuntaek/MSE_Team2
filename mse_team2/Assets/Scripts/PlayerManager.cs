@@ -17,8 +17,6 @@ public class PlayerManager : MonoBehaviour
     public TMP_InputField NicknameInput;
     public TMP_InputField PasswordInput;
 
-    public SignupSceneManager SignupSceneManager;
-
 
     public void SignupPlayer()
     {
@@ -50,7 +48,8 @@ public class PlayerManager : MonoBehaviour
                 break;
             case UnityWebRequest.Result.Success:
                 Debug.Log("Request success");
-                SignupSceneManager.ShowSignupResult(request.downloadHandler.text);
+                SignupSceneManager lgm = FindObjectOfType<SignupSceneManager>();
+                // SignupSceneManager.ShowSignupResult(request.downloadHandler.text);
                 ParsedPlayer parsed_p = JsonUtility.FromJson<ParsedPlayer>(request.downloadHandler.text);
                 // print("&&&& "+request.downloadHandler.text);
                 // Debug.Log(parsed_p.privateCode.ToString() + "\t" + parsed_p.id
@@ -66,6 +65,8 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator LoginRequest()
     {
+        LoginSceneManager lgm = FindObjectOfType<LoginSceneManager>();
+
         string json = getLoginInfoFromFields();
         
         UnityWebRequest request = UnityWebRequest.Post(LoginURL, json, "application/json");
@@ -78,16 +79,32 @@ public class PlayerManager : MonoBehaviour
             case UnityWebRequest.Result.DataProcessingError:
                 Debug.Log("Error: " + request.error);
                 break;
-            case UnityWebRequest.Result.ProtocolError:
+            case UnityWebRequest.Result.ProtocolError:  // id is not in the repository
                 Debug.Log("HTTP Error: " + request.error);
+                lgm.showResult("Fail to login!\nInvalid account!", Color.red);
+                yield return new WaitForSeconds(3f);
+                lgm.hideResult();
                 break;
             case UnityWebRequest.Result.Success:
                 Debug.Log("Request success");
-                Debug.Log(request.downloadHandler.text);
+                // Debug.Log(request.downloadHandler.text);
                 ParsedPlayer parsed_p = JsonUtility.FromJson<ParsedPlayer>(request.downloadHandler.text);
-                Player p = new Player(parsed_p);
-                // Debug.Log(Player.privateCode.ToString() + "\t" + Player.id
-                // + "\t" + Player.nickname+ "\t" + Player.password);
+
+                if (parsed_p != null) {
+                    Player p = new Player(parsed_p);
+
+                    SceneHandler sh = new SceneHandler();
+                    
+                    lgm.showResult("Success to login!", Color.green);
+                    yield return new WaitForSeconds(3f);
+                    lgm.hideResult();
+                    sh.OpenGameLobbyScene();
+                }
+                else { // password is wrong
+                    lgm.showResult("Fail to login!\nPassword is invalid!", Color.red);
+                    yield return new WaitForSeconds(3f);
+                    lgm.hideResult();
+                }
                 break;
         }
     }

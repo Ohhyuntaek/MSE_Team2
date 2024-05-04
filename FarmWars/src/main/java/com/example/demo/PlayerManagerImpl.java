@@ -45,6 +45,6 @@ public class PlayerManagerImpl implements IPlayerManager {
 		if (insert_p.getPassword().equals(loginfo.getPassword())) {
 			return insert_p;
 		}
-		return new Player("fail", "fail", "fail");
+		return null;
 	}
 }

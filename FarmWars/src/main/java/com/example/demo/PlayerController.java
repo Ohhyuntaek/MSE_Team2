@@ -25,7 +25,7 @@ public class PlayerController {
 	}
 	
 	@PostMapping(value="/update", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public int updatePlayer(@RequestBody Player p) {
+	public Player updatePlayer(@RequestBody Player p) {
 		return manager.updatePlayer(p);
 	}
 	

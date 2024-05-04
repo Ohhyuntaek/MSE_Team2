@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoginResultText: {fileID: 273642939}
+  LoginButton: {fileID: 1778520680}
 --- !u!4 &205250991
 Transform:
   m_ObjectHideFlags: 0

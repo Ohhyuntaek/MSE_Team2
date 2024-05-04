@@ -11,28 +11,40 @@ public class PlayerManager : MonoBehaviour
     private static string BasicURL = "http://localhost:9999/farmwars";
     private string SignupURL = BasicURL + "/signup";
     private string LoginURL = BasicURL + "/login";
+    private string UpdateURL = BasicURL + "/update";
 
     [SerializeField]
     public TMP_InputField IDInput;
     public TMP_InputField NicknameInput;
     public TMP_InputField PasswordInput;
+    public TMP_InputField newNicknameInput;
+    public TMP_InputField newPasswordInput;
 
 
     public void SignupPlayer()
     {
+        StopAllCoroutines();
         StartCoroutine(SignupRequest());
     }
 
     public void LoginPlayer()
     {
+        StopAllCoroutines();
         StartCoroutine(LoginRequest());
+    }
+
+    public void UpdatePlayer()
+    {
+        StopAllCoroutines();
+        StartCoroutine(UpdateRequest());
     }
 
     IEnumerator SignupRequest()
     {
+        
+        SignupSceneManager sm = FindObjectOfType<SignupSceneManager>();
 
         string json = getPlayerFromFields();
-
         UnityWebRequest request = UnityWebRequest.Post(SignupURL, json, "application/json");
 
         yield return request.SendWebRequest();
@@ -43,22 +55,27 @@ public class PlayerManager : MonoBehaviour
             case UnityWebRequest.Result.DataProcessingError:
                 Debug.Log("Error: " + request.error);
                 break;
-            case UnityWebRequest.Result.ProtocolError:
+            case UnityWebRequest.Result.ProtocolError:  // id is already exist or inputs are too long
                 Debug.Log("HTTP Error: " + request.error);
+                sm.ShowResult("Fail to sign up!\nID is already exist or inputs are too long!", Color.red);
+                yield return new WaitForSeconds(3f);
+                sm.hideResult();
                 break;
             case UnityWebRequest.Result.Success:
                 Debug.Log("Request success");
-                SignupSceneManager lgm = FindObjectOfType<SignupSceneManager>();
-                // SignupSceneManager.ShowSignupResult(request.downloadHandler.text);
                 ParsedPlayer parsed_p = JsonUtility.FromJson<ParsedPlayer>(request.downloadHandler.text);
-                // print("&&&& "+request.downloadHandler.text);
-                // Debug.Log(parsed_p.privateCode.ToString() + "\t" + parsed_p.id
-                // + "\t" + parsed_p.nickname+ "\t" + parsed_p.password);
                 
-                Player p = new Player(parsed_p);
-                // Debug.Log(Player.privateCode.ToString() + "\t" + Player.id
-                // + "\t" + Player.nickname+ "\t" + Player.password);
+                if (parsed_p != null){
+                    Player p = new Player(parsed_p);
 
+                    SceneHandler sh = new SceneHandler();
+
+                    sm.ShowResult("Success to sign up!", Color.green);
+                    sm.hideSignupButton();
+                    yield return new WaitForSeconds(3f);
+                    sm.hideResult();
+                    sh.OpenGameLobbyScene();
+                }
                 break;
         }
     }
@@ -68,7 +85,7 @@ public class PlayerManager : MonoBehaviour
         LoginSceneManager lgm = FindObjectOfType<LoginSceneManager>();
 
         string json = getLoginInfoFromFields();
-        
+    
         UnityWebRequest request = UnityWebRequest.Post(LoginURL, json, "application/json");
 
         yield return request.SendWebRequest();
@@ -87,7 +104,6 @@ public class PlayerManager : MonoBehaviour
                 break;
             case UnityWebRequest.Result.Success:
                 Debug.Log("Request success");
-                // Debug.Log(request.downloadHandler.text);
                 ParsedPlayer parsed_p = JsonUtility.FromJson<ParsedPlayer>(request.downloadHandler.text);
 
                 if (parsed_p != null) {
@@ -96,6 +112,7 @@ public class PlayerManager : MonoBehaviour
                     SceneHandler sh = new SceneHandler();
                     
                     lgm.showResult("Success to login!", Color.green);
+                    lgm.hideLoginButton();
                     yield return new WaitForSeconds(3f);
                     lgm.hideResult();
                     sh.OpenGameLobbyScene();
@@ -104,6 +121,48 @@ public class PlayerManager : MonoBehaviour
                     lgm.showResult("Fail to login!\nPassword is invalid!", Color.red);
                     yield return new WaitForSeconds(3f);
                     lgm.hideResult();
+                }
+                break;
+        }
+    }
+
+    IEnumerator UpdateRequest()
+    {
+        GameLobbySceneManager glm = FindObjectOfType<GameLobbySceneManager>();
+
+        string json = getUpdatedInfoFromFields();
+        print(json);
+        UnityWebRequest request = UnityWebRequest.Post(UpdateURL, json, "application/json");
+
+        yield return request.SendWebRequest();
+
+        switch (request.result)
+        {
+            case UnityWebRequest.Result.ConnectionError:
+            case UnityWebRequest.Result.DataProcessingError:
+                Debug.Log("Error: " + request.error);
+                break;
+            case UnityWebRequest.Result.ProtocolError:  // too long inputs
+                Debug.Log("HTTP Error: " + request.error);
+                glm.showResult("Fail to update!\nInputs are too long!", Color.red);
+                yield return new WaitForSeconds(3f);
+                glm.hideResult();
+                break;
+            case UnityWebRequest.Result.Success:
+                Debug.Log("Request success");
+                ParsedPlayer parsed_p = JsonUtility.FromJson<ParsedPlayer>(request.downloadHandler.text);
+
+                if (parsed_p != null) {
+                    Player p = new Player(parsed_p);
+
+                    SceneHandler sh = new SceneHandler();
+                    
+                    glm.showResult("Success to update!", Color.green);
+                    glm.hideEditAccountInfos();
+                    yield return new WaitForSeconds(3f);
+                    glm.hideResult();
+                    
+                    glm.updatePlayerInfo();
                 }
                 break;
         }
@@ -126,6 +185,16 @@ public class PlayerManager : MonoBehaviour
         loginfo.SetPassword(PasswordInput.text);
 
         return JsonUtility.ToJson(loginfo);
+    }
+
+    private string getUpdatedInfoFromFields(){
+        ParsedPlayer pp = new ParsedPlayer();
+        pp.password = newPasswordInput.text;
+        pp.nickname = newNicknameInput.text;
+        pp.id = Player.id;
+        pp.privateCode = Player.privateCode;
+        
+        return JsonUtility.ToJson(pp);
     }
 
     

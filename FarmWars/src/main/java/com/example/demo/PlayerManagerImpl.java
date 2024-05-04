@@ -20,7 +20,7 @@ public class PlayerManagerImpl implements IPlayerManager {
 	}
 	
 	@Override
-	public int updatePlayer(Player p) {
+	public Player updatePlayer(Player p) {
 		return playerRepository.update(p);
 	}
 	

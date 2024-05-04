@@ -58,10 +58,14 @@ public class PlayerRepositoryImpl implements IPlayerRepository {
 	}
 
 	@Override
-	public int update(Player player) {
+	public Player update(Player player) {
 
-		return jdbc.update(SQL_UPDATE, player.getID(), player.getNickname(), player.getPassword(), player.getPrivateCode());
-		
+		int updateResult = jdbc.update(SQL_UPDATE, player.getID(), player.getNickname(), player.getPassword(), player.getPrivateCode());
+		if (updateResult == 1) {
+			System.out.println("&&&&&"+player);
+			return player;
+		}
+		return null;
 	}
 
 	@Override

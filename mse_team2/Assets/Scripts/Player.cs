@@ -1,38 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using System.Reflection.Emit;
 
 [Serializable]
-public class Player
+public class Player : MonoBehaviour
 {
-    public long privateCode;
-    public string playerId;
-    public string playerNickname;
-    public string playerPassword;
+    public static long privateCode;
+    public static string id;
+    public static string nickname;
+    public static string password;
 
-    public Player(){
-
-    }
-    
-    public void SetPrivateCode(){
-        this.privateCode = 72;
-    }
-
-    public void SetID(string ID)
-    {
-        this.playerId = ID;
-    }
-    
-    public void SetNickname(string Nickname)
-    {
-        this.playerNickname = Nickname;
-    }
-
-    public void SetPassword(string Password)
-    {
-        this.playerPassword = Password;
+    public Player(ParsedPlayer pp){
+        privateCode = pp.privateCode;
+        id = pp.id;
+        nickname = pp.nickname;
+        password = pp.password;
     }
 }
- 

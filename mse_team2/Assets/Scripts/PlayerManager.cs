@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
     {
 
         string json = getPlayerFromFields();
-        print(json);
+
         UnityWebRequest request = UnityWebRequest.Post(SignupURL, json, "application/json");
 
         yield return request.SendWebRequest();
@@ -51,7 +51,15 @@ public class PlayerManager : MonoBehaviour
             case UnityWebRequest.Result.Success:
                 Debug.Log("Request success");
                 SignupSceneManager.ShowSignupResult(request.downloadHandler.text);
+                ParsedPlayer parsed_p = JsonUtility.FromJson<ParsedPlayer>(request.downloadHandler.text);
+                // print("&&&& "+request.downloadHandler.text);
+                // Debug.Log(parsed_p.privateCode.ToString() + "\t" + parsed_p.id
+                // + "\t" + parsed_p.nickname+ "\t" + parsed_p.password);
                 
+                Player p = new Player(parsed_p);
+                // Debug.Log(Player.privateCode.ToString() + "\t" + Player.id
+                // + "\t" + Player.nickname+ "\t" + Player.password);
+
                 break;
         }
     }

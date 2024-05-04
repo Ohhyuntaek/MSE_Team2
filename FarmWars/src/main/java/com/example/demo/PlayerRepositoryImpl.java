@@ -38,11 +38,9 @@ public class PlayerRepositoryImpl implements IPlayerRepository {
 			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
 				
 				PreparedStatement ps = con.prepareStatement(SQL_INSERT, new String[] {"privateCode"});
-//				ps.setLong(1, 35);
 				ps.setString(1, player.getID());
 				ps.setString(2, player.getNickname());
-				ps.setString(3, player.getPassword());		
-//				ps.setLong(4, 0);
+				ps.setString(3, player.getPassword());
 				return ps;
 			}
 		}, keyHolder);
@@ -56,7 +54,7 @@ public class PlayerRepositoryImpl implements IPlayerRepository {
 			return null;
 		}
 		
-		return null;
+		return player;
 	}
 
 	@Override

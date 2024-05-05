@@ -111,10 +111,17 @@ public class GameLobbyButtonHandler : MonoBehaviour
 
     public void DeletingButtonReset(){
         
-            deletingCheckingButtons.SetActive(false);
-            deleteAccountButton.gameObject.GetComponent<Image>().sprite = originalSprite_deleteAccountButton;
-            editAccountInfos.gameObject.SetActive(false);
-            editAccountButton.gameObject.GetComponent<Image>().sprite = originalSprite_editAccountButton;
+        deletingCheckingButtons.SetActive(false);
+        deleteAccountButton.gameObject.GetComponent<Image>().sprite = originalSprite_deleteAccountButton;
+        editAccountInfos.gameObject.SetActive(false);
+        editAccountButton.gameObject.GetComponent<Image>().sprite = originalSprite_editAccountButton;
+
+    }
+
+    public void UpdateButtonReset(){
+        editAccountButton.gameObject.GetComponent<Image>().sprite = originalSprite_editAccountButton;
+        deletingCheckingButtons.SetActive(false);
+        deleteAccountButton.gameObject.GetComponent<Image>().sprite = originalSprite_deleteAccountButton;
 
     }
 }

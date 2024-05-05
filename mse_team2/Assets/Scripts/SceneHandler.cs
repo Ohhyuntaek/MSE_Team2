@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneHandler : MonoBehaviour
 {
 
-    public void OpenMainMenuScene(){
-        SceneManager.LoadScene("MainMenuScene");
+    public void OpenTitleScene(){
+        SceneManager.LoadScene("Title");
     }
     public void OpenSignupScene()
     {

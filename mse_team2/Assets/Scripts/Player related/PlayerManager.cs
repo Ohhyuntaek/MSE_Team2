@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Networking;
 using UnityEditor.PackageManager.Requests;
+using System;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     private string SignupURL = BasicURL + "/signup";
     private string LoginURL = BasicURL + "/login";
     private string UpdateURL = BasicURL + "/update";
+    private string DeleteURL = BasicURL + "/delete";
 
     [SerializeField]
     public TMP_InputField IDInput;
@@ -37,6 +39,12 @@ public class PlayerManager : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(UpdateRequest());
+    }
+
+    public void DeletePlayer()
+    {
+        StopAllCoroutines();
+        StartCoroutine(DeleteRequest());
     }
 
     IEnumerator SignupRequest()
@@ -131,7 +139,7 @@ public class PlayerManager : MonoBehaviour
         GameLobbySceneManager glm = FindObjectOfType<GameLobbySceneManager>();
 
         string json = getUpdatedInfoFromFields();
-        print(json);
+
         UnityWebRequest request = UnityWebRequest.Post(UpdateURL, json, "application/json");
 
         yield return request.SendWebRequest();
@@ -144,9 +152,9 @@ public class PlayerManager : MonoBehaviour
                 break;
             case UnityWebRequest.Result.ProtocolError:  // too long inputs
                 Debug.Log("HTTP Error: " + request.error);
-                glm.showResult("Fail to update!\nInputs are too long!", Color.red);
+                glm.showUpdateResult("Fail to update!\nInputs are too long!", Color.red);
                 yield return new WaitForSeconds(3f);
-                glm.hideResult();
+                glm.hideUpdateResult();
                 break;
             case UnityWebRequest.Result.Success:
                 Debug.Log("Request success");
@@ -154,15 +162,58 @@ public class PlayerManager : MonoBehaviour
 
                 if (parsed_p != null) {
                     Player p = new Player(parsed_p);
-
-                    SceneHandler sh = new SceneHandler();
                     
-                    glm.showResult("Success to update!", Color.green);
+                    glm.showUpdateResult("Success to update!\nJust wait for a moment please :)", Color.green);
                     glm.hideEditAccountInfos();
                     yield return new WaitForSeconds(3f);
-                    glm.hideResult();
+                    glm.hideUpdateResult();
                     
                     glm.updatePlayerInfo();
+                }
+                break;
+        }
+    }
+
+    IEnumerator DeleteRequest()
+    {
+        GameLobbySceneManager glm = FindObjectOfType<GameLobbySceneManager>();
+
+        string json = getPlayerInfo();
+
+        UnityWebRequest request = UnityWebRequest.Post(DeleteURL, json, "application/json");
+
+        yield return request.SendWebRequest();
+
+        switch (request.result)
+        {
+            case UnityWebRequest.Result.ConnectionError:
+            case UnityWebRequest.Result.DataProcessingError:
+                Debug.Log("Error: " + request.error);
+                break;
+            case UnityWebRequest.Result.ProtocolError:
+                Debug.Log("HTTP Error: " + request.error);
+                break;
+            case UnityWebRequest.Result.Success:
+                Debug.Log("Request success");
+                print(request.downloadHandler.text);
+                int result = Int32.Parse(request.downloadHandler.text);
+                if (result == 1) { // success to delete
+                    // init player info
+                    ParsedPlayer parsed_p = new ParsedPlayer();
+                    parsed_p.privateCode = -1;
+                    parsed_p.id = null;
+                    parsed_p.nickname = null;
+                    parsed_p.password = null;
+
+                    Player p = new Player(parsed_p);
+
+                    SceneHandler sh = new SceneHandler();
+                        
+                    glm.showDeleteResult("Success to delete!\nJust wait for a moment please :)", Color.green);
+                    yield return new WaitForSeconds(3f);
+                    glm.hideDeleteResult();
+                        
+                    sh.OpenTitleScene();
                 }
                 break;
         }
@@ -197,5 +248,14 @@ public class PlayerManager : MonoBehaviour
         return JsonUtility.ToJson(pp);
     }
 
+    private string getPlayerInfo(){
+        ParsedPlayer pp = new ParsedPlayer();
+        pp.privateCode = Player.privateCode;
+        pp.id = Player.id;
+        pp.nickname = Player.nickname;
+        pp.password = Player.password;
+
+        return JsonUtility.ToJson(pp);
+    }
     
 }

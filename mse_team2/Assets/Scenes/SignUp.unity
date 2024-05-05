@@ -2121,7 +2121,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1183700013}
         m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
-        m_MethodName: OpenMainMenuScene
+        m_MethodName: OpenTitleScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2511,6 +2511,8 @@ MonoBehaviour:
   IDInput: {fileID: 2079461980}
   NicknameInput: {fileID: 1682102058}
   PasswordInput: {fileID: 396756079}
+  newNicknameInput: {fileID: 0}
+  newPasswordInput: {fileID: 0}
 --- !u!4 &1685047458
 Transform:
   m_ObjectHideFlags: 0

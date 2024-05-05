@@ -19,7 +19,6 @@ public class FarmWarsApplication {
 		
 		System.out.println("Player private code: "+p.getPrivateCode());
 		
-		
 		Player p2 = new Player("tester", "testing", "asdf");
 		Player p3 = new Player("tester2", "testing2", "asdwasd");
 		
@@ -42,7 +41,7 @@ public class FarmWarsApplication {
 		System.out.println("changed nickname of p2");
 		System.out.println(repo.findOne(p2.getPrivateCode()));
 		
-		repo.delete(p3);
+		System.out.println(repo.delete(p3));
 		System.out.println("All players after deleting: ");
 		for (Player ps : repo.findAll()) {
 			System.out.println(ps);

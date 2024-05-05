@@ -62,7 +62,6 @@ public class PlayerRepositoryImpl implements IPlayerRepository {
 
 		int updateResult = jdbc.update(SQL_UPDATE, player.getID(), player.getNickname(), player.getPassword(), player.getPrivateCode());
 		if (updateResult == 1) {
-			System.out.println("&&&&&"+player);
 			return player;
 		}
 		return null;
@@ -70,7 +69,6 @@ public class PlayerRepositoryImpl implements IPlayerRepository {
 
 	@Override
 	public int delete(Player player) {
-		
 		return jdbc.update(SQL_DELETE, player.getPrivateCode());
 		
 	}

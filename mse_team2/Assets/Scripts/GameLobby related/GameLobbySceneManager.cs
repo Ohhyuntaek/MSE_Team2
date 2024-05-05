@@ -10,6 +10,7 @@ public class GameLobbySceneManager : MonoBehaviour
     [SerializeField] public TMP_Text DetailedPlayerNickname;
     [SerializeField] public TMP_Text UpdateResultText;
     [SerializeField] private GameObject editAccountInfos;
+    [SerializeField] private TMP_Text DeleteAccountResultText;
     void Start()
     {
         PlayerNickname.text = Player.nickname;
@@ -17,14 +18,14 @@ public class GameLobbySceneManager : MonoBehaviour
         DetailedPlayerNickname.text = Player.nickname;
     }
 
-    public void showResult(string result, Color color){
+    public void showUpdateResult(string result, Color color){
         
         UpdateResultText.gameObject.SetActive(true);
         UpdateResultText.text = result;
         UpdateResultText.color = color;
     }
 
-    public void hideResult(){
+    public void hideUpdateResult(){
         UpdateResultText.gameObject.SetActive(false);
     }
 
@@ -38,4 +39,14 @@ public class GameLobbySceneManager : MonoBehaviour
         DetailedPlayerNickname.text = Player.nickname;
     }
 
+    public void showDeleteResult(string result, Color color){
+        
+        DeleteAccountResultText.gameObject.SetActive(true);
+        DeleteAccountResultText.text = result;
+        DeleteAccountResultText.color = color;
+    }
+
+    public void hideDeleteResult(){
+        DeleteAccountResultText.gameObject.SetActive(false);
+    }
 }

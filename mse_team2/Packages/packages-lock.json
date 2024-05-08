@@ -1,21 +1,5 @@
 {
   "dependencies": {
-    "com.crookedhead.tbsf.nakama": {
-      "version": "https://github.com/mzetkowski/tbsf-nakama-client.git?path=/Packages/com.crookedhead.tbsf.nakama",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "806710a941cac78962880f363b09a721da31982c"
-    },
-    "com.heroiclabs.nakama-unity": {
-      "version": "https://github.com/heroiclabs/nakama-unity.git?path=/Packages/Nakama#v3.10.1",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0"
-      },
-      "hash": "220e12373781e25c1a27576ee79c9524d008c339"
-    },
     "com.unity.burst": {
       "version": "1.8.13",
       "depth": 1,

@@ -1,0 +1,45 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ValueBar : MonoBehaviour
+{
+    // Maximum and minimum values per unit
+    private const int MAX_VALUE = 100;
+    private const int MIN_VALUE = 0;
+
+    // Base value at the start of the game
+    public int basicValue = 100;
+
+    // Rect Mask 2D Component for bar Strips
+    [SerializeField]
+    private RectMask2D barRect;
+
+    private void Start()
+    {
+        // Initialising the bar
+        InitializeBar();
+    }
+
+    // Updating the display of bar
+    public void UpdateBar(int newHealth)
+    {
+        // Ensure that the HP value is between the maximum and minimum values
+        int currentValue = Mathf.Clamp(newHealth, MIN_VALUE, MAX_VALUE);
+
+        // Update the Right value of Rect Mask 2D to change the length of the bar
+        float valuePercentage = (float)currentValue / MAX_VALUE;
+        barRect.padding = new Vector4(0f, 0f, 3.8f - (valuePercentage * 3.8f), 0f);
+    }
+
+    // Initialising the bar
+    private void InitializeBar()
+    {
+        // 获取Rect Mask 2D组件
+        barRect = GetComponent<RectMask2D>();
+
+        // 设置初始HP值
+        UpdateBar(basicValue);
+    }
+}

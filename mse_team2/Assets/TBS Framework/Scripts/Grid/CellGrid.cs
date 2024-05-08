@@ -94,6 +94,7 @@ namespace TbsFramework.Grid
         /// </summary>
         public Transform PlayersParent;
         public bool ShouldStartGameImmediately = true;          // 게임을 즉시 시작할지 여부
+        public bool isGameStarted = false;
 
         private int UnitId = 0;     // 유닛 ID 카운터
 
@@ -114,6 +115,7 @@ namespace TbsFramework.Grid
 
         public void InitializeAndStart()
         {
+            isGameStarted = true;
             Initialize();   // 초기화
             StartGame();    // 게임 시작
         }
@@ -170,7 +172,8 @@ namespace TbsFramework.Grid
             var unitGenerator = GetComponent<IUnitGenerator>();
             if (unitGenerator != null)
             {
-                var units = unitGenerator.SpawnUnits(Cells);
+                //var units = unitGenerator.SpawnUnits(Cells);
+                var units = FindObjectsOfType<Unit>();
                 foreach (var unit in units)
                 {
                     // 유닛 추가
@@ -212,11 +215,13 @@ namespace TbsFramework.Grid
         }
         private void OnUnitHighlighted(object sender, EventArgs e)
         {
+            if (!FindObjectOfType<CellGrid>().isGameStarted) return;
             // 유닛 하이라이트 처리
             cellGridState.OnUnitHighlighted(sender as Unit);
         }
         private void OnUnitDehighlighted(object sender, EventArgs e)
         {
+            if (!FindObjectOfType<CellGrid>().isGameStarted) return;
             // 유닛 하이라이트 해제 처리
             cellGridState.OnUnitDehighlighted(sender as Unit);
         }
@@ -243,7 +248,8 @@ namespace TbsFramework.Grid
         public void AddUnit(Transform unit, Cell targetCell = null, Player ownerPlayer = null)
         {
             unit.GetComponent<Unit>().UnitID = UnitId++;    // 유닛 ID 할당
-            Units.Add(unit.GetComponent<Unit>());           // 유닛 리스트에 추가
+            if(Units != null)
+                Units.Add(unit.GetComponent<Unit>());           // 유닛 리스트에 추가
 
             if (targetCell != null)
             {
@@ -311,8 +317,15 @@ namespace TbsFramework.Grid
 
         public void EndTurn(bool isNetworkInvoked=false)
         {
-            // 턴 종료
-            _cellGridState.EndTurn(isNetworkInvoked);
+            if(isGameStarted)
+            {
+                // 턴 종료
+                _cellGridState.EndTurn(isNetworkInvoked);
+            }
+            else
+            {
+                FindObjectOfType<UITest>().EndTurn();
+            }
         }
 
         /// <summary>

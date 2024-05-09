@@ -12,6 +12,8 @@ public class ValueBar : MonoBehaviour
     // Base value at the start of the game
     public int basicValue = 100;
 
+    public float Max_Range = 3.8f;  // UI == 3.8*20=76
+
     // Rect Mask 2D Component for bar Strips
     [SerializeField]
     private RectMask2D barRect;
@@ -30,7 +32,7 @@ public class ValueBar : MonoBehaviour
 
         // Update the Right value of Rect Mask 2D to change the length of the bar
         float valuePercentage = (float)currentValue / MAX_VALUE;
-        barRect.padding = new Vector4(0f, 0f, 3.8f - (valuePercentage * 3.8f), 0f);
+        barRect.padding = new Vector4(0f, 0f, Max_Range - (valuePercentage * Max_Range), 0f);
     }
 
     // Initialising the bar

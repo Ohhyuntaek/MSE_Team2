@@ -714,8 +714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Name
-  habitat: Walrus
+  unitName: Walrus
+  habitat: aquatic
   role: Buffer
   HP: 40
   AP: 15

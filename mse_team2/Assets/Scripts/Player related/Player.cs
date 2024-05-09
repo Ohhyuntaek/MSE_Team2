@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LoginSeriver  // Prevents this script from being exposed externally causing it to be misreferenced.
+namespace PlayerServer  // Prevents this script from being exposed externally causing it to be misreferenced.
 {
     [Serializable]
     public class Player : MonoBehaviour

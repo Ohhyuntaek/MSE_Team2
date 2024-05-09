@@ -24,6 +24,10 @@ public class SceneHandler : MonoBehaviour
         SceneManager.LoadScene("GameLobby");    
     }
 
+    public void OpenEasyModeGameLobbyScene(){
+        SceneManager.LoadScene("EasyModeGameLobby");
+    }
+
     public void QuitApp() {
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

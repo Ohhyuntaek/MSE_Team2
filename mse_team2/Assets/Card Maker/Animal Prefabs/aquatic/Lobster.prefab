@@ -427,6 +427,7 @@ GameObject:
   - component: {fileID: 8047628689421722098}
   - component: {fileID: 8047628689421722099}
   - component: {fileID: 8047628689421722100}
+  - component: {fileID: -4160476000620697556}
   m_Layer: 0
   m_Name: Lobster
   m_TagString: Buffer
@@ -529,6 +530,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4160476000620697556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047628689421722102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Lobster
+  habitat: aquatic
+  role: Buffer
+  HP: 25
+  AP: 30
 --- !u!1 &8047628689622576741
 GameObject:
   m_ObjectHideFlags: 0

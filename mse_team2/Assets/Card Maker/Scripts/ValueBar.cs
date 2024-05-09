@@ -36,10 +36,10 @@ public class ValueBar : MonoBehaviour
     // Initialising the bar
     private void InitializeBar()
     {
-        // 获取Rect Mask 2D组件
+        // Get Rect Mask 2D component
         barRect = GetComponent<RectMask2D>();
 
-        // 设置初始HP值
+        // Setting the initial HP value
         UpdateBar(basicValue);
     }
 }

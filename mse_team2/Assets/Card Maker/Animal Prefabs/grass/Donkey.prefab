@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 2012484680144268243}
   - component: {fileID: 2012484680144268240}
   - component: {fileID: 2012484680144268241}
+  - component: {fileID: -8870768386291730417}
   m_Layer: 0
   m_Name: Donkey
   m_TagString: Attacker
@@ -399,6 +400,23 @@ CapsuleCollider:
   m_Height: 1.1316013
   m_Direction: 2
   m_Center: {x: 0.016002297, y: 0.5668026, z: 0.15972126}
+--- !u!114 &-8870768386291730417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012484680144267823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Donkey
+  habitat: grass
+  role: Attacker
+  HP: 40
+  AP: 25
 --- !u!1 &2012484680172295570
 GameObject:
   m_ObjectHideFlags: 0

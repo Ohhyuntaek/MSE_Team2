@@ -392,6 +392,7 @@ GameObject:
   - component: {fileID: 1225246363217015058}
   - component: {fileID: 1225246363217015057}
   - component: {fileID: 1225246363217015056}
+  - component: {fileID: 2435883530628732170}
   m_Layer: 0
   m_Name: Emu
   m_TagString: Attacker
@@ -494,6 +495,23 @@ CapsuleCollider:
   m_Height: 1.2351372
   m_Direction: 2
   m_Center: {x: 0, y: 0.7269492, z: 0.11483157}
+--- !u!114 &2435883530628732170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225246363217015054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Emu
+  habitat: grass
+  role: Attacker
+  HP: 35
+  AP: 15
 --- !u!1 &1363325947341366624
 GameObject:
   m_ObjectHideFlags: 0

@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 7736883971786636227}
   - component: {fileID: 7736883971786636226}
   - component: {fileID: 7736883971786636237}
+  - component: {fileID: -539818649945521316}
   m_Layer: 0
   m_Name: Tapir
   m_TagString: Tanker
@@ -433,6 +434,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-539818649945521316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7736883971786636239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Tapir
+  habitat: mountain
+  role: Tanker
+  HP: 75
+  AP: 10
 --- !u!1 &7736883971806261188
 GameObject:
   m_ObjectHideFlags: 0

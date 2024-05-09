@@ -485,6 +485,7 @@ GameObject:
   - component: {fileID: 6986768233181138262}
   - component: {fileID: 6986768233181138265}
   - component: {fileID: 6986768233181138264}
+  - component: {fileID: 2741154247627317006}
   m_Layer: 0
   m_Name: SnappingTurtle
   m_TagString: Buffer
@@ -587,6 +588,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2741154247627317006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6986768233181138266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Turtle
+  habitat: aquatic
+  role: Buffer
+  HP: 90
+  AP: 10
 --- !u!1 &6986768233761334541
 GameObject:
   m_ObjectHideFlags: 0

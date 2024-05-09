@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 6201156563404250518}
   - component: {fileID: 6201156563404250519}
   - component: {fileID: 6201156563404250504}
+  - component: {fileID: -6347865701450976531}
   m_Layer: 0
   m_Name: Rattlesnake
   m_TagString: Attacker
@@ -207,6 +208,23 @@ CapsuleCollider:
   m_Height: 0.8522537
   m_Direction: 1
   m_Center: {x: 0, y: 0.4377123, z: 0.32198635}
+--- !u!114 &-6347865701450976531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201156563404250516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Rattlesnake
+  habitat: grass
+  role: Attacker
+  HP: 20
+  AP: 35
 --- !u!1 &6201156563741094154
 GameObject:
   m_ObjectHideFlags: 0

@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 820885437305187271}
   - component: {fileID: 820885437305187270}
   - component: {fileID: 820885437305187269}
+  - component: {fileID: -3950960067719254732}
   m_Layer: 0
   m_Name: Panda
   m_TagString: Tanker
@@ -396,6 +397,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3950960067719254732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820885437305187267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Panda
+  habitat: mountain
+  role: Tanker
+  HP: 70
+  AP: 10
 --- !u!1 &820885437721442775
 GameObject:
   m_ObjectHideFlags: 0

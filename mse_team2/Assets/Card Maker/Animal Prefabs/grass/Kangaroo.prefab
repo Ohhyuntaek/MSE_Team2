@@ -743,6 +743,7 @@ GameObject:
   - component: {fileID: 5908660347311492604}
   - component: {fileID: 5908660347311492605}
   - component: {fileID: 5908660347311492594}
+  - component: {fileID: -5286381820350479786}
   m_Layer: 0
   m_Name: Kangaroo
   m_TagString: Attacker
@@ -845,3 +846,20 @@ CapsuleCollider:
   m_Height: 1.101471
   m_Direction: 2
   m_Center: {x: 0, y: 0.59787005, z: 0.1767397}
+--- !u!114 &-5286381820350479786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908660347311492592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Kangaroo
+  habitat: grass
+  role: Attacker
+  HP: 30
+  AP: 20

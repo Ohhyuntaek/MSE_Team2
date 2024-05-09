@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 3863027491269863610}
   - component: {fileID: 3863027491269863611}
   - component: {fileID: 3863027491269863608}
+  - component: {fileID: 3661928167251964162}
   m_Layer: 0
   m_Name: Hog
   m_TagString: Tanker
@@ -209,6 +210,23 @@ CapsuleCollider:
   m_Height: 1.0479007
   m_Direction: 2
   m_Center: {x: -0.00035232306, y: 0.3646834, z: 0.1215093}
+--- !u!114 &3661928167251964162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863027491269863588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Hog
+  habitat: mountain
+  role: Tanker
+  HP: 70
+  AP: 10
 --- !u!1 &3863027491392409892
 GameObject:
   m_ObjectHideFlags: 0

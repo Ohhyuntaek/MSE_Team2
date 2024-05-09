@@ -587,6 +587,7 @@ GameObject:
   - component: {fileID: 7893974801881764410}
   - component: {fileID: 7893974801881764409}
   - component: {fileID: 7893974801881764408}
+  - component: {fileID: -8243764620635969769}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Buffer
@@ -689,6 +690,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8243764620635969769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7893974801881764390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215696f692a998d49b8f17e99160848f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Crab
+  habitat: aquatic
+  role: Buffer
+  HP: 30
+  AP: 25
 --- !u!1 &7893974801980220353
 GameObject:
   m_ObjectHideFlags: 0

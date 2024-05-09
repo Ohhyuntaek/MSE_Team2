@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/EasyModeGameLobby.unity
-    guid: 0673efad1db76dd42be8be06c6d77d0a
+    path: Assets/Scenes/Title.unity
+    guid: f73fde28d85592644b0cb9629b9601d6
+  - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 910fd27a16abe9b4c8376d224085a357
   - enabled: 1
     path: Assets/Scenes/GameLobby.unity
     guid: 0617d695c59395a428e8c77d6dd0796c
   - enabled: 1
-    path: Assets/Scenes/Login.unity
-    guid: 910fd27a16abe9b4c8376d224085a357
+    path: Assets/Scenes/EasyModeGameLobby.unity
+    guid: 0673efad1db76dd42be8be06c6d77d0a
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: afa887e137b7f684ba3fd12ca2d1aece
@@ -23,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SignUp.unity
     guid: f4695562bcd1518489a0f2690865e693
-  - enabled: 1
-    path: Assets/Scenes/Title.unity
-    guid: f73fde28d85592644b0cb9629b9601d6
   m_configObjects: {}

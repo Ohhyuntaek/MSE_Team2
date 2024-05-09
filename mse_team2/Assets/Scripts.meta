@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 46d0baa06f01ca04aa194566f165a5d6
 =======
 guid: 54f2ddb972388ab47b6ac7a5db8dc036
 >>>>>>> origin/Alpha_Version
+=======
+guid: a690d0541d04db34dafc7f9e7bc01dfe
+>>>>>>> Animal_Objects
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

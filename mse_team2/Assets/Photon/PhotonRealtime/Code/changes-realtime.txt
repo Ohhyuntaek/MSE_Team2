@@ -4,6 +4,12 @@ www.photonengine.com  -  Join our Discord Server: https://dashboard.photonengine
 
 
 
+<<<<<<< HEAD
+=======
+Version 4.1.8.4 (26. April 2024 - rev7529)
+    No notable changes (except in library).
+
+>>>>>>> Animal_Objects
 Version 4.1.8.3 (24. April 2024 - rev7519)
     Fixed: Minor issue where a NickName change triggered an update of player properties at a time when it had to fail. This now updates when reaching the Joined state.
     Changed: InternalCacheProperties() will update the Player.NickName for remote players. The local player has control over it's NickName on join.

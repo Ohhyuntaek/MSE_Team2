@@ -64,6 +64,9 @@ namespace TbsFramework.Units
 
         private int AbilityID = 0;
 
+        
+        public Transform modelTransform;
+
         public List<Ability> Abilities { get; private set; } = new List<Ability>();
         public void RegisterAbility(Ability ability)
         {
@@ -103,7 +106,7 @@ namespace TbsFramework.Units
         /// Cell that the unit is currently occupying.
         /// </summary>
         [SerializeField]
-        [HideInInspector]
+        //[HideInInspector]
         private Cell cell;
         public Cell Cell
         {
@@ -178,6 +181,8 @@ namespace TbsFramework.Units
             TotalHitPoints = HitPoints;
             TotalMovementPoints = MovementPoints;
             TotalActionPoints = ActionPoints;
+
+            modelTransform = GetComponentInChildren<LODGroup>(true)?.transform;
 
             foreach(var ability in GetComponentsInChildren<Ability>())
             {
@@ -370,6 +375,7 @@ namespace TbsFramework.Units
             return realDamage;
         }
 
+        //이동 함수
         /// <summary>
         /// Handler method for moving the unit.
         /// </summary>
@@ -377,9 +383,11 @@ namespace TbsFramework.Units
         /// <param name="path">A list of cells, path from source to destination cell</param>
         public virtual IEnumerator Move(Cell destinationCell, IList<Cell> path)
         {
+            //이동할수 있는 거리 감산
             var totalMovementCost = path.Sum(h => h.MovementCost);
             MovementPoints -= totalMovementCost;
 
+            //목적지 셀 변수 조정
             Cell.IsTaken = false;
             Cell.CurrentUnits.Remove(this);
             Cell = destinationCell;
@@ -388,16 +396,19 @@ namespace TbsFramework.Units
 
             if (MovementAnimationSpeed > 0)
             {
+                //이동 중
                 yield return MovementAnimation(path);
             }
             else
             {
+                //이동 종료시
                 transform.position = Cell.transform.position;
                 OnMoveFinished();
             }
 
             if (UnitMoved != null)
             {
+                //유닛 이동 이벤트 실행
                 UnitMoved.Invoke(this, new MovementEventArgs(Cell, destinationCell, path, this));
             }
         }
@@ -409,11 +420,23 @@ namespace TbsFramework.Units
                 Vector3 destination_pos = FindObjectOfType<CellGrid>().Is2D ? new Vector3(currentCell.transform.localPosition.x, currentCell.transform.localPosition.y, transform.localPosition.z) : new Vector3(currentCell.transform.localPosition.x, currentCell.transform.localPosition.y, currentCell.transform.localPosition.z);
                 while (transform.localPosition != destination_pos)
                 {
+                    if(modelTransform)
+                    {
+                        //이동할때 로테이션값 계산
+                        Vector3 direction = (destination_pos - transform.localPosition);
+                        direction.y = 0;
+                        direction.Normalize();
+
+                        modelTransform.rotation = Quaternion.Euler(0, 90 - (Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg), 0);
+                    }
+
+                    //실질적으로 이동하는 부분
                     transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination_pos, Time.deltaTime * MovementAnimationSpeed);
                     yield return null;
                 }
             }
 
+            //이동 종료시 이벤트 실행
             OnMoveFinished();
         }
         /// <summary>

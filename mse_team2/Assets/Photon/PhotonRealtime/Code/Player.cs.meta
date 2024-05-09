@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b3bcbfff42bfa344796eff8607c44ca5
+=======
+guid: e3e4b5bebc687044b9c6c2803c36be3d
+>>>>>>> Animal_Objects
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []

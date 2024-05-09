@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: a644bbd66014e55408d3356967031a3e
+=======
+guid: 7015e500cd5b71244af56448dfb59804
+>>>>>>> Animal_Objects
 TextScriptImporter:
   externalObjects: {}
   userData: 

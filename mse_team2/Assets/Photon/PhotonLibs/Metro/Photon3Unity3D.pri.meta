@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 2acf2214309480e4aafcb972048c2399
 timeCreated: 1460035811
 licenseType: Pro
+=======
+guid: 3439a9e4030efca45b6cc06240106c02
+timeCreated: 1460035811
+licenseType: Store
+>>>>>>> Animal_Objects
 DefaultImporter:
   userData: 
   assetBundleName: 

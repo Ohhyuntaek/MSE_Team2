@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 15e93ca6d5e8e9647a50875251a08eaa
+=======
+guid: 6a558ae793155af4b9b9ab945fc64a0f
+>>>>>>> Animal_Objects
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2

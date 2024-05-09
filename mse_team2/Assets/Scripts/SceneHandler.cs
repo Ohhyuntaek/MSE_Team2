@@ -5,13 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-<<<<<<< HEAD
 
     public void OpenTitleScene(){
         SceneManager.LoadScene("Title");
     }
-=======
->>>>>>> Animal_Objects
     public void OpenSignupScene()
     {
         SceneManager.LoadScene("SignUp");
@@ -26,7 +23,12 @@ public class SceneHandler : MonoBehaviour
     {
         SceneManager.LoadScene("GameLobby");    
     }
-<<<<<<< HEAD
+
+    public void OpenEasyModeGameLobbyScene() 
+    {
+        SceneManager.LoadScene("EasyModeGameLobby");    
+    }
+
 
     public void QuitApp() {
         #if UNITY_EDITOR
@@ -35,6 +37,4 @@ public class SceneHandler : MonoBehaviour
         Application.Quit();
         #endif
     }
-=======
->>>>>>> Animal_Objects
 }

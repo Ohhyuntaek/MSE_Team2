@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.Networking;
 //using UnityEditor.PackageManager.Requests;
 using System;
-using LoginSeriver;
+using PlayerServer;
 
 public class PlayerManager : MonoBehaviour
 {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class CardObject : MonoBehaviour
 {
@@ -105,7 +106,9 @@ public class CardObject : MonoBehaviour
         void OnGUI()
         {
             // Create drop-down menus for selecting different Prefabs
-            selectedPrefabIndex = UnityEditor.EditorGUILayout.Popup("Select Prefab", selectedPrefabIndex, GetPrefabNames());
+            #if UNITY_EDITOR
+                selectedPrefabIndex = EditorGUILayout.Popup("Select Prefab", selectedPrefabIndex, GetPrefabNames());
+            #endif
 
             // 根据选择的索引实例化对应的 Prefab
             //if (GUILayout.Button("Instantiate Prefab"))

@@ -274,7 +274,7 @@ namespace TbsFramework.Grid
             unit.GetComponent<Unit>().transform.localRotation = Quaternion.Euler(0, 0, 0);  // 유닛의 회전 초기화
             unit.GetComponent<Unit>().Initialize(); // 유닛 초기화
             
-            // 이벤틍 ㅕㄴ결
+            // 이벤트 연결
             unit.GetComponent<Unit>().UnitClicked += OnUnitClicked;
             unit.GetComponent<Unit>().UnitHighlighted += OnUnitHighlighted;
             unit.GetComponent<Unit>().UnitDehighlighted += OnUnitDehighlighted;

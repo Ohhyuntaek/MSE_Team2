@@ -51,3 +51,4 @@ java.io.FileNotFoundException: C:\Users\dhgus\OneDrive\문서\GitHub\MSE_Team2\F
 	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1204)
 	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2024-05-14 13:43:53,415 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

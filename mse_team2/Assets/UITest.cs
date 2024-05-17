@@ -47,7 +47,7 @@ public class UITest : MonoBehaviour
 
     void GetInput()
     {
-        if (cellGrid.isGameStarted) return;
+        if (cellGrid.currentState != CellGrid.GameState.Spawn) return;
         if(Input.GetMouseButtonDown(0))
         {
             RaycastHit[] hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition), 100, cellLayer);

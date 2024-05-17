@@ -94,7 +94,16 @@ namespace TbsFramework.Grid
         /// </summary>
         public Transform PlayersParent;
         public bool ShouldStartGameImmediately = true;          // 게임을 즉시 시작할지 여부
-        public bool isGameStarted = false;
+        public GameState currentState = GameState.SelectCard;
+
+        public enum GameState
+        {
+            SelectCard,
+            Spawn,
+            Play,
+            End
+        }
+
 
         private int UnitId = 0;     // 유닛 ID 카운터
 
@@ -115,7 +124,7 @@ namespace TbsFramework.Grid
 
         public void InitializeAndStart()
         {
-            isGameStarted = true;
+            currentState = GameState.SelectCard;
             Initialize();   // 초기화
             StartGame();    // 게임 시작
         }
@@ -215,13 +224,13 @@ namespace TbsFramework.Grid
         }
         private void OnUnitHighlighted(object sender, EventArgs e)
         {
-            if (!FindObjectOfType<CellGrid>().isGameStarted) return;
+            if (FindObjectOfType<CellGrid>().currentState != GameState.Play) return;
             // 유닛 하이라이트 처리
             cellGridState.OnUnitHighlighted(sender as Unit);
         }
         private void OnUnitDehighlighted(object sender, EventArgs e)
         {
-            if (!FindObjectOfType<CellGrid>().isGameStarted) return;
+            if (FindObjectOfType<CellGrid>().currentState != GameState.Play) return;
             // 유닛 하이라이트 해제 처리
             cellGridState.OnUnitDehighlighted(sender as Unit);
         }
@@ -317,14 +326,21 @@ namespace TbsFramework.Grid
 
         public void EndTurn(bool isNetworkInvoked=false)
         {
-            if(isGameStarted)
+            switch (currentState)
             {
-                // 턴 종료
-                _cellGridState.EndTurn(isNetworkInvoked);
-            }
-            else
-            {
-                FindObjectOfType<UITest>().EndTurn();
+                case GameState.SelectCard:
+                    //FindObjectOfType<CardManager>().EndTurn();
+
+                    break;
+
+                case GameState.Spawn:
+
+                    // 턴 종료
+                    _cellGridState.EndTurn(isNetworkInvoked);
+                    break;
+                case GameState.Play:
+                    FindObjectOfType<UITest>().EndTurn();
+                    break;
             }
         }
 

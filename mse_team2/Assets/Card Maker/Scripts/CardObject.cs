@@ -42,7 +42,7 @@ public class CardObject : MonoBehaviour
     [SerializeField] private GameObject AP_Bar;
 
 
-    private void Awake()
+    private void Start()
     {
         unitObject = Instantiate(prefabs[selectedPrefabIndex], generationPoint);
         unitValueManager = unitObject.GetComponent<UnitValueManager>();
@@ -50,17 +50,15 @@ public class CardObject : MonoBehaviour
         unitAnimator.Play("Idle_A");
 
         UpdateValues();
+
+        UpdateBackground();
     }
 
     private void OnEnable()
     {
-        unitAnimator.Play("Idle_A");
+        //unitAnimator.Play("Idle_A");
     }
 
-    void Start()
-    {
-        UpdateBackground();
-    }
 
     void Update()
     {

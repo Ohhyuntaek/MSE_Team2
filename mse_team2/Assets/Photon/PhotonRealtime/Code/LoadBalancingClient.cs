@@ -2243,9 +2243,11 @@ namespace Photon.Realtime
         {
             if (!this.CheckIfOpCanBeSent(OperationCode.RaiseEvent, this.Server, "RaiseEvent"))
             {
+                Debug.Log("11");
                 return false;
             }
 
+            Debug.Log("22");
             return this.LoadBalancingPeer.OpRaiseEvent(eventCode, customEventContent, raiseEventOptions, sendOptions);
         }
 

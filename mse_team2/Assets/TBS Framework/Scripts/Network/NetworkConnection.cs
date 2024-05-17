@@ -62,7 +62,7 @@ namespace TbsFramework.Network
 
         // 핸들러와 이벤트 큐
         protected Dictionary<long, Action<Dictionary<string, string>>> Handlers = new Dictionary<long, Action<Dictionary<string, string>>>();
-        protected Queue<(Action preAction, Func<IEnumerator> routine)> EventQueue = new Queue<(Action preAction, Func<IEnumerator> routine)>();
+        public Queue<(Action preAction, Func<IEnumerator> routine)> EventQueue = new Queue<(Action preAction, Func<IEnumerator> routine)>();
         protected bool processingEvents;
 
         /// <summary>
@@ -276,6 +276,15 @@ namespace TbsFramework.Network
             }
         }
 
+        public void NetworkTest(IEnumerator coroutine)
+        {
+            EventQueue.Enqueue((new Action(() => { }), () => coroutine));
+            if (!processingEvents)
+            {
+                StartCoroutine(ProcessEvents());
+            }
+        }
+
         // 턴 종료 처리
         protected IEnumerator EndTurn(bool isNetworkInvoked)
         {
@@ -438,5 +447,6 @@ namespace TbsFramework.Network
         AbilityUsed,            // 능력이 사용되었음
         PlayerNumberChanged,    // 플레이어 수가 변경되었음
         IsReadyChanged,         // 준비 상태가 변경되었음
+        Else,
     }
 }

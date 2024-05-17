@@ -333,7 +333,7 @@ namespace TbsFramework.Grid
         /// </summary>
         private void EndTurnExecute(bool isNetworkInvoked=false)
         {
-            cellGridState = new CellGridStateBlockInput(this);  // 입력 차단 상태로 ㅈㄴ환
+            cellGridState = new CellGridStateBlockInput(this);  // 입력 차단 상태로 전환
             bool isGameFinished = CheckGameFinished();          // 게임 종료 상태 확인
             if (isGameFinished)
             {

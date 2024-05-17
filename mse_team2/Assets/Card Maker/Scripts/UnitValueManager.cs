@@ -11,13 +11,4 @@ public class UnitValueManager : MonoBehaviour
     public int HP = 100;
     public int AP = 100;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

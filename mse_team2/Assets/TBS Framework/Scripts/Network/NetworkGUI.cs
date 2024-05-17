@@ -271,7 +271,7 @@ namespace TbsFramework.Network
         }
 
         /// <summary>
-        /// 플레이어 번확 변경되었을 때 호출되는 메서드
+        /// 플레이어 번호가 변경되었을 때 호출되는 메서드
         /// </summary>
         /// <param name="actionParams"></param>
         private void OnPlayerNumberChanged(Dictionary<string, string> actionParams)

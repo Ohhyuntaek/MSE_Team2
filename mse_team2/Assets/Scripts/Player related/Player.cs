@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace PlayerServer  // Prevents this script from being exposed externally causing it to be misreferenced.
 {
+    // class that contains the player information during the whole app playing
+    // data won't be removed or initiated even the scene is changed during the game
+    // data will be updated or removed, initiated only when the player signup/login/edit information/delete information
     [Serializable]
     public class Player : MonoBehaviour
     {

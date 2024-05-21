@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Reflection.Emit;
 
+// class contains the information of the player (not static)
 [Serializable]
 public class ParsedPlayer
 {

@@ -7,11 +7,13 @@ using UnityEngine.Networking;
 using System;
 using PlayerServer;
 using UnityEditor.SceneManagement;
+using Unity.VisualScripting;
 
 // class for communicating with server related to the player data
 public class PlayerManager : MonoBehaviour
 {
 
+    // URLs for communicating with server
     private static string BasicURL = "http://localhost:9999/farmwars";
     private string SignupURL = BasicURL + "/signup";
     private string LoginURL = BasicURL + "/login";
@@ -88,7 +90,8 @@ public class PlayerManager : MonoBehaviour
                 if (parsed_p != null){
                     // save new player's information in Player class (maintained during whole app)
                     Player p = new Player(parsed_p);
-                    Debug.Log(Player.privateCode);
+
+                    // create new player's game history in server
                     ghm.CreateHistory(parsed_p);
 
                     SceneHandler sh = new SceneHandler();
@@ -96,6 +99,7 @@ public class PlayerManager : MonoBehaviour
                     // show signup result
                     sm.ShowResult("Success to sign up!", Color.green);
                     sm.hideSignupButton();
+                    sm.hideGoBackButton();
                     yield return new WaitForSeconds(3f);
                     sm.hideResult();
 
@@ -140,6 +144,7 @@ public class PlayerManager : MonoBehaviour
                     // save login player information in Player class (won't be changed during the whole game)
                     Player p = new Player(parsed_p);
 
+                    // get player's game history from the server
                     ghm.FindPlayerHistory(parsed_p);
 
                     SceneHandler sh = new SceneHandler();
@@ -147,6 +152,7 @@ public class PlayerManager : MonoBehaviour
                     // show login result
                     lgm.showResult("Success to login!", Color.green);
                     lgm.hideLoginButton();
+                    lgm.hideGoBackButton();
                     yield return new WaitForSeconds(3f);
                     lgm.hideResult();
 
@@ -242,6 +248,7 @@ public class PlayerManager : MonoBehaviour
                     parsed_p_orig.nickname = Player.nickname;
                     parsed_p_orig.password = Player.password;
 
+                    // delete player's game history in server
                     ghm.DeletePlayerHistory(parsed_p_orig);
 
                     // init player info

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// this class handles signup information to communicate with server part
 [Serializable]
 public class SignupInfo : MonoBehaviour
 {

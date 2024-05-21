@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -76,14 +78,14 @@ public class FarmWarsApplication {
 		System.out.println(ghrepo.find(p.getPrivateCode()));
 		
 		System.out.println("\nAll gamehistories: ");
-		for(Gamehistory ghs : ghrepo.findTopTotalHistory()) {
+		for(WinningRate ghs : ghrepo.findTopTotalHistory()) {
 			System.out.println(ghs);
 		}
 		
 //		System.out.println("\nDelete gh3 player's gamehistory");
 //		System.out.println(ghrepo.delete(gh3.getPrivateCode()));
 //		System.out.println("\nAll gamehistories after deleting: ");
-		for(Gamehistory ghs : ghrepo.findTopTotalHistory()) {
+		for(WinningRate ghs : ghrepo.findTopTotalHistory()) {
 			System.out.println(ghs);
 		}
 		
@@ -107,15 +109,15 @@ public class FarmWarsApplication {
 		
 		System.out.println("\nTest ranking");
 		System.out.println("Total ranking");
-		for(Gamehistory ghs : ghrepo.findTopTotalHistory()) {
+		for(WinningRate ghs : ghrepo.findTopTotalHistory()) {
 			System.out.println(ghs);
 		}
 		System.out.println("Easy ranking");
-		for(Gamehistory ghs : ghrepo.findTopEasyHistory()) {
+		for(WinningRate ghs : ghrepo.findTopEasyHistory()) {
 			System.out.println(ghs);
 		}
 		System.out.println("Hard ranking");
-		for(Gamehistory ghs : ghrepo.findTopHardHistory()) {
+		for(WinningRate ghs : ghrepo.findTopHardHistory()) {
 			System.out.println(ghs);
 		}
 	}

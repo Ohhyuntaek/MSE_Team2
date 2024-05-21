@@ -58,6 +58,7 @@ public class PlayerManager : MonoBehaviour
         StartCoroutine(DeleteRequest());
     }
 
+
     // send signup request to server part
     IEnumerator SignupRequest()
     {
@@ -116,7 +117,7 @@ public class PlayerManager : MonoBehaviour
         LoginSceneManager lgm = FindObjectOfType<LoginSceneManager>();
 
         string json = getLoginInfoFromFields();
-    
+        print(json);
         UnityWebRequest request = UnityWebRequest.Post(LoginURL, json, "application/json");
 
         yield return request.SendWebRequest();

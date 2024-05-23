@@ -183,6 +183,10 @@ public class GameLobbyButtonHandler : MonoBehaviour
             easyRankingButton.gameObject.GetComponent<Image>().sprite = originalSprite_easyRankingButton;
             hardRankingButton.gameObject.GetComponent<Image>().sprite = originalSprite_hardRankingButton;
             RankingPanel.gameObject.SetActive(true);
+            
+            // show total ranking part
+            GamehistoryManager ghm = FindAnyObjectByType<GamehistoryManager>();
+            ghm.TotalRankingPlayerHistory();
         }
         // when button is re-clicked
         else {

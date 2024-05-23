@@ -30,6 +30,9 @@ public class GameLobbySceneManager : MonoBehaviour
     [SerializeField] private TMP_Text Player_ranking_hardWin;
     [SerializeField] private TMP_Text Player_ranking_hardLose;
     [SerializeField] private TMP_Text Player_ranking_hardWinningRate;
+    [SerializeField] private List<TMP_Text> Rank_Nicknames;
+    [SerializeField] private List<TMP_Text> Rank_WinningRates;
+    [SerializeField] private TMP_Text PlayerRank;
 
     void Start()
     {
@@ -113,5 +116,21 @@ public class GameLobbySceneManager : MonoBehaviour
     // hide deleting request result
     public void hideDeleteResult(){
         DeleteAccountResultText.gameObject.SetActive(false);
+    }
+
+    // ranking of the modes
+    public void ShowRankResult(List<WinningRate> wrl){
+        for (int i = 0; i < wrl.Count; i++){
+            if (i<5) {
+                // print top 5 player's information
+                Rank_Nicknames[i].text = wrl[i].nickname;
+                Rank_WinningRates[i].text = wrl[i].winningRate.ToString()+"%";
+            }
+            // print current player's rank
+            if (wrl[i].nickname.Equals(Player.nickname)){
+                PlayerRank.text = (i+1).ToString();
+            }
+        }
+
     }
 }

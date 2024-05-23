@@ -2,7 +2,7 @@
 
 namespace TbsFramework.Example1
 {
-    public class Paladin : MyUnit
+    public class Attacker : MyUnit
     {
         protected override int Defend(Unit other, int damage)
         {

@@ -29,6 +29,7 @@ public class CardManager : MonoBehaviour
     {
         FindObjectOfType<NetworkConnection>().AddHandler(OnCardSelectEnded, (long)TbsFramework.Network.OpCode.Else);
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -44,7 +45,6 @@ public class CardManager : MonoBehaviour
         if(cardArray.Contains(selectedIndex))
         {
             int index = cardArray.IndexOf(selectedIndex);
-            Debug.Log(index);
             Destroy(spawnedCards[index].gameObject);
             spawnedCards.RemoveAt(index);
             InitCardsPositions();
@@ -55,8 +55,6 @@ public class CardManager : MonoBehaviour
         {
             if(cardArray.Count >= 3)
             {
-
-
                 int index = 0;
                 Destroy(spawnedCards[index].gameObject);
                 spawnedCards.RemoveAt(index);
@@ -95,7 +93,7 @@ public class CardManager : MonoBehaviour
         {
             FindObjectOfType<CellGrid>().currentState = CellGrid.GameState.Spawn;
 
-            //FindObjectOfType<NetworkConnection>().EventQueue.Enqueue((new Action(() => { }), () => OnCardSelectEnded()));
+            // FindObjectOfType<NetworkConnection>().EventQueue.Enqueue((new Action(() => { }), () => OnCardSelectEnded()));
         }
         else
         {
@@ -113,6 +111,5 @@ public class CardManager : MonoBehaviour
     private void OnCardSelectEnded(Dictionary<string, string> dict)
     {
         Debug.Log(dict["aaa"]);
-        Debug.Log("≈ÎΩ≈ µ∆¥Ÿ ææ¿Ã¿Ãπﬂ");
     }
 }

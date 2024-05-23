@@ -25,7 +25,7 @@ public class SceneHandler : MonoBehaviour
     }
 
     public void OpenEasyModeGameLobbyScene(){
-        SceneManager.LoadScene("EasyModeGameLobby");
+        SceneManager.LoadScene("EasyMode");
     }
 
     public void QuitApp() {

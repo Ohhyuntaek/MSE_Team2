@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 //using UnityEditor.PackageManager.Requests;
 using System;
 using PlayerServer;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
 // class for communicating with server related to the player data

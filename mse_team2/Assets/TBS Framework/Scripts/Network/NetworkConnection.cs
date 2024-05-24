@@ -404,6 +404,9 @@ namespace TbsFramework.Network
         /// </summary>
         public Dictionary<string, string> CustomProperties { get; private set; }
 
+        // JY add > random map
+        public int mapIndex {get; private set;}
+
         /// <summary>
         /// Constructor for creating a new NetworkUser instance.
         /// 새로운 NetworkUser 인스턴스 생성
@@ -418,6 +421,16 @@ namespace TbsFramework.Network
             UserID = userID;
             CustomProperties = customProperties;
             IsHost = isHost;
+        }
+
+        // JY add > random map
+        public NetworkUser(string userName, string userID, Dictionary<string, string> customProperties, int mapIndex, bool isHost = false)
+        {
+            UserName = userName;
+            UserID = userID;
+            CustomProperties = customProperties;
+            IsHost = isHost;
+            this.mapIndex = mapIndex;
         }
 
         /// <summary>

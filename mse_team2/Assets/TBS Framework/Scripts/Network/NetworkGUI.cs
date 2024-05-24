@@ -41,6 +41,9 @@ namespace TbsFramework.Network
 
         [SerializeField] private Transform _playersParent;          // 플레이어 UI 항목들을 담을 부모 트랜스폼
 
+        // JY added
+        [SerializeField] public List<GameObject> _maps; // 각 map 별 카메라 position이 지정된 empty game objects
+
         private NetworkUser _localUser;         // 로컬 사용자 객체
         private int _localPlayerNumber;         // 로컬 플레이어의 번호
         private Dictionary<string, GameObject> _playerPanels = new Dictionary<string, GameObject>();    // 플레이어 패널을 관리하기 위한 딕셔너리
@@ -315,6 +318,14 @@ namespace TbsFramework.Network
         /// <returns></returns>
         private IEnumerator SetupMatch()
         {
+            // JY add
+            // random map selection
+            int mapindex = UnityEngine.Random.Range(0, _maps.Count);
+            print("Selected map: "+mapindex);
+            // Camera.main.transform.position = _maps[mapindex].transform.position;
+            print("Camera position: "+Camera.main.transform.localPosition);
+
+
             // 모든 플레이어에 대해 반복
             for (int i = 0; i < _playersParent.childCount; i++)
             {
@@ -327,6 +338,12 @@ namespace TbsFramework.Network
 
                 // 플레이어 컴포넌트 가져오기
                 var player = playerGO.GetComponent<Player>();
+
+                // JY add
+                // random map selection
+                player.mapIndex = mapindex;
+                player.setCameraPos(_maps[mapindex].transform.localPosition);
+
                 // 플레이어 번호 가져오기
                 var playerNumber = player.PlayerNumber;
 
@@ -341,6 +358,11 @@ namespace TbsFramework.Network
                     remotePlayer.NetworkConnection = _networkConnection;
                     // 플레이어 번호 설정
                     remotePlayer.PlayerNumber = playerNumber;
+
+                    // JY add
+                    // random map selection
+                    remotePlayer.mapIndex = mapindex;
+                    remotePlayer.setCameraPos(_maps[mapindex].transform.localPosition);
                 }
             }
 

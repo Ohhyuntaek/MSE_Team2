@@ -42,7 +42,7 @@ namespace TbsFramework.Network
         [SerializeField] private Transform _playersParent;          // 플레이어 UI 항목들을 담을 부모 트랜스폼
 
         // JY added
-        [SerializeField] public List<GameObject> _maps; // 각 map 별 카메라 position이 지정된 empty game objects
+        [SerializeField] public List<GameObject> _maps; // 각 map 별 game object
 
         private NetworkUser _localUser;         // 로컬 사용자 객체
         private int _localPlayerNumber;         // 로컬 플레이어의 번호
@@ -321,9 +321,7 @@ namespace TbsFramework.Network
             // JY add
             // random map selection
             int mapindex = UnityEngine.Random.Range(0, _maps.Count);
-            print("Selected map: "+mapindex);
-            // Camera.main.transform.position = _maps[mapindex].transform.position;
-            print("Camera position: "+Camera.main.transform.localPosition);
+            
 
 
             // 모든 플레이어에 대해 반복
@@ -342,7 +340,9 @@ namespace TbsFramework.Network
                 // JY add
                 // random map selection
                 player.mapIndex = mapindex;
-                player.setCameraPos(_maps[mapindex].transform.localPosition);
+                player.setCameraPos(_maps[mapindex].transform.position+ new Vector3(0, 19, -10));
+                // JY add cellgrid change following by random map
+                _cellGrid.transform.position = _maps[mapindex].transform.position;
 
                 // 플레이어 번호 가져오기
                 var playerNumber = player.PlayerNumber;
@@ -362,7 +362,9 @@ namespace TbsFramework.Network
                     // JY add
                     // random map selection
                     remotePlayer.mapIndex = mapindex;
-                    remotePlayer.setCameraPos(_maps[mapindex].transform.localPosition);
+                    remotePlayer.setCameraPos(_maps[mapindex].transform.position+ new Vector3(0, 19, -10));
+                    // JY add cellgrid change following by random map
+                    _cellGrid.transform.position = _maps[mapindex].transform.position;
                 }
             }
 

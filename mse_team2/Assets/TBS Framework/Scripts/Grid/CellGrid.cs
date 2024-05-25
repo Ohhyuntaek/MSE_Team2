@@ -159,6 +159,10 @@ namespace TbsFramework.Grid
                     {
                         Cells.Add(cell);    // 셀 추가
                     }
+
+                    // JY add
+                    // for cell property setting (special buff effect to the characters)
+                    cell.SetCellProperty(Players[0].mapIndex);
                 }
                 else
                 {

@@ -55,6 +55,24 @@ namespace TbsFramework.Cells
         /// </summary>
         public event EventHandler CellDehighlighted;
 
+
+
+        // JY add
+        // for cell property setting (special buff effect to the characters)
+        public enum CellProperty {
+            Mountain,
+            Acuatic,
+            Grass
+        }
+        [SerializeField] private List<CellProperty> CellProperties;
+        public CellProperty _Property;
+        public void SetCellProperty(int mapIndex){
+            _Property = CellProperties[mapIndex];
+        }
+
+
+
+
         public virtual void OnMouseEnter()
         {
             if (CellHighlighted != null)

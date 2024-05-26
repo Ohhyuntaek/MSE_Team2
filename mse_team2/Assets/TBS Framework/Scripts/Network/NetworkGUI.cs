@@ -330,6 +330,7 @@ namespace TbsFramework.Network
                 // 플레이어 번호 가져오기
                 var playerNumber = player.PlayerNumber;
 
+
                 // 로컬 플레이어가 아니고, 플레이어가 HumanPlayer이거나 AIPlayer이고 호스트가 아닌 경우
                 if (!playerNumber.Equals(_localPlayerNumber) && player is HumanPlayer || player is AIPlayer && !_networkConnection.IsHost)
                 {
@@ -343,6 +344,8 @@ namespace TbsFramework.Network
                     remotePlayer.PlayerNumber = playerNumber;
                 }
             }
+
+            FindObjectOfType<CardManager>().localPlayerNum = _localPlayerNumber;
 
             // 한 프레임을 기다린 후 게임 오브젝트 비활성화
             yield return new WaitForEndOfFrame();

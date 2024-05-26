@@ -120,6 +120,13 @@ namespace TbsFramework.Units
             }
         }
 
+        /// <summary>
+        /// 공격 요소
+        /// 
+        /// Hit Points => AP
+        /// Attack Range => 공격 범위
+        /// 
+        /// </summary>
         public int HitPoints;
         public int AttackRange;
         public int AttackFactor;

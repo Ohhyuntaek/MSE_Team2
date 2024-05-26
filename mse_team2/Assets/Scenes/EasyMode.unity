@@ -673,6 +673,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -1663,6 +1668,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -1745,6 +1755,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -1992,6 +2007,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -2142,6 +2162,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -2309,6 +2334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -2551,6 +2581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spearman
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004830922144235210, guid: 41eadc23840ba114b8a8076dabe85868,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3089,6 +3124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -3324,6 +3364,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -3919,6 +3964,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -4118,7 +4168,7 @@ PrefabInstance:
     - target: {fileID: 1039634632047457087, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1039634632047457087, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -4164,6 +4214,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -4580,6 +4635,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -5735,6 +5795,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForestHexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 7191029098602758644, guid: 46a57576dc5110345985fdc9771baa16,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8176727952375852411, guid: 46a57576dc5110345985fdc9771baa16, type: 3}
@@ -6310,6 +6375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -6476,6 +6546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -6967,6 +7042,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -7304,6 +7384,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -7470,6 +7555,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -7721,6 +7811,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -9763,6 +9858,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -11309,6 +11409,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -11549,6 +11654,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -11803,6 +11913,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -11895,6 +12010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -12500,6 +12620,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -12587,6 +12712,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -12927,6 +13057,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -13014,6 +13149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -13111,6 +13251,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 442986312732949614, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 670090265791840578, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
       propertyPath: m_Layer
@@ -13124,6 +13269,31 @@ PrefabInstance:
     - target: {fileID: 917069691976598230, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124960474672680929, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124960474672680929, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124960474672680929, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124960474672680929, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124960474672680929, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1212016313145562963, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
@@ -13179,6 +13349,31 @@ PrefabInstance:
     - target: {fileID: 2870541233393955854, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192555965490109497, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192555965490109497, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192555965490109497, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192555965490109497, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3192555965490109497, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3241984970951373389, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
@@ -13276,10 +13471,45 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4398895735320174566, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432020920130134195, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432020920130134195, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432020920130134195, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432020920130134195, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432020920130134195, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4484398605753268595, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484398605753268595, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4489300419738739010, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
@@ -13326,6 +13556,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6093113377833481003, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6186142491909665464, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
       propertyPath: m_Layer
@@ -13334,6 +13569,36 @@ PrefabInstance:
     - target: {fileID: 6195622638752172071, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195622638752172071, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436002418222456510, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436002418222456510, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436002418222456510, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 360.30246
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436002418222456510, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 180.15123
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436002418222456510, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6800078744502248587, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
@@ -13416,6 +13681,31 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7025951056336101402, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025951056336101402, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025951056336101402, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025951056336101402, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025951056336101402, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7054648719002416014, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
       propertyPath: m_Layer
@@ -13485,6 +13775,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219449801225961890, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8428345913720409872, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
@@ -13645,6 +13940,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214923806539391645, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14113,6 +14413,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -14206,6 +14511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -14293,6 +14603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -15172,6 +15487,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -15289,6 +15609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spearman
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004830922144235210, guid: 41eadc23840ba114b8a8076dabe85868,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15764,6 +16089,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -16025,6 +16355,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForestHexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 7191029098602758644, guid: 46a57576dc5110345985fdc9771baa16,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8176727952375852411, guid: 46a57576dc5110345985fdc9771baa16, type: 3}
@@ -16100,6 +16435,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -16218,6 +16558,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoughHexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 205264069529360221, guid: 3516bee96ae643f45bbf1eb8460adcf4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 205264069529521021, guid: 3516bee96ae643f45bbf1eb8460adcf4,
         type: 3}
@@ -16449,6 +16794,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -16621,6 +16971,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -17190,6 +17545,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -18120,6 +18480,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -18779,6 +19144,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -18952,6 +19322,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -19119,6 +19494,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -19207,6 +19587,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -19294,6 +19679,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -19402,6 +19792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ForestHexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191029098602758644, guid: 46a57576dc5110345985fdc9771baa16,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -19982,6 +20377,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -21098,6 +21498,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -21262,6 +21667,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoughHexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 205264069529360221, guid: 3516bee96ae643f45bbf1eb8460adcf4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 205264069529521021, guid: 3516bee96ae643f45bbf1eb8460adcf4,
         type: 3}
@@ -22009,6 +22419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -23405,6 +23820,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -23492,6 +23912,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -24039,6 +24464,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -24517,6 +24947,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -24927,6 +25362,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -25077,6 +25517,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -25956,6 +26401,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -26451,6 +26901,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -26623,6 +27078,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -27248,6 +27708,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -29098,6 +29563,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -29124,6 +29594,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 578009596}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1152469140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152469141}
+  - component: {fileID: 1152469143}
+  - component: {fileID: 1152469142}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1152469141
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152469140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2703267430888802492}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -16, y: 64}
+  m_SizeDelta: {x: 600, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1152469142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152469140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &1152469143
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152469140}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1154552023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29191,6 +29740,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -29675,6 +30229,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -29768,6 +30327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -30044,6 +30608,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 1607822178229772516, guid: 378d05c8c49ffd542b1ccd388177c2eb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2321349763813198882, guid: 378d05c8c49ffd542b1ccd388177c2eb,
         type: 3}
       propertyPath: TargetUnit
@@ -30193,6 +30762,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -30213,100 +30787,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb1fc8de526cbe4f9176ce441803bb6, type: 3}
---- !u!1001 &1208336112
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1278839802}
-    m_Modifications:
-    - target: {fileID: 1225246363217015054, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_Name
-      value: Emu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 87843dd4c2527fc4aab8d9461ce14c7c, type: 3}
---- !u!4 &1208336113 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1225246363217015055, guid: 87843dd4c2527fc4aab8d9461ce14c7c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1208336112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1210588002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30612,6 +31092,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -30773,6 +31258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -31419,6 +31909,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoughHexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 205264069529360221, guid: 3516bee96ae643f45bbf1eb8460adcf4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 205264069529521021, guid: 3516bee96ae643f45bbf1eb8460adcf4,
         type: 3}
       propertyPath: m_RootOrder
@@ -31432,7 +31927,7 @@ PrefabInstance:
     - target: {fileID: 205264069529521021, guid: 3516bee96ae643f45bbf1eb8460adcf4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.76
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 205264069529521021, guid: 3516bee96ae643f45bbf1eb8460adcf4,
         type: 3}
@@ -31649,6 +32144,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -31736,6 +32236,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -31835,12 +32340,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4143485497919934, guid: 15003ceaeeee90f4ebbc62a616483b13,
     type: 3}
   m_PrefabInstance: {fileID: 1278378181}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1278839802 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1792490405}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1281023594
 PrefabInstance:
@@ -32067,6 +32566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -32336,7 +32840,7 @@ PrefabInstance:
     - target: {fileID: 1039634632047457087, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.57
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1039634632047457087, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -32382,6 +32886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -33211,6 +33720,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -34340,6 +34854,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -34377,6 +34896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoughHexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 205264069529360221, guid: 3516bee96ae643f45bbf1eb8460adcf4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 205264069529521021, guid: 3516bee96ae643f45bbf1eb8460adcf4,
         type: 3}
@@ -35003,6 +35527,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -35287,7 +35816,7 @@ PrefabInstance:
     - target: {fileID: 1039634632047457087, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1039634632047457087, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -35333,6 +35862,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -35734,6 +36268,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -35846,6 +36385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paladin
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138218145491161756, guid: d34a913b388c76d44894c65424652f9c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7185316894741799485, guid: d34a913b388c76d44894c65424652f9c, type: 3}
@@ -36251,6 +36795,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoughHexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 205264069529360221, guid: 3516bee96ae643f45bbf1eb8460adcf4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 205264069529521021, guid: 3516bee96ae643f45bbf1eb8460adcf4,
         type: 3}
       propertyPath: m_RootOrder
@@ -36493,6 +37042,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -36585,6 +37139,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -36714,7 +37273,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1278839802}
+  - {fileID: 6878763728658229422}
   - {fileID: 66868591}
   - {fileID: 1198759825}
   - {fileID: 1343829252}
@@ -36868,6 +37427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -37223,6 +37787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoughHexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 205264069529360221, guid: 3516bee96ae643f45bbf1eb8460adcf4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 205264069529521021, guid: 3516bee96ae643f45bbf1eb8460adcf4,
         type: 3}
@@ -37692,6 +38261,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -37795,6 +38369,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForestHexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 7191029098602758644, guid: 46a57576dc5110345985fdc9771baa16,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8176727952375852411, guid: 46a57576dc5110345985fdc9771baa16, type: 3}
@@ -37870,6 +38449,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -38200,6 +38784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -38590,6 +39179,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -38837,6 +39431,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -39008,6 +39607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -39192,6 +39796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -39696,6 +40305,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -39857,6 +40471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -40087,6 +40706,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -40688,6 +41312,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -40945,6 +41574,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -41190,6 +41824,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -41861,6 +42500,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: IsTaken
@@ -42074,6 +42718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoughHexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 205264069529360221, guid: 3516bee96ae643f45bbf1eb8460adcf4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 205264069529521021, guid: 3516bee96ae643f45bbf1eb8460adcf4,
         type: 3}
@@ -43032,6 +43681,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -43119,6 +43773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -43656,6 +44315,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -44061,6 +44725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -45024,6 +45693,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -45086,176 +45760,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &1792490405
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1481230986}
-    m_Modifications:
-    - target: {fileID: 525775871997991727, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 969416537067904186, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: TargetUnit
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 969416537067904186, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: unitToCheck
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2052628712150781322, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2687605787404487836, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829808027087248629, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5865430868137627619, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 33c38e81eba0e6946b7c7e79b2e63f4e, type: 2}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.3000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185316894741799485, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: cell
-      value: 
-      objectReference: {fileID: 1682761152}
-    - target: {fileID: 7185316894741799485, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: PlayerNumber
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9138218145491161756, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      propertyPath: m_Name
-      value: Emu
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7185316894741799485, guid: d34a913b388c76d44894c65424652f9c, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6878763726943867659, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 1208336113}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9138218145491161756, guid: d34a913b388c76d44894c65424652f9c,
-        type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1792490408}
-  m_SourcePrefab: {fileID: 100100000, guid: d34a913b388c76d44894c65424652f9c, type: 3}
---- !u!1 &1792490406 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9138218145491161756, guid: d34a913b388c76d44894c65424652f9c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1792490405}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1792490407 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8879685239776326297, guid: d34a913b388c76d44894c65424652f9c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1792490405}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1792490406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fb1d8deab68da45903617c176baa15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1792490408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1792490406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe3f3ddd77258b744981786cc2279324, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UnitHighlighterAggregator: {fileID: 1792490407}
-  modelTransform: {fileID: 0}
-  Obstructable: 0
-  cell: {fileID: 1682761152}
-  HitPoints: 15
-  AttackRange: 1
-  AttackFactor: 0
-  DefenceFactor: 0
-  movementPoints: 3
-  MovementAnimationSpeed: 7
-  actionPoints: 1
-  PlayerNumber: 0
-  UnitName: Emu
 --- !u!4 &1796826281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1039634632047457087, guid: dcb1fc8de526cbe4f9176ce441803bb6,
@@ -45414,6 +45918,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -45686,6 +46195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ForestHexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191029098602758644, guid: 46a57576dc5110345985fdc9771baa16,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -46641,6 +47155,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 1607822178229772516, guid: 378d05c8c49ffd542b1ccd388177c2eb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2321349763813198882, guid: 378d05c8c49ffd542b1ccd388177c2eb,
         type: 3}
       propertyPath: TargetUnit
@@ -46953,6 +47472,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -47363,6 +47887,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -47536,6 +48065,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -47623,6 +48157,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -48356,6 +48895,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -48771,6 +49315,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -49613,6 +50162,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -50187,6 +50741,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -50483,7 +51042,7 @@ PrefabInstance:
     - target: {fileID: 1039634632047457087, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.67
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1039634632047457087, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -50529,6 +51088,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -50696,6 +51260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -51099,6 +51668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoughHexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 205264069529360221, guid: 3516bee96ae643f45bbf1eb8460adcf4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 205264069529521021, guid: 3516bee96ae643f45bbf1eb8460adcf4,
         type: 3}
@@ -52694,6 +53268,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -52946,6 +53525,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
       propertyPath: HexGridType
@@ -53112,6 +53696,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -53855,6 +54444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039634632047750943, guid: dcb1fc8de526cbe4f9176ce441803bb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5908619658396002551, guid: dcb1fc8de526cbe4f9176ce441803bb6,
         type: 3}
@@ -58961,10 +59555,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2703267430888802492}
+  - component: {fileID: 8594165592428670523}
   - component: {fileID: 7725335073297763908}
   - component: {fileID: 8594165592428670522}
   - component: {fileID: 761727953468783141}
-  - component: {fileID: 8594165592428670523}
+  - component: {fileID: 8594165592428670524}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -64930,6 +65525,7 @@ RectTransform:
   - {fileID: 1779857592}
   - {fileID: 1812308302}
   - {fileID: 1602435820}
+  - {fileID: 1152469141}
   m_Father: {fileID: 415486082970132042}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -76510,6 +77106,84 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -2}
   m_SizeDelta: {x: -4, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &6261070399562072671
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1481230986}
+    m_Modifications:
+    - target: {fileID: 3888885758927797638, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: cell
+      value: 
+      objectReference: {fileID: 1682761152}
+    - target: {fileID: 5890066501434519413, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_Name
+      value: Emu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890066501434519413, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.3000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 995de5f6158be204ca46f29fe25f78ac, type: 3}
 --- !u!114 &6266811179137222803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79155,6 +79829,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &6878763728658229422 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 6261070399562072671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6880933162478197523
 GameObject:
   m_ObjectHideFlags: 0
@@ -85232,7 +85912,38 @@ MonoBehaviour:
   parent: {fileID: 1911319694}
   initPos: {fileID: 782342054705584455}
   yInterval: 310
+  isAbleSpawn: 0
+  spawnNumber: 0
   spawnedCards: []
+  cellLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  players:
+  - {fileID: 998837969}
+  - {fileID: 66308854}
+  index: 0
+  localPlayerNum: -1
+  turnNumber: 0
+  nextTurnButton: {fileID: 22654188}
+  consoleText: {fileID: 1152469142}
+--- !u!114 &8594165592428670524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246316587237765542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d53184841e2104c9a3b0dcc9c1c9e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitPrefabs:
+  - {fileID: 3888885758927797638, guid: 995de5f6158be204ca46f29fe25f78ac, type: 3}
+  - {fileID: 1756373468567657163, guid: 6172126f23d586844b78c52b5f5d647c, type: 3}
+  - {fileID: 1729920826356291490, guid: 81ea3853e75e20248aa768845bf3ce26, type: 3}
+  - {fileID: 2531647507898865413, guid: 5a061d7d18342d848989aec057c311c1, type: 3}
+  - {fileID: 2445991878749421312, guid: 043f00a4f59cfd045b42c0534f4516c1, type: 3}
 --- !u!114 &8606697811787366320
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -55,6 +55,7 @@ namespace TbsFramework.Example1
         }
         private void OnTurnEnded(object sender, bool isNetworkInvoked)
         {
+            if (FindObjectOfType<CellGrid>().currentState != CellGrid.GameState.Play) return;
             NextTurnButton.interactable = ((sender as CellGrid).CurrentPlayer is HumanPlayer);
             InfoText.text = "Player " + ((sender as CellGrid).CurrentPlayerNumber + 1);
         }

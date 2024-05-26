@@ -447,6 +447,9 @@ namespace TbsFramework.Network
         AbilityUsed,            // 능력이 사용되었음
         PlayerNumberChanged,    // 플레이어 수가 변경되었음
         IsReadyChanged,         // 준비 상태가 변경되었음
+        SelectCard,             // 카드 선택 중
+        SpawnUnit,              // 카드 선택 완료 후 스폰
+        Play,                   // 게임 시작
         Else,
     }
 }

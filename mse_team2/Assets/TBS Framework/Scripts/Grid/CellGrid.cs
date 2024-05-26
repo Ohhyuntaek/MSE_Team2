@@ -213,8 +213,6 @@ namespace TbsFramework.Grid
         {
             // 셀 클릭했을 때 실행되는 이벤트
             cellGridState.OnCellClicked(sender as Cell);
-            UITest a = FindObjectOfType<UITest>();
-            a.OnCellClicked(sender as Cell);
         }
 
         private void OnUnitClicked(object sender, EventArgs e)
@@ -329,7 +327,7 @@ namespace TbsFramework.Grid
             switch (currentState)
             {
                 case GameState.SelectCard:
-                    //FindObjectOfType<CardManager>().EndTurn();
+                    FindObjectOfType<CardManager>().EndTurn();
 
                     break;
 

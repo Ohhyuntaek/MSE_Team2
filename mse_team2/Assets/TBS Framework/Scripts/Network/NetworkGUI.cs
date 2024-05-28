@@ -340,7 +340,7 @@ namespace TbsFramework.Network
                 // JY add
                 // random map selection
                 player.mapIndex = mapindex;
-                player.setCameraPos(_maps[mapindex].transform.position+ new Vector3(0, 19, -10));
+                player.setCameraPos(_maps[mapindex].transform.position+ new Vector3(0, 25, 0));
                 // JY add cellgrid change following by random map
                 _cellGrid.transform.position = _maps[mapindex].transform.position;
 
@@ -362,7 +362,7 @@ namespace TbsFramework.Network
                     // JY add
                     // random map selection
                     remotePlayer.mapIndex = mapindex;
-                    remotePlayer.setCameraPos(_maps[mapindex].transform.position+ new Vector3(0, 19, -10));
+                    remotePlayer.setCameraPos(_maps[mapindex].transform.position+ new Vector3(0, 25, 0));
                     // JY add cellgrid change following by random map
                     _cellGrid.transform.position = _maps[mapindex].transform.position;
                 }

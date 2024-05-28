@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+// this class handles login information to communicate with server part
 [Serializable]
 public class LoginInfo
 {

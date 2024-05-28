@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4374897, g: 0.48531294, b: 0.5655875, a: 1}
+  m_IndirectSpecularColor: {r: 0.43748924, g: 0.48531228, b: 0.56558657, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -334,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c391e79cc273ad4c98c22fb08b3069c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlayerNumber: 0
   networkGUI: {fileID: 1832324678}
   endingUI: {fileID: 7530548915315425678}
   resultText_all: {fileID: 5998927880142623}
@@ -8134,7 +8133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1327830282}
-  - component: {fileID: 1327830283}
+  - component: {fileID: 1327830284}
   m_Layer: 0
   m_Name: GUIController
   m_TagString: Untagged
@@ -8157,7 +8156,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1327830283
+--- !u!114 &1327830284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8166,15 +8165,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1327830280}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a2abef6752ff54fa93d33291a68736, type: 3}
+  m_Script: {fileID: 11500000, guid: c8a566543a1dd3043869575d4cc347bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CellGrid: {fileID: 396922}
   NextTurnButton: {fileID: 22654188}
   UnitImage: {fileID: 746256339}
-  InfoText: {fileID: 726185883}
+  InfoText: {fileID: 522580621}
   StatsText: {fileID: 522580621}
-  dominationConditionUI: {fileID: 396927}
 --- !u!4 &1341703113 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1039634632047457087, guid: dcb1fc8de526cbe4f9176ce441803bb6,

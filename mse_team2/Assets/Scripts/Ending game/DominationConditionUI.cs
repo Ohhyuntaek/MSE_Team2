@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using TbsFramework.Players;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,7 @@ namespace TbsFramework.Grid.GameResolvers
 {
     public class DominationConditionUI : GameEndCondition
     {
-        public int myPlayerNumber = 0;
+        //public int myPlayerNumber = 0;
         public GameObject networkGUI;
         public GameObject endingUI;
 
@@ -28,22 +29,34 @@ namespace TbsFramework.Grid.GameResolvers
                 networkGUI.SetActive(true);
                 endingUI.SetActive(true);
 
-                resultText_all.text = "Winner: Player " + Result;
+                //resultText_all.text = "Winner: Player " + Result;
+                resultText_all.text = "Winner: Player " + (cellGrid.CurrentPlayerNumber +1);
 
                 animalsUIAnimaitionManager = FindObjectOfType<AnimalsUIAnimaitionManager>();
 
-                if (cellGrid != null)  // Get the player's own id and compare it to the winning player's id
+                //if (cellGrid != null)  // Get the player's own id and compare it to the winning player's id
+                //{
+                //    if (myPlayerNumber + 1 == Result)
+                //    {
+                //        resultText_self.text = "You Win!";
+                //        animalsUIAnimaitionManager.isWin = true;
+                //    }
+                //    else
+                //    {
+                //        resultText_self.text = "You Lose!";
+                //        animalsUIAnimaitionManager.isWin = false;
+                //    }
+                //}
+
+                if (cellGrid.CurrentPlayer is HumanPlayer)
                 {
-                    if (myPlayerNumber + 1 == Result)
-                    {
-                        resultText_self.text = "You Win!";
-                        animalsUIAnimaitionManager.isWin = true;
-                    }
-                    else
-                    {
-                        resultText_self.text = "You Lose!";
-                        animalsUIAnimaitionManager.isWin = false;
-                    }
+                    resultText_self.text = "You Win!";
+                    animalsUIAnimaitionManager.isWin = true;
+                }
+                else
+                {
+                    resultText_self.text = "You Lose!";
+                    animalsUIAnimaitionManager.isWin = false;
                 }
 
                 return new GameResult(true, playersAlive, playersDead);

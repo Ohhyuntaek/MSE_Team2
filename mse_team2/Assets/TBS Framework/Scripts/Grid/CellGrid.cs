@@ -337,7 +337,7 @@ namespace TbsFramework.Grid
                     _cellGridState.EndTurn(isNetworkInvoked);
                     break;
                 case GameState.Play:
-                    FindObjectOfType<UITest>().EndTurn();
+                    FindObjectOfType<CellGrid>().EndTurnExecute();
                     break;
             }
         }

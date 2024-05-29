@@ -23,10 +23,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SignUp.unity
     guid: f4695562bcd1518489a0f2690865e693
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/EasyMode.unity
     guid: edf1351893be25347a0fbd7881b17167
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sample/SceneMultiplayer_copy.unity
     guid: a0aa669164eb29641be4151c614ce3b9
   - enabled: 0

@@ -340,7 +340,7 @@ namespace TbsFramework.Grid
                     _cellGridState.EndTurn(isNetworkInvoked);
                     break;
                 case GameState.Play:
-                    FindObjectOfType<CellGrid>().EndTurnExecute();
+                    _cellGridState.EndTurn(isNetworkInvoked);
                     break;
             }
         }

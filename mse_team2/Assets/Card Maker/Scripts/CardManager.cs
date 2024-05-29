@@ -17,7 +17,7 @@ using TbsFramework.Gui;
 public class CardManager : MonoBehaviour
 {
     [SerializeField]
-    List<int> cardArray = new List<int> ();
+    List<int> cardArray = new List<int>();
 
     [SerializeField]
     Transform parent;
@@ -38,6 +38,9 @@ public class CardManager : MonoBehaviour
     [SerializeField]
     Player[] players;
     public int index = 0;
+
+    [SerializeField]
+    public Camera cardUICamera;
 
     public int localPlayerNum = -1;
 
@@ -229,6 +232,7 @@ public class CardManager : MonoBehaviour
                     // ##################### 게임 시작시점 #####################
                     cellGrid.currentState = CellGrid.GameState.Play;
                     cellGrid.InitializeAndStart();
+                    cardUICamera.gameObject.SetActive(false);
                     break;
             }
         }

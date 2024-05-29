@@ -124,7 +124,6 @@ namespace TbsFramework.Grid
 
         public void InitializeAndStart()
         {
-            currentState = GameState.SelectCard;
             Initialize();   // 초기화
             StartGame();    // 게임 시작
         }

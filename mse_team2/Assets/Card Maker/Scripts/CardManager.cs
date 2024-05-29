@@ -181,7 +181,7 @@ public class CardManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("ī�尡 �����մϴ�.");
+            Debug.Log("카드가 부족합니다.");
         }
     }
 
@@ -207,6 +207,7 @@ public class CardManager : MonoBehaviour
         Unit unit = Instantiate(prefabManager.unitPrefabs[prefabNum], cell.transform.position, Quaternion.identity);
         
         cellGrid.AddUnit(unit.transform, cell,  players[player]);
+        unit.PlayerNumber = player;
         spawnNumber++;
 
         nextTurnButton.interactable = true;
@@ -225,8 +226,9 @@ public class CardManager : MonoBehaviour
                     spawnNumber = 0;
                     break;
                 case 1:
-                    // ##################### ���� ������� #####################
+                    // ##################### 게임 시작시점 #####################
                     cellGrid.currentState = CellGrid.GameState.Play;
+                    cellGrid.InitializeAndStart();
                     break;
             }
         }

@@ -6586,7 +6586,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 851183965}
         m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
-        m_MethodName: OpenEasyModeGameLobbyScene
+        m_MethodName: OpenEasyModeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -31,7 +31,7 @@ public class SceneHandler : MonoBehaviour
     }
 
     // open easy mode game lobby scene
-    public void OpenEasyModeGameLobbyScene(){
+    public void OpenEasyModeScene(){
         SceneManager.LoadScene("EasyMode");
     }
 

@@ -267,7 +267,7 @@ namespace TbsFramework.Grid
                 targetCell.IsTaken = unit.GetComponent<Unit>().Obstructable;    // 타겟 셀의 점유 상태 업데이트
 
                 unit.GetComponent<Unit>().Cell = targetCell;    // 유닛의 셀 설정
-                unit.GetComponent<Unit>().transform.localPosition = targetCell.transform.localPosition; // 유닛의 위치 설정
+                unit.GetComponent<Unit>().transform.position = targetCell.transform.position; // 유닛의 위치 설정 // JY modified : localpos to worldpos
             }
 
             if (ownerPlayer != null)

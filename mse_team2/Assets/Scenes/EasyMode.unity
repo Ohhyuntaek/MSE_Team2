@@ -719,10 +719,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 8594165592428670523}
+        m_TargetAssemblyTypeName: CardManager, Assembly-CSharp
         m_MethodName: EndTurn
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1765,7 +1765,7 @@ PrefabInstance:
     - target: {fileID: 7004830922144235210, guid: 41eadc23840ba114b8a8076dabe85868,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11480,6 +11480,11 @@ PrefabInstance:
       propertyPath: PlayersParent
       value: 
       objectReference: {fileID: 384340002}
+    - target: {fileID: 870935720680642341, guid: 14dcfdb1d4a2db44dbb4efd007b5c7dd,
+        type: 3}
+      propertyPath: ShouldStartGameImmediately
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1413742022471026843, guid: 14dcfdb1d4a2db44dbb4efd007b5c7dd,
         type: 3}
       propertyPath: m_Name
@@ -12374,7 +12379,7 @@ PrefabInstance:
     - target: {fileID: 7004830922144235210, guid: 41eadc23840ba114b8a8076dabe85868,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24323,7 +24328,7 @@ PrefabInstance:
     - target: {fileID: 1607822178229772516, guid: 378d05c8c49ffd542b1ccd388177c2eb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2321349763813198882, guid: 378d05c8c49ffd542b1ccd388177c2eb,
         type: 3}
@@ -28728,7 +28733,7 @@ PrefabInstance:
     - target: {fileID: 9138218145491161756, guid: d34a913b388c76d44894c65424652f9c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7185316894741799485, guid: d34a913b388c76d44894c65424652f9c, type: 3}
@@ -36815,7 +36820,7 @@ PrefabInstance:
     - target: {fileID: 1607822178229772516, guid: 378d05c8c49ffd542b1ccd388177c2eb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2321349763813198882, guid: 378d05c8c49ffd542b1ccd388177c2eb,
         type: 3}
@@ -65239,7 +65244,7 @@ PrefabInstance:
     - target: {fileID: 5890066501434519413, guid: 995de5f6158be204ca46f29fe25f78ac,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8761500260606161350, guid: 995de5f6158be204ca46f29fe25f78ac,
         type: 3}

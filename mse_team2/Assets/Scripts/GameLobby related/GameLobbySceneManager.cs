@@ -51,7 +51,7 @@ public class GameLobbySceneManager : MonoBehaviour
             Player_ranking_totalWinningRate.text = 0.ToString()+"%";
         }
         else {
-            Player_ranking_totalWinningRate.text = (Math.Truncate((float)((Gamehistory.easyWin + Gamehistory.hardWin)*100/(Gamehistory.easyGame + Gamehistory.hardGame)))/100).ToString()+"%";
+            Player_ranking_totalWinningRate.text = (Math.Truncate((float)((Gamehistory.easyWin + Gamehistory.hardWin)*100/(Gamehistory.easyGame + Gamehistory.hardGame)))).ToString()+"%";
         }
 
         Player_ranking_easyGame.text = Gamehistory.easyGame.ToString();
@@ -61,7 +61,7 @@ public class GameLobbySceneManager : MonoBehaviour
             Player_ranking_easyWinningRate.text = 0.ToString()+"%";
         }
         else {
-            Player_ranking_easyWinningRate.text = (Math.Truncate((float)(Gamehistory.easyWin*100/Gamehistory.easyGame))/100).ToString()+"%";
+            Player_ranking_easyWinningRate.text = (Math.Truncate((float)(Gamehistory.easyWin*100/Gamehistory.easyGame))).ToString()+"%";
         }
 
         Player_ranking_hardGame.text = Gamehistory.hardGame.ToString();
@@ -71,7 +71,7 @@ public class GameLobbySceneManager : MonoBehaviour
             Player_ranking_hardWinningRate.text = 0.ToString();
         }
         else {
-            Player_ranking_hardWinningRate.text= (Math.Truncate((float)(Gamehistory.hardWin*100/Gamehistory.hardGame))/100).ToString()+"%";
+            Player_ranking_hardWinningRate.text= (Math.Truncate((float)(Gamehistory.hardWin*100/Gamehistory.hardGame))).ToString()+"%";
         }
         
     }

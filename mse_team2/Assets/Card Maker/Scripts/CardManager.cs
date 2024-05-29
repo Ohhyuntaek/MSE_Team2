@@ -92,11 +92,11 @@ public class CardManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //½ºÆù ·ÎÁ÷
+            //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if(cellGrid.currentState == CellGrid.GameState.Spawn)
             {
                 RaycastHit[] hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition), 100, cellLayer);
-
+                
                 if (hits.Length > 0)
                 {
                     OnCellClicked(hits[0].transform.GetComponent<Cell>());
@@ -114,7 +114,7 @@ public class CardManager : MonoBehaviour
         CardObject current = EventSystem.current.currentSelectedGameObject.GetComponent<CardObject>();
         int selectedIndex = current.selectedPrefabIndex;
 
-        //¹è¿­¿¡ ÇöÀç ÀÎµ¦½º°¡ ÀÖÀ¸¸é
+        //ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if(cardArray.Contains(selectedIndex))
         {
             int index = cardArray.IndexOf(selectedIndex);
@@ -181,7 +181,7 @@ public class CardManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Ä«µå°¡ ºÎÁ·ÇÕ´Ï´Ù.");
+            Debug.Log("Ä«ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
         }
     }
 
@@ -205,6 +205,7 @@ public class CardManager : MonoBehaviour
         consoleText.text = $"{player} {prefabNum} {coordStr} {isAbleSpawn}";
 
         Unit unit = Instantiate(prefabManager.unitPrefabs[prefabNum], cell.transform.position, Quaternion.identity);
+        
         cellGrid.AddUnit(unit.transform, cell,  players[player]);
         spawnNumber++;
 
@@ -224,7 +225,7 @@ public class CardManager : MonoBehaviour
                     spawnNumber = 0;
                     break;
                 case 1:
-                    // ##################### °ÔÀÓ ½ÇÇà½ÃÁ¡ #####################
+                    // ##################### ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ #####################
                     cellGrid.currentState = CellGrid.GameState.Play;
                     break;
             }
@@ -233,7 +234,7 @@ public class CardManager : MonoBehaviour
 
     public void OnCellClicked(Cell cell)
     {
-        // ¼¿ Å¬¸¯ ÈÄ ¼ÒÈ¯ÇÏ°íÀÚ ÇÏ´Â ÇÃ·¹ÀÌ¾î, ¼ÒÈ¯ÇÒ ¸÷, ¼¿ À§Ä¡ ÀúÀå
+        // ï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½, ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
 
         if (turnNumber != localPlayerNum) return;
 

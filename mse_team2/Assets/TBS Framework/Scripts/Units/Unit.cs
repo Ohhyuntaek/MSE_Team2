@@ -200,7 +200,6 @@ namespace TbsFramework.Units
 
         public virtual void OnMouseDown()
         {
-            Debug.Log("click1");
             if (UnitClicked != null)
             {
                 UnitClicked.Invoke(this, EventArgs.Empty);
@@ -208,8 +207,6 @@ namespace TbsFramework.Units
         }
         public virtual void OnMouseEnter()
         {
-            Debug.Log("click2");
-
             if (UnitHighlighted != null)
             {
                 UnitHighlighted.Invoke(this, EventArgs.Empty);
@@ -217,8 +214,6 @@ namespace TbsFramework.Units
         }
         public virtual void OnMouseExit()
         {
-            Debug.Log("click3");
-
             if (UnitDehighlighted != null)
             {
                 UnitDehighlighted.Invoke(this, EventArgs.Empty);
@@ -413,6 +408,7 @@ namespace TbsFramework.Units
             }
             else
             {
+                Debug.Log(Cell.transform.position);
                 //이동 종료시
                 transform.position = Cell.transform.position;
                 OnMoveFinished();

@@ -425,13 +425,19 @@ namespace TbsFramework.Units
             for (int i = path.Count - 1; i >= 0; i--)
             {
                 var currentCell = path[i];
-                Vector3 destination_pos = FindObjectOfType<CellGrid>().Is2D ? new Vector3(currentCell.transform.localPosition.x, currentCell.transform.localPosition.y, transform.localPosition.z) : new Vector3(currentCell.transform.localPosition.x, currentCell.transform.localPosition.y, currentCell.transform.localPosition.z);
-                while (transform.localPosition != destination_pos)
+
+                //JY
+                // Vector3 destination_pos = FindObjectOfType<CellGrid>().Is2D ? new Vector3(currentCell.transform.localPosition.x, currentCell.transform.localPosition.y, transform.localPosition.z) : new Vector3(currentCell.transform.localPosition.x, currentCell.transform.localPosition.y, currentCell.transform.localPosition.z);
+                Vector3 destination_pos = FindObjectOfType<CellGrid>().Is2D ? new Vector3(currentCell.transform.position.x, currentCell.transform.position.y, transform.position.z) : new Vector3(currentCell.transform.position.x, currentCell.transform.position.y, currentCell.transform.position.z);
+                
+                // while (transform.localPosition != destination_pos)
+                while (transform.position != destination_pos)
                 {
                     if(modelTransform)
                     {
                         //이동할때 로테이션값 계산
-                        Vector3 direction = (destination_pos - transform.localPosition);
+                        // Vector3 direction = (destination_pos - transform.localPosition);
+                        Vector3 direction = (destination_pos - transform.position);
                         direction.y = 0;
                         direction.Normalize();
 
@@ -439,7 +445,9 @@ namespace TbsFramework.Units
                     }
 
                     //실질적으로 이동하는 부분
-                    transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination_pos, Time.deltaTime * MovementAnimationSpeed);
+
+                    //transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination_pos, Time.deltaTime * MovementAnimationSpeed);
+                    transform.position = Vector3.MoveTowards(transform.position, destination_pos, Time.deltaTime * MovementAnimationSpeed);
                     yield return null;
                 }
             }

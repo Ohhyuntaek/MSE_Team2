@@ -734,7 +734,7 @@ MonoBehaviour:
   MovementAnimationSpeed: 7
   actionPoints: 1
   PlayerNumber: 0
-  UnitName: Emu
+  UnitName: Rattlesnake
 --- !u!114 &2065430786379138435
 MonoBehaviour:
   m_ObjectHideFlags: 0

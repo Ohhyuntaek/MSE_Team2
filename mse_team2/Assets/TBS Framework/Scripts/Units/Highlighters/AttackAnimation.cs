@@ -14,11 +14,15 @@ namespace TbsFramework.Units.Highlighters
 
         private IEnumerator AttackAnimationCoroutine(Unit unit, Unit otherUnit)
         {
+            Debug.Log("Attack Animation");
+
             var StartingPosition = unit.transform.position;
 
             var heading = otherUnit.transform.localPosition - unit.transform.localPosition;
             var direction = heading / heading.magnitude * Magnitude;
             float startTime = Time.time;
+
+            unit.transform.rotation = Quaternion.Euler(0, 90 - (Mathf.Atan2(heading.z, heading.x) * Mathf.Rad2Deg), 0); ;
 
             while (startTime + 0.25f > Time.time)
             {

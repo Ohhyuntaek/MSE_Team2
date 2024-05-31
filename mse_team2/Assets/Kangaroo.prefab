@@ -453,7 +453,7 @@ MonoBehaviour:
   MovementAnimationSpeed: 7
   actionPoints: 1
   PlayerNumber: 0
-  UnitName: Emu
+  UnitName: Kangaroo
 --- !u!114 &8501275877787388713
 MonoBehaviour:
   m_ObjectHideFlags: 0

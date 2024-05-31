@@ -653,7 +653,7 @@ MonoBehaviour:
   MovementAnimationSpeed: 7
   actionPoints: 1
   PlayerNumber: 0
-  UnitName: Emu
+  UnitName: Buffalo
 --- !u!114 &8418431003879672574
 MonoBehaviour:
   m_ObjectHideFlags: 0

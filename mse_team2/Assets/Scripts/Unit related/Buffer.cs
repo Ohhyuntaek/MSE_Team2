@@ -2,12 +2,12 @@
 
 namespace TbsFramework.Example1
 {
-    public class Spearman : MyUnit
+    public class Buffer : MyUnit
     {
         protected override int Defend(Unit other, int damage)
         {
             var realDamage = damage;
-            if (other is Archer)
+            if (other is Tanker)
                 realDamage *= 2;//Archer deals double damage to spearman.
 
             return realDamage - DefenceFactor;

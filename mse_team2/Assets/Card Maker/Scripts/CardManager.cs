@@ -68,9 +68,6 @@ public class CardManager : MonoBehaviour
 
     public Button nextTurnButton;
 
-    [SerializeField]
-    Text consoleText;
-
     // Start is called before the first frame update
     private void Start()
     {
@@ -86,8 +83,8 @@ public class CardManager : MonoBehaviour
         if (isRemoteSelectEnd == true && isLocalSelectEnd == true && cellGrid.currentState == CellGrid.GameState.SelectCard)
         {
             cellGrid.currentState = CellGrid.GameState.Spawn;
-
-            guiController.InfoText.text = "Player 1";
+            nextTurnButton.interactable = false;
+            guiController.InfoText.text = "Player 1 is Spawning";
         }
     }
 
@@ -117,7 +114,6 @@ public class CardManager : MonoBehaviour
         CardObject current = EventSystem.current.currentSelectedGameObject.GetComponent<CardObject>();
         int selectedIndex = current.selectedPrefabIndex;
 
-        //�迭�� ���� �ε����� ������
         if(cardArray.Contains(selectedIndex))
         {
             int index = cardArray.IndexOf(selectedIndex);
@@ -180,11 +176,12 @@ public class CardManager : MonoBehaviour
         if (cardArray.Count == 3)
         {
             isLocalSelectEnd = true;
+            guiController.NextTurnButton.interactable = false;
             FindObjectOfType<NetworkConnection>().SendMatchState((long)TbsFramework.Network.OpCode.SelectCard, new Dictionary<string, string>());
         }
         else
         {
-            Debug.Log("카드가 부족합니다.");
+            guiController.InfoText.text = "Lack of cards";
         }
     }
 
@@ -203,21 +200,26 @@ public class CardManager : MonoBehaviour
         Vector2 coord = new Vector2(float.Parse(s[0]), float.Parse(s[1]));
         Cell cell = FindObjectsOfType<Cell>().ToList().Find(a => a.OffsetCoord == coord);
 
-
-        Debug.Log($"{player} {prefabNum} {coordStr} {isAbleSpawn}");
-        consoleText.text = $"{player} {prefabNum} {coordStr} {isAbleSpawn}";
+        // Debug.Log($"{player} {prefabNum} {coordStr} {isAbleSpawn}");
+        // consoleText.text = $"{player} {prefabNum} {coordStr} {isAbleSpawn}";
 
         Unit unit = Instantiate(prefabManager.unitPrefabs[prefabNum], cell.transform.position, Quaternion.identity);
         
         cellGrid.AddUnit(unit.transform, cell,  players[player]);
         unit.PlayerNumber = player;
-        spawnNumber++;
 
-        nextTurnButton.interactable = true;
+        MeshRenderer mr = unit.transform.GetComponentsInChildren<MeshRenderer>().ToList().Find(a => a.gameObject.name == "Highlighter");
+        Color color = (unit.PlayerNumber == 1) ? Color.red : Color.blue;
+        color.a = 0.6f;
+        mr.material.color = color;
+
+        spawnNumber++;
 
         cellGrid.PlayableUnits().Add(unit);
 
         isAbleSpawn = false;
+
+        cell.IsTaken = true;
 
         if (spawnNumber >= 3)
         {
@@ -225,7 +227,7 @@ public class CardManager : MonoBehaviour
             {
                 case 0:
                     turnNumber = 1;
-                    guiController.InfoText.text = "Player 2";
+                    guiController.InfoText.text = "Player 2 is Spawning";
                     spawnNumber = 0;
                     break;
                 case 1:
@@ -262,7 +264,6 @@ public class CardManager : MonoBehaviour
     {
         index = int.Parse(EventSystem.current.currentSelectedGameObject.name);
         Debug.Log(index);
-        consoleText.text = index.ToString();
         isAbleSpawn = true;
     }
 }

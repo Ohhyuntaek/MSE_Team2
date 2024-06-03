@@ -2,7 +2,7 @@
 
 namespace TbsFramework.Example1
 {
-    public class Archer : MyUnit
+    public class Tanker : MyUnit
     {
         protected override int Defend(Unit other, int damage)
         {

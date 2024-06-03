@@ -7,7 +7,7 @@ namespace TbsFramework.Example1
         protected override int Defend(Unit other, int damage)
         {
             var realDamage = damage;
-            if (other is Spearman)
+            if (other is Buffer)
                 realDamage *= 2;//Spearman deals double damage to paladin.
 
             return realDamage - DefenceFactor;

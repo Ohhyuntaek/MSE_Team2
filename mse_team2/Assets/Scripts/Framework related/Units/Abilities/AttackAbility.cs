@@ -19,7 +19,6 @@ namespace TbsFramework.Units.Abilities
         {
             if (CanPerform(cellGrid) && UnitReference.IsUnitAttackable(UnitToAttack, UnitReference.Cell))
             {
-                Debug.Log("1");
                 UnitReference.AttackHandler(UnitToAttack);
                 yield return new WaitForSeconds(0.5f);
             }

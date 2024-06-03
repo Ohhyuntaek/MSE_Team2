@@ -444,6 +444,9 @@ MonoBehaviour:
   UnitHighlighterAggregator: {fileID: 8576032116090612832}
   modelTransform: {fileID: 0}
   Obstructable: 0
+  habitat_property: 0
+  buff_effect: {fileID: 1015780934767744, guid: f20bc82562328d04cb7f1c5c0fe50fdb,
+    type: 3}
   cell: {fileID: 0}
   HitPoints: 15
   AttackRange: 1

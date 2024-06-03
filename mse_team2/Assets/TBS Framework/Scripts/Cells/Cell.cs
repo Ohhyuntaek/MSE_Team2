@@ -75,22 +75,19 @@ namespace TbsFramework.Cells
         [SerializeField] private List<Material> CellPropMats;        
         public void SetCellPropertyColor(){
             
-            GameObject _newChildProp = Instantiate(_cellPropObj, transform.position+new Vector3(0,-0.75f,0), transform.rotation);
+            GameObject _newChildProp = Instantiate(_cellPropObj, transform.position, transform.rotation);
             // GameObject child = transform.GetChild(0).gameObject;
             // var outline = child.GetComponent<MeshRenderer>();
 
             if (_Property.Equals(CellProperty.Mountain)){
                 // outline.sharedMaterial.SetColor("_BaseColor", Celloutlines[0].GetColor("_BaseColor"));
                 _newChildProp.gameObject.GetComponent<MeshRenderer>().material = CellPropMats[0];
-                print("m");
             }
             else if (_Property.Equals(CellProperty.Acuatic)){
                 _newChildProp.gameObject.GetComponent<MeshRenderer>().material = CellPropMats[1];
-                print("a");
             }
             else {
                 _newChildProp.gameObject.GetComponent<MeshRenderer>().material = CellPropMats[2];
-                print("m");
             }
             // outline.sharedMaterial = mat;
             // outline.sharedMaterial.SetColor("_Color", mat.GetColor("_Color"));

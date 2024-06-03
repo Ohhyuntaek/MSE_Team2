@@ -84,6 +84,12 @@ namespace TbsFramework.Units
         public bool Obstructable = true;
 
         public UnitState UnitState { get; set; }
+
+        // JY add for habitat buff effect
+        [SerializeField] private Cell.CellProperty habitat_property;
+
+
+
         public void SetState(UnitState state)
         {
             UnitState.MakeTransition(state);

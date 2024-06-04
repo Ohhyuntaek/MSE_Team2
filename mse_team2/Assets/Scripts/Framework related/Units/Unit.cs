@@ -11,6 +11,7 @@ using TbsFramework.Grid;
 using TbsFramework.Players.AI.Actions;
 using TbsFramework.Players.AI.Evaluators;
 using TbsFramework.Units.Abilities;
+using UnityEngine.Experimental.GlobalIllumination;
 
 namespace TbsFramework.Units
 {
@@ -84,6 +85,13 @@ namespace TbsFramework.Units
         public bool Obstructable = true;
 
         public UnitState UnitState { get; set; }
+
+        // JY add for habitat buff effect
+        [SerializeField] private Cell.CellProperty habitat_property;
+        [SerializeField] private GameObject buff_effect;
+        private GameObject child_buffeffect;
+
+
         public void SetState(UnitState state)
         {
             UnitState.MakeTransition(state);
@@ -175,6 +183,14 @@ namespace TbsFramework.Units
         public int PlayerNumber;
 
         private static DijkstraPathfinding _pathfinder = new DijkstraPathfinding();
+
+        // JY add for buff effect
+        void Start() {
+            child_buffeffect = Instantiate(buff_effect, transform);
+            child_buffeffect.gameObject.SetActive(false);
+        }
+
+
 
         /// <summary>
         /// Method called when unit was added to the game to initialize fields etc. 
@@ -323,6 +339,11 @@ namespace TbsFramework.Units
         /// <returns></returns>
         protected virtual AttackAction DealDamage(Unit unitToAttack)
         {
+            // JY add for buff effect on attacking
+            if (Cell._Property == habitat_property) {
+                return new AttackAction(AttackFactor+5, 1f);
+            }
+            
             return new AttackAction(AttackFactor, 1f);
         }
         /// <summary>
@@ -458,7 +479,20 @@ namespace TbsFramework.Units
         /// <summary>
         /// Method called after movement animation has finished.
         /// </summary>
-        protected virtual void OnMoveFinished() { }
+        protected virtual void OnMoveFinished() { 
+            // JY add for buff effect
+            if (Cell._Property != habitat_property){
+                print("no");
+                child_buffeffect.gameObject.SetActive(false);
+            }
+            else {
+                print("yes");
+                child_buffeffect.gameObject.SetActive(true);
+            }
+            
+
+
+        }
 
         ///<summary>
         /// Method indicates if unit is capable of moving to cell given as parameter.

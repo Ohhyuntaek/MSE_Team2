@@ -342,7 +342,7 @@ namespace TbsFramework.Network
                 player.mapIndex = mapindex;
                 player.setCameraPos(_maps[mapindex].transform.position+ new Vector3(0, 25, 0));
                 // JY add cellgrid change following by random map
-                _cellGrid.transform.position = _maps[mapindex].transform.position;
+                _cellGrid.transform.position = _maps[mapindex].transform.position+new Vector3(0,5,0);
 
                 // 플레이어 번호 가져오기
                 var playerNumber = player.PlayerNumber;
@@ -365,7 +365,7 @@ namespace TbsFramework.Network
                     remotePlayer.mapIndex = mapindex;
                     remotePlayer.setCameraPos(_maps[mapindex].transform.position+ new Vector3(0, 25, 0));
                     // JY add cellgrid change following by random map
-                    _cellGrid.transform.position = _maps[mapindex].transform.position;
+                    _cellGrid.transform.position = _maps[mapindex].transform.position+new Vector3(0,5,0);
                 }
             }
 

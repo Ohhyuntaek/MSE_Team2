@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using TbsFramework.Cells.Highlighters;
+using TbsFramework.Grid;
 using TbsFramework.Pathfinding.DataStructs;
 using TbsFramework.Units;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TbsFramework.Cells
@@ -37,7 +39,7 @@ namespace TbsFramework.Cells
         /// </summary>
         public float MovementCost = 1;
 
-        public List<Unit> CurrentUnits { get; private set; } = new List<Unit>();
+        public List<Units.Unit> CurrentUnits { get; private set; } = new List<Units.Unit>();
 
         /// <summary>
         /// CellClicked event is invoked when user clicks on the cell. 
@@ -55,8 +57,6 @@ namespace TbsFramework.Cells
         /// </summary>
         public event EventHandler CellDehighlighted;
 
-
-
         // JY add
         // for cell property setting (special buff effect to the characters)
         public enum CellProperty {
@@ -66,8 +66,31 @@ namespace TbsFramework.Cells
         }
         [SerializeField] private List<CellProperty> CellProperties;
         public CellProperty _Property;
+        
+        [SerializeField] public GameObject _cellPropObj; // 각 cell 별 property를 보여줄 object
         public void SetCellProperty(int mapIndex){
             _Property = CellProperties[mapIndex];
+            SetCellPropertyColor();
+        }
+        [SerializeField] private List<Material> CellPropMats;        
+        public void SetCellPropertyColor(){
+            
+            GameObject _newChildProp = Instantiate(_cellPropObj, transform.position, transform.rotation);
+            // GameObject child = transform.GetChild(0).gameObject;
+            // var outline = child.GetComponent<MeshRenderer>();
+
+            if (_Property.Equals(CellProperty.Mountain)){
+                // outline.sharedMaterial.SetColor("_BaseColor", Celloutlines[0].GetColor("_BaseColor"));
+                _newChildProp.gameObject.GetComponent<MeshRenderer>().material = CellPropMats[0];
+            }
+            else if (_Property.Equals(CellProperty.Acuatic)){
+                _newChildProp.gameObject.GetComponent<MeshRenderer>().material = CellPropMats[1];
+            }
+            else {
+                _newChildProp.gameObject.GetComponent<MeshRenderer>().material = CellPropMats[2];
+            }
+            // outline.sharedMaterial = mat;
+            // outline.sharedMaterial.SetColor("_Color", mat.GetColor("_Color"));
         }
 
 

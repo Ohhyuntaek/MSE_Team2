@@ -139,6 +139,7 @@ namespace TbsFramework.Units
         public int AttackRange;
         public int AttackFactor;
         public int DefenceFactor;
+        public int originAttackFactor;
         /// <summary>
         /// Determines how far on the grid the unit can move.
         /// </summary>
@@ -183,14 +184,17 @@ namespace TbsFramework.Units
         public int PlayerNumber;
 
         private static DijkstraPathfinding _pathfinder = new DijkstraPathfinding();
+        private bool isChildBuffEffectActived;
+        private int buffedAttackFactor;
 
         // JY add for buff effect
         void Start() {
+            originAttackFactor = AttackFactor;
+
             child_buffeffect = Instantiate(buff_effect, transform);
+            child_buffeffect.transform.position = new Vector3(child_buffeffect.transform.position.x, child_buffeffect.transform.position.y + 1, child_buffeffect.transform.position.z);
             child_buffeffect.gameObject.SetActive(false);
         }
-
-
 
         /// <summary>
         /// Method called when unit was added to the game to initialize fields etc. 
@@ -218,6 +222,7 @@ namespace TbsFramework.Units
         {
             if (UnitClicked != null)
             {
+                Debug.Log("Attack Factor : " + AttackFactor);
                 UnitClicked.Invoke(this, EventArgs.Empty);
             }
         }
@@ -339,11 +344,16 @@ namespace TbsFramework.Units
         /// <returns></returns>
         protected virtual AttackAction DealDamage(Unit unitToAttack)
         {
+            /*
             // JY add for buff effect on attacking
-            if (Cell._Property == habitat_property) {
-                return new AttackAction(AttackFactor+5, 1f);
+            // Cell._Property == habitat_property
+            if (isChildBuffEffectActived == true) {
+                return new AttackAction(AttackFactor + 5, 1f);
+            } else
+            {
+                return new AttackAction(AttackFactor, 1f);
             }
-            
+            */
             return new AttackAction(AttackFactor, 1f);
         }
         /// <summary>
@@ -479,19 +489,33 @@ namespace TbsFramework.Units
         /// <summary>
         /// Method called after movement animation has finished.
         /// </summary>
-        protected virtual void OnMoveFinished() { 
+        protected virtual void OnMoveFinished() {
+            bool isBuffOn = false;
+            bool isBuffing = false;
+
             // JY add for buff effect
             if (Cell._Property != habitat_property){
-                print("no");
+                // No Buff
+                Debug.Log("No, " + "Cell Propert : " + Cell._Property + ", " + "Habitot Property : " + habitat_property);
                 child_buffeffect.gameObject.SetActive(false);
+                isChildBuffEffectActived = false;
+                AttackFactor = originAttackFactor;
+                isBuffing = false;
             }
             else {
-                print("yes");
+                // Add Buff
+                Debug.Log("Yes, " + "Cell Propert : " + Cell._Property + ", " + "Habitot Property : " + habitat_property);
                 child_buffeffect.gameObject.SetActive(true);
+                isChildBuffEffectActived = true;
+                isBuffOn = true;
+
+                if (isBuffOn && isBuffing == false)
+                {
+                    AttackFactor = originAttackFactor + 5;
+                    isBuffOn = false;
+                    isBuffing = true;
+                }
             }
-            
-
-
         }
 
         ///<summary>

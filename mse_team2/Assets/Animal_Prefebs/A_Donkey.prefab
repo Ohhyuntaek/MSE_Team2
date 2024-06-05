@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 7827788884322233856}
   - component: {fileID: 2634172215070774464}
   m_Layer: 0
-  m_Name: Donkey
+  m_Name: A_Donkey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,14 +418,14 @@ MonoBehaviour:
   UnitHighlighterAggregator: {fileID: 2634172215070774464}
   modelTransform: {fileID: 0}
   Obstructable: 0
-  habitat_property: 0
+  habitat_property: 2
   buff_effect: {fileID: 1015780934767744, guid: f20bc82562328d04cb7f1c5c0fe50fdb,
     type: 3}
   cell: {fileID: 0}
-  HitPoints: 15
+  HitPoints: 100
   AttackRange: 1
-  AttackFactor: 0
-  DefenceFactor: 0
+  AttackFactor: 20
+  DefenceFactor: 1
   movementPoints: 3
   MovementAnimationSpeed: 7
   actionPoints: 1

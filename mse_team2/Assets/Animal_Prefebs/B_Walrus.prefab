@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7724456025731957767}
   - component: {fileID: 3997402352406255524}
   m_Layer: 0
-  m_Name: Walrus
+  m_Name: B_Walrus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,11 +81,14 @@ MonoBehaviour:
   UnitHighlighterAggregator: {fileID: 3997402352406255524}
   modelTransform: {fileID: 0}
   Obstructable: 1
+  habitat_property: 1
+  buff_effect: {fileID: 1015780934767744, guid: f20bc82562328d04cb7f1c5c0fe50fdb,
+    type: 3}
   cell: {fileID: 0}
-  HitPoints: 15
+  HitPoints: 100
   AttackRange: 1
-  AttackFactor: 0
-  DefenceFactor: 0
+  AttackFactor: 5
+  DefenceFactor: 1
   movementPoints: 3
   MovementAnimationSpeed: 7
   actionPoints: 1

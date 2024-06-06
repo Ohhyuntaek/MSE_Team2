@@ -21,7 +21,7 @@ public class ValueBar : MonoBehaviour
     private void Start()
     {
         // Initialising the bar
-        InitializeBar();
+        StartCoroutine(InitializeBarEnu());
     }
 
     // Updating the display of bar
@@ -36,11 +36,13 @@ public class ValueBar : MonoBehaviour
     }
 
     // Initialising the bar
-    private void InitializeBar()
+    private IEnumerator InitializeBarEnu()
     {
         // Get Rect Mask 2D component
         barRect = GetComponent<RectMask2D>();
 
+
+        yield return new WaitForSeconds(1f);
         // Setting the initial HP value
         UpdateBar(basicValue);
     }

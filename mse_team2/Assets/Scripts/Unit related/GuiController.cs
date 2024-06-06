@@ -11,6 +11,9 @@ namespace TbsFramework.Example1
 {
     public class GuiController : MonoBehaviour
     {
+        [SerializeField]
+        public GameObject endingPannel;
+
         public CellGrid CellGrid;
         public Button NextTurnButton;
         public CardManager cardManager;
@@ -18,6 +21,11 @@ namespace TbsFramework.Example1
         public Image UnitImage;
         public Text InfoText;
         public Text StatsText;
+
+        private void Start()
+        {
+            endingPannel.SetActive(false);
+        }
 
         void Awake()
         {
@@ -43,6 +51,8 @@ namespace TbsFramework.Example1
 
         private void OnGameEnded(object sender, EventArgs e)
         {
+            endingPannel.SetActive(true);
+
             InfoText.text = $"{cardManager.nicknames[(sender as CellGrid).CurrentPlayerNumber]} wins!";
 
             CellGrid.TurnEnded -= OnTurnEnded;

@@ -10,6 +10,7 @@ namespace TbsFramework.Players
     public abstract class Player : MonoBehaviour
     {
         public int PlayerNumber;
+        public string playerName;
 
         // JY add for map random selection
         private int _mapIndex;
@@ -22,7 +23,10 @@ namespace TbsFramework.Players
             print("Camera position: "+Camera.main.transform.position);
         }
 
-
+        public void setPlayerName(string playerName)
+        {
+            this.playerName = playerName;
+        }
 
 
         public virtual void Initialize(CellGrid cellGrid) { }

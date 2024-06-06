@@ -17,4 +17,9 @@ public class EasyModeGameSceneHandler : MonoBehaviour
         PlayerPartInCanvas.gameObject.SetActive(false);
         PlayerNickname.text = Player.nickname;
     }
+
+    public string getNickName()
+    {
+        return Player.nickname;
+    }
 }

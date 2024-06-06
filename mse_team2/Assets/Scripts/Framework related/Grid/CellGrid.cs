@@ -6,6 +6,7 @@ using TbsFramework.Grid.GameResolvers;
 using TbsFramework.Grid.GridStates;
 using TbsFramework.Grid.TurnResolvers;
 using TbsFramework.Grid.UnitGenerators;
+using TbsFramework.Network;
 using TbsFramework.Players;
 using TbsFramework.Units;
 using TbsFramework.Units.Abilities;
@@ -103,7 +104,7 @@ namespace TbsFramework.Grid
             Play,
             End
         }
-
+        CardManager cardManager;
 
         private int UnitId = 0;     // 유닛 ID 카운터
 
@@ -115,6 +116,7 @@ namespace TbsFramework.Grid
 
         private void Start()
         {
+            cardManager = FindObjectOfType<CardManager>();
             if (ShouldStartGameImmediately)
             {
                 // 초기화 및 게임 시작
@@ -124,6 +126,7 @@ namespace TbsFramework.Grid
 
         public void InitializeAndStart()
         {
+            cardManager.SendNickname();
             Initialize();   // 초기화
             StartGame();    // 게임 시작
         }
@@ -330,7 +333,7 @@ namespace TbsFramework.Grid
             switch (currentState)
             {
                 case GameState.SelectCard:
-                    FindObjectOfType<CardManager>().EndTurn();
+                    cardManager.EndTurn();
 
                     break;
 
@@ -383,7 +386,7 @@ namespace TbsFramework.Grid
             if (TurnEnded != null)
                 TurnEnded.Invoke(this, isNetworkInvoked);   // 턴 종료 이벤트 호출
 
-            Debug.Log(string.Format("Player {0} turn", CurrentPlayerNumber));   // 현재 플레이어의 턴 로그 출력
+            Debug.Log($"{cardManager.nicknames[CurrentPlayerNumber]} turn");   // 현재 플레이어의 턴 로그 출력
 
             playableUnits = PlayableUnits();    // 업데이트된 플레이어블 유닛 리스트 가져오기
             for (int i = 0; i < playableUnits.Count; i++)

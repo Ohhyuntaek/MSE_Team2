@@ -451,5 +451,6 @@ namespace TbsFramework.Network
         SpawnUnit,              // 카드 선택 완료 후 스폰
         Play,                   // 게임 시작
         Else,
+        SendNickname
     }
 }

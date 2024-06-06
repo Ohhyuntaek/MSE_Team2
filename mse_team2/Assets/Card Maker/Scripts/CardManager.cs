@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 using TbsFramework.Grid;
 using TbsFramework.Network;
 using UnityEngine;
@@ -11,7 +10,6 @@ using TbsFramework.Units;
 using TbsFramework.Players;
 using UnityEngine.UI;
 using TbsFramework.Example1;
-using TbsFramework.Gui;
 
 
 public class CardManager : MonoBehaviour
@@ -68,12 +66,27 @@ public class CardManager : MonoBehaviour
 
     public Button nextTurnButton;
 
+    public string currentNickname = "";
+    public string remoteNickname = "";
+
+    public string[] nicknames;
+
     // Start is called before the first frame update
     private void Start()
     {
         FindObjectOfType<NetworkConnection>().AddHandler(OnCardSelectEnded, (long)TbsFramework.Network.OpCode.SelectCard);
+        FindObjectOfType<NetworkConnection>().AddHandler(SendNickname, (long)TbsFramework.Network.OpCode.SendNickname);
         FindObjectOfType<NetworkConnection>().AddHandler(SpawnUnit, (long)TbsFramework.Network.OpCode.SpawnUnit);
         guiController.InfoText.text = "Select 3 Cards";
+        currentNickname = PlayerServer.Player.nickname;
+    }
+
+    public void SendNickname()
+    {
+        Dictionary<string, string> dict = new Dictionary<string, string>();
+        dict.Add("nickname", currentNickname);
+
+        FindObjectOfType<NetworkConnection>().SendMatchState((long)TbsFramework.Network.OpCode.SendNickname, dict);
     }
 
     void Update()
@@ -84,7 +97,7 @@ public class CardManager : MonoBehaviour
         {
             cellGrid.currentState = CellGrid.GameState.Spawn;
             nextTurnButton.interactable = false;
-            guiController.InfoText.text = "Player 1 is Spawning";
+            guiController.InfoText.text = $"{(nicknames == null ? "" : nicknames[0])} is Spawning";
         }
     }
 
@@ -189,6 +202,23 @@ public class CardManager : MonoBehaviour
     {
         isRemoteSelectEnd = true;
     }
+    private void SendNickname(Dictionary<string, string> dict)
+    {
+        remoteNickname = dict["nickname"];
+
+        nicknames = new string[2];
+
+        if (localPlayerNum == 0)
+        {
+            nicknames[0] = currentNickname;
+            nicknames[1] = remoteNickname;
+        }
+        else
+        {
+            nicknames[0] = remoteNickname;
+            nicknames[1] = currentNickname;
+        }
+    }
 
     public void SpawnUnit(Dictionary<string, string> dict)
     {
@@ -227,7 +257,7 @@ public class CardManager : MonoBehaviour
             {
                 case 0:
                     turnNumber = 1;
-                    guiController.InfoText.text = "Player 2 is Spawning";
+                    guiController.InfoText.text = $"{nicknames[1]} is Spawning";
                     spawnNumber = 0;
                     break;
                 case 1:

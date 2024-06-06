@@ -13,6 +13,7 @@ namespace TbsFramework.Example1
     {
         public CellGrid CellGrid;
         public Button NextTurnButton;
+        public CardManager cardManager;
 
         public Image UnitImage;
         public Text InfoText;
@@ -20,6 +21,7 @@ namespace TbsFramework.Example1
 
         void Awake()
         {
+            cardManager = FindObjectOfType<CardManager>();
             UnitImage.color = Color.gray;
 
             CellGrid.GameStarted += OnGameStarted;
@@ -41,7 +43,7 @@ namespace TbsFramework.Example1
 
         private void OnGameEnded(object sender, EventArgs e)
         {
-            InfoText.text = "Player " + ((sender as CellGrid).CurrentPlayerNumber + 1) + " wins!";
+            InfoText.text = $"{cardManager.nicknames[(sender as CellGrid).CurrentPlayerNumber]} wins!";
 
             CellGrid.TurnEnded -= OnTurnEnded;
             CellGrid.GameEnded -= OnGameEnded;
@@ -57,7 +59,7 @@ namespace TbsFramework.Example1
         {
             if (FindObjectOfType<CellGrid>().currentState != CellGrid.GameState.Play) return;
             NextTurnButton.interactable = ((sender as CellGrid).CurrentPlayer is HumanPlayer);
-            InfoText.text = "Player " + ((sender as CellGrid).CurrentPlayerNumber + 1);
+            InfoText.text = $"{cardManager.nicknames[(sender as CellGrid).CurrentPlayerNumber]}";
         }
         private void OnCellDehighlighted(object sender, EventArgs e)
         {

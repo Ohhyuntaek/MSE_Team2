@@ -246,6 +246,8 @@ namespace TbsFramework.Grid
 
         private void OnUnitDestroyed(object sender, AttackEventArgs e)
         {
+            // HT When animal was destroyed
+            GameObject.Find("DestroySound").GetComponent<AudioSource>().Play();
             Units.Remove(e.Defender);   // 유닛 제거
             e.Defender.GetComponents<Ability>().ToList().ForEach(a => a.OnUnitDestroyed(this)); // 유닛 파괴 이벤트 처리
             e.Defender.UnitClicked -= OnUnitClicked;

@@ -8,7 +8,7 @@ namespace TbsFramework.Example1
         {
             var realDamage = damage;
             if (other is Buffer)
-                realDamage *= 2;//Spearman deals double damage to paladin.
+                realDamage *= 2;
 
             return realDamage - DefenceFactor;
         }

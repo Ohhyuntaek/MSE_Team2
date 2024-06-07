@@ -12,6 +12,13 @@ public class GameResultInfo : MonoBehaviour
     public string gameMode;
     public string result;
 
+    public GameResultInfo(long pc, string gm, string rs)
+    {
+        privateCode = pc;
+        gameMode = gm;
+        result = rs;
+    }
+
     public void setPrivateCode(long privateCode){
         this.privateCode = privateCode;
     }

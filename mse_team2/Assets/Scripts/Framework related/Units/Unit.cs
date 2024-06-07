@@ -87,7 +87,7 @@ namespace TbsFramework.Units
         public UnitState UnitState { get; set; }
 
         // JY add for habitat buff effect
-        [SerializeField] private Cell.CellProperty habitat_property;
+        [SerializeField] public Cell.CellProperty habitat_property;
         [SerializeField] private GameObject buff_effect;
         private GameObject child_buffeffect;
 

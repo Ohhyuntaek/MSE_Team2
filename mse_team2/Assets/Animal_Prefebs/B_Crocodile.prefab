@@ -377,10 +377,11 @@ MonoBehaviour:
   buff_effect: {fileID: 1015780934767744, guid: f20bc82562328d04cb7f1c5c0fe50fdb,
     type: 3}
   cell: {fileID: 0}
-  HitPoints: 100
-  AttackRange: 1
-  AttackFactor: 5
+  HitPoints: 45
+  AttackRange: 3
+  AttackFactor: 20
   DefenceFactor: 1
+  originAttackFactor: 0
   movementPoints: 3
   MovementAnimationSpeed: 7
   actionPoints: 1

@@ -95,10 +95,11 @@ namespace TbsFramework.Example1
             StatsText.text = "";
             UnitImage.color = Color.gray;
         }
+        
         private void OnUnitHighlighted(object sender, EventArgs e)
         {
             var unit = sender as MyUnit;
-            StatsText.text = unit.UnitName + "\nHit Points: " + unit.HitPoints + "/" + unit.TotalHitPoints + "\nAttack: " + unit.AttackFactor + "\nDefence: " + unit.DefenceFactor + "\nRange: " + unit.AttackRange;
+            StatsText.text = unit.UnitName + "\nHit Points: " + unit.HitPoints + "/" + unit.TotalHitPoints + "\nAttack: " + unit.AttackFactor + "\nDefence: " + unit.DefenceFactor + "\nRange: " + unit.AttackRange + "\nHabitat: " + unit.habitat_property;
             UnitImage.color = unit.GetComponentInChildren<Renderer>().material.color;
         }
         private void OnUnitAdded(object sender, UnitCreatedEventArgs e)

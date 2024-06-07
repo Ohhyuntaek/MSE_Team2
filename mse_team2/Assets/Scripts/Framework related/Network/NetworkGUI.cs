@@ -199,7 +199,7 @@ namespace TbsFramework.Network
                     playerSelectionPanelInstance.transform.Find("IsReady").GetComponent<Toggle>().interactable = value != string.Empty && user.UserID.Equals(_localUser.UserID);
                     // 로컬 플레이어 번호 업데이트
                     _localPlayerNumber = int.Parse(value);
-                    // 플레이어 번호 ㅅ변경 메세지 작성 및 전송
+                    // 플레이어 번호 변경 메세지 작성 및 전송
                     var actionParams = new Dictionary<string, string>
                     {
                         { "user_id", _localUser.UserID },

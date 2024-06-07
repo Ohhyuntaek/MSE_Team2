@@ -10,8 +10,11 @@ using TbsFramework.Units;
 using TbsFramework.Players;
 using UnityEngine.UI;
 using TbsFramework.Example1;
+using TMPro;
 
-
+/// <summary>
+/// HT : How to select 3 animal cards, How to spawn animals, How to start the game with Synchronization
+/// </summary>
 public class CardManager : MonoBehaviour
 {
     [SerializeField]
@@ -22,6 +25,7 @@ public class CardManager : MonoBehaviour
 
     [SerializeField]
     Transform initPos;
+
     [SerializeField]
     float yInterval;
     public bool isAbleSpawn = false;
@@ -39,6 +43,16 @@ public class CardManager : MonoBehaviour
 
     [SerializeField]
     public Camera cardUICamera;
+
+    [SerializeField]
+    public GameObject scrollView;
+    [SerializeField]
+    public GameObject showButton;
+    [SerializeField]
+    public GameObject hideButton;
+
+    [SerializeField]
+    public TMP_Text nicknameUIText;
 
     public int localPlayerNum = -1;
 
@@ -74,15 +88,21 @@ public class CardManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        // The function to synchronize 
         FindObjectOfType<NetworkConnection>().AddHandler(OnCardSelectEnded, (long)TbsFramework.Network.OpCode.SelectCard);
         FindObjectOfType<NetworkConnection>().AddHandler(SendNickname, (long)TbsFramework.Network.OpCode.SendNickname);
         FindObjectOfType<NetworkConnection>().AddHandler(SpawnUnit, (long)TbsFramework.Network.OpCode.SpawnUnit);
         guiController.InfoText.text = "Select 3 Cards";
+
+        // The function to synchronize each players' nickname
         currentNickname = PlayerServer.Player.nickname;
+        nicknameUIText.text = currentNickname;
     }
 
     public void SendNickname()
     {
+        // Send my nickname to the other computer
+
         Dictionary<string, string> dict = new Dictionary<string, string>();
         dict.Add("nickname", currentNickname);
 
@@ -95,6 +115,12 @@ public class CardManager : MonoBehaviour
 
         if (isRemoteSelectEnd == true && isLocalSelectEnd == true && cellGrid.currentState == CellGrid.GameState.SelectCard)
         {
+            // Disable Full card deck
+            scrollView.SetActive(false);
+            showButton.SetActive(false);
+            hideButton.SetActive(false);
+
+            // Go to spawn level
             cellGrid.currentState = CellGrid.GameState.Spawn;
             nextTurnButton.interactable = false;
             guiController.InfoText.text = $"{(nicknames == null ? "" : nicknames[0])} is Spawning";
@@ -105,7 +131,7 @@ public class CardManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //���� ����
+            // Spawn animals when click the cell
             if(cellGrid.currentState == CellGrid.GameState.Spawn)
             {
                 RaycastHit[] hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition), 100, cellLayer);
@@ -120,9 +146,10 @@ public class CardManager : MonoBehaviour
 
     public void CardObjectBtn()
     {
+        // Select 3 animal cards
+        
         if (cellGrid.currentState != CellGrid.GameState.SelectCard) return;
         if (isLocalSelectEnd) return;
-
 
         CardObject current = EventSystem.current.currentSelectedGameObject.GetComponent<CardObject>();
         int selectedIndex = current.selectedPrefabIndex;
@@ -186,6 +213,8 @@ public class CardManager : MonoBehaviour
 
     public void EndTurn()
     {
+        // When the player finish selecting 3 animal cards
+
         if (cardArray.Count == 3)
         {
             isLocalSelectEnd = true;
@@ -202,6 +231,7 @@ public class CardManager : MonoBehaviour
     {
         isRemoteSelectEnd = true;
     }
+
     private void SendNickname(Dictionary<string, string> dict)
     {
         remoteNickname = dict["nickname"];
@@ -261,9 +291,14 @@ public class CardManager : MonoBehaviour
                     spawnNumber = 0;
                     break;
                 case 1:
-                    // ##################### 게임 시작시점 #####################
+                    // ##################### Game Start #####################
                     cellGrid.currentState = CellGrid.GameState.Play;
                     cellGrid.InitializeAndStart();
+
+
+                    scrollView.SetActive(true);
+                    showButton.SetActive(true);
+                    hideButton.SetActive(true);
                     cardUICamera.gameObject.SetActive(false);
                     break;
             }
@@ -272,7 +307,7 @@ public class CardManager : MonoBehaviour
 
     public void OnCellClicked(Cell cell)
     {
-        // �� Ŭ�� �� ��ȯ�ϰ��� �ϴ� �÷��̾�, ��ȯ�� ��, �� ��ġ ����
+        // Store player information, animal information, cell information, and send it to your opponent's computer
 
         if (turnNumber != localPlayerNum) return;
 

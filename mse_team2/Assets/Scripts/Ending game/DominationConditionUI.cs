@@ -61,6 +61,8 @@ namespace TbsFramework.Grid.GameResolvers
 
                 if (cellGrid.CurrentPlayer is HumanPlayer)
                 {
+                    GameObject.Find("WinSound").GetComponent<AudioSource>().Play();
+
                     resultText_self.text = "You Win!";
                     animalsUIAnimaitionManager.isWin = true; 
                     
@@ -72,6 +74,8 @@ namespace TbsFramework.Grid.GameResolvers
                 }
                 else
                 {
+                    GameObject.Find("LoseSound").GetComponent<AudioSource>().Play();
+
                     resultText_self.text = "You Lose!";
                     animalsUIAnimaitionManager.isWin = false;
 

@@ -20,6 +20,7 @@ namespace TbsFramework.Units.Highlighters
             var direction = heading / heading.magnitude * Magnitude;
             float startTime = Time.time;
 
+            // HT rotate animals when they attack other animals
             unit.modelTransform.rotation = Quaternion.Euler(0, 90 - (Mathf.Atan2(heading.z, heading.x) * Mathf.Rad2Deg), 0);
 
             unit.GetComponentInChildren<Animator>().SetTrigger("Attack");

@@ -99,6 +99,7 @@ namespace TbsFramework.Example1
         private void OnUnitHighlighted(object sender, EventArgs e)
         {
             var unit = sender as MyUnit;
+            // HT add Habitat text in StattText
             StatsText.text = unit.UnitName + "\nHit Points: " + unit.HitPoints + "/" + unit.TotalHitPoints + "\nAttack: " + unit.AttackFactor + "\nDefence: " + unit.DefenceFactor + "\nRange: " + unit.AttackRange + "\nHabitat: " + unit.habitat_property;
             UnitImage.color = unit.GetComponentInChildren<Renderer>().material.color;
         }

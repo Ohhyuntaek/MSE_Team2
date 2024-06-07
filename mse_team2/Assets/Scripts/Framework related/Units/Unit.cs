@@ -183,14 +183,26 @@ namespace TbsFramework.Units
         /// </summary>
         public int PlayerNumber;
 
+        // HT add effect sounds
+        [SerializeField]
+        private GameObject movementEffectSoundObject;
+        [SerializeField]
+        private GameObject attackEffectSoundObject;
+
+        public AudioSource movementAudioSource;
+        public AudioSource attackAudioSource;
+
         private static DijkstraPathfinding _pathfinder = new DijkstraPathfinding();
         private bool isChildBuffEffectActived;
         private int buffedAttackFactor;
 
-        // JY add for buff effect
         void Start() {
+            movementAudioSource = GameObject.Find("MovementEffectSound").GetComponent<AudioSource>(); 
+            attackAudioSource = GameObject.Find("AttackEffectSound").GetComponent<AudioSource>();
+
             originAttackFactor = AttackFactor;
 
+            // JY add for buff effect
             child_buffeffect = Instantiate(buff_effect, transform);
             child_buffeffect.transform.position = new Vector3(child_buffeffect.transform.position.x, child_buffeffect.transform.position.y + 1, child_buffeffect.transform.position.z);
             child_buffeffect.gameObject.SetActive(false);
@@ -222,7 +234,6 @@ namespace TbsFramework.Units
         {
             if (UnitClicked != null)
             {
-                Debug.Log("Attack Factor : " + AttackFactor);
                 UnitClicked.Invoke(this, EventArgs.Empty);
             }
         }
@@ -333,6 +344,7 @@ namespace TbsFramework.Units
         /// </summary>
         public void AttackHandler(Unit unitToAttack)
         {
+            attackAudioSource.Play();
             AttackAction attackAction = DealDamage(unitToAttack);
             MarkAsAttacking(unitToAttack);
             unitToAttack.DefendHandler(this, attackAction.Damage);
@@ -413,7 +425,7 @@ namespace TbsFramework.Units
             return realDamage;
         }
 
-        //이동 함수
+        // HT Movement function
         /// <summary>
         /// Handler method for moving the unit.
         /// </summary>
@@ -421,11 +433,12 @@ namespace TbsFramework.Units
         /// <param name="path">A list of cells, path from source to destination cell</param>
         public virtual IEnumerator Move(Cell destinationCell, IList<Cell> path)
         {
-            //이동할수 있는 거리 감산
+            movementAudioSource.Play();
+            // Calculate distance that animals can move
             var totalMovementCost = path.Sum(h => h.MovementCost);
             MovementPoints -= totalMovementCost;
 
-            //목적지 셀 변수 조정
+            // Adjust Destination Cell Variables
             Cell.IsTaken = false;
             Cell.CurrentUnits.Remove(this);
             Cell = destinationCell;
@@ -434,25 +447,24 @@ namespace TbsFramework.Units
 
             if (MovementAnimationSpeed > 0)
             {
-                //이동 중
+                // Animals are moving
                 yield return MovementAnimation(path);
             }
             else
             {
-                Debug.Log(Cell.transform.position);
-                //이동 종료시
+                // Animals finished to move
                 transform.position = Cell.transform.position;
                 OnMoveFinished();
             }
 
             if (UnitMoved != null)
             {
-                //유닛 이동 이벤트 실행
                 UnitMoved.Invoke(this, new MovementEventArgs(Cell, destinationCell, path, this));
             }
         }
         protected virtual IEnumerator MovementAnimation(IList<Cell> path)
         {
+
             for (int i = path.Count - 1; i >= 0; i--)
             {
                 var currentCell = path[i];
@@ -466,7 +478,7 @@ namespace TbsFramework.Units
                 {
                     if(modelTransform)
                     {
-                        //이동할때 로테이션값 계산
+                        // HT Calculate rotation value when animals are moveing
                         // Vector3 direction = (destination_pos - transform.localPosition);
                         Vector3 direction = (destination_pos - transform.position);
                         direction.y = 0;
@@ -475,15 +487,13 @@ namespace TbsFramework.Units
                         modelTransform.rotation = Quaternion.Euler(0, 90 - (Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg), 0);
                     }
 
-                    //실질적으로 이동하는 부분
-
+                    // HT The part that animals are real moving
                     //transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination_pos, Time.deltaTime * MovementAnimationSpeed);
                     transform.position = Vector3.MoveTowards(transform.position, destination_pos, Time.deltaTime * MovementAnimationSpeed);
                     yield return null;
                 }
             }
 
-            //이동 종료시 이벤트 실행
             OnMoveFinished();
         }
         /// <summary>

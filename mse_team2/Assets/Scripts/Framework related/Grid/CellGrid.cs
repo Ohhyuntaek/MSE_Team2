@@ -114,6 +114,9 @@ namespace TbsFramework.Grid
         public List<Unit> Units { get; private set; }       // 유닛 리스트
         public Func<List<Unit>> PlayableUnits = () => new List<Unit>(); // 플레이어블 유닛 반환 함수
 
+        [SerializeField]
+        public GameObject inGameMusicObject;
+
         private void Start()
         {
             cardManager = FindObjectOfType<CardManager>();
@@ -124,8 +127,10 @@ namespace TbsFramework.Grid
             }
         }
 
+
         public void InitializeAndStart()
         {
+            inGameMusicObject.GetComponent<AudioSource>().Play();
             cardManager.SendNickname();
             Initialize();   // 초기화
             StartGame();    // 게임 시작
@@ -428,6 +433,9 @@ namespace TbsFramework.Grid
         // 게임이 끝났는지 확인하는 메서드
         public bool CheckGameFinished()
         {
+            // HT Pause the InGame music
+            GameObject.Find("InGameMusicObject").GetComponent<AudioSource>().Pause();
+
             List<GameResult> gameResults =
                 GetComponents<GameEndCondition>()       // 게임 종료 조건 컴포넌트를 모두 가져옴
                 .Select(c => c.CheckCondition(this))    // 각 조건에 대해 현재 게임 상태를 검사

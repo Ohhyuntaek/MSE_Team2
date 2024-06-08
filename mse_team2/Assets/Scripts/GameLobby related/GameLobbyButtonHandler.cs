@@ -24,6 +24,9 @@ public class GameLobbyButtonHandler : MonoBehaviour
     [SerializeField] private GameObject deletingCheckingButtons;
     [SerializeField] private GameObject RankingPanel;
 
+    [SerializeField] private Sprite blueButtonSprite;
+    [SerializeField] private Sprite redButtonSprite;
+
     // sprites of buttons to easily check button clicking / non-clicking
     private Sprite originalSprite_myAccountButton;
     private Sprite originalSprite_editAccountButton;
@@ -34,6 +37,7 @@ public class GameLobbyButtonHandler : MonoBehaviour
     private Sprite originalSprite_hardRankingButton;
     private Sprite originalSprite_startGameButton;
 
+    private bool isStartButtonClicked = false;
 
 
     private void Start() {
@@ -61,7 +65,7 @@ public class GameLobbyButtonHandler : MonoBehaviour
         if (myAccountButton.gameObject.GetComponent<Image>().sprite == originalSprite_myAccountButton){
             detailedAccountInfos.gameObject.SetActive(true);
             editAccountInfos.gameObject.SetActive(false);
-            myAccountButton.gameObject.GetComponent<Image>().sprite = null;
+            myAccountButton.gameObject.GetComponent<Image>().sprite = redButtonSprite;
             editAccountButton.gameObject.GetComponent<Image>().sprite = originalSprite_editAccountButton;
             EasyModeButton.gameObject.SetActive(false);
             HardModeButton.gameObject.SetActive(false);
@@ -98,7 +102,7 @@ public class GameLobbyButtonHandler : MonoBehaviour
         // when button is clicked
         if (editAccountButton.gameObject.GetComponent<Image>().sprite == originalSprite_editAccountButton){
             editAccountInfos.gameObject.SetActive(true);
-            editAccountButton.gameObject.GetComponent<Image>().sprite = null;
+            editAccountButton.gameObject.GetComponent<Image>().sprite = blueButtonSprite;
             deletingCheckingButtons.SetActive(false);
             deleteAccountButton.gameObject.GetComponent<Image>().sprite = originalSprite_deleteAccountButton;
         }
@@ -114,16 +118,16 @@ public class GameLobbyButtonHandler : MonoBehaviour
     // handling mode buttons
     private void HandleModes(){
         // when button is clicked
-        if (startGameButton.gameObject.GetComponent<Image>().sprite == originalSprite_startGameButton){
+        if (isStartButtonClicked == false) {
             EasyModeButton.gameObject.SetActive(true);
             HardModeButton.gameObject.SetActive(true);
-            startGameButton.gameObject.GetComponent<Image>().sprite = null;
+            isStartButtonClicked = true;
         }
         // when button is re-clicked
         else {
             EasyModeButton.gameObject.SetActive(false);
             HardModeButton.gameObject.SetActive(false);
-            startGameButton.gameObject.GetComponent<Image>().sprite = originalSprite_startGameButton;
+            isStartButtonClicked = false;
         }
         
     }
@@ -133,7 +137,7 @@ public class GameLobbyButtonHandler : MonoBehaviour
         // when button is clicked
         if (deleteAccountButton.gameObject.GetComponent<Image>().sprite == originalSprite_deleteAccountButton){
             deletingCheckingButtons.SetActive(true);
-            deleteAccountButton.gameObject.GetComponent<Image>().sprite = null;
+            deleteAccountButton.gameObject.GetComponent<Image>().sprite = redButtonSprite;
             editAccountInfos.gameObject.SetActive(false);
             editAccountButton.gameObject.GetComponent<Image>().sprite = originalSprite_editAccountButton;
         }
@@ -178,8 +182,8 @@ public class GameLobbyButtonHandler : MonoBehaviour
             startGameButton.gameObject.GetComponent<Image>().sprite = originalSprite_startGameButton;
             deletingCheckingButtons.SetActive(false);
             deleteAccountButton.gameObject.GetComponent<Image>().sprite = originalSprite_deleteAccountButton;
-            rankingButton.gameObject.GetComponent<Image>().sprite = null;
-            totalRankingButton.gameObject.GetComponent<Image>().sprite = null;
+            rankingButton.gameObject.GetComponent<Image>().sprite = blueButtonSprite;
+            totalRankingButton.gameObject.GetComponent<Image>().sprite = blueButtonSprite;
             easyRankingButton.gameObject.GetComponent<Image>().sprite = originalSprite_easyRankingButton;
             hardRankingButton.gameObject.GetComponent<Image>().sprite = originalSprite_hardRankingButton;
             RankingPanel.gameObject.SetActive(true);
@@ -211,7 +215,7 @@ public class GameLobbyButtonHandler : MonoBehaviour
     public void HandleTotalRanking(){
         // when button is clicked
         if (totalRankingButton.gameObject.GetComponent<Image>().sprite == originalSprite_totalRankingButton){
-            totalRankingButton.gameObject.GetComponent<Image>().sprite = null;
+            totalRankingButton.gameObject.GetComponent<Image>().sprite = blueButtonSprite;
             easyRankingButton.gameObject.GetComponent<Image>().sprite = originalSprite_easyRankingButton;
             hardRankingButton.gameObject.GetComponent<Image>().sprite = originalSprite_hardRankingButton;
         }
@@ -222,7 +226,7 @@ public class GameLobbyButtonHandler : MonoBehaviour
         // when button is clicked
         if (easyRankingButton.gameObject.GetComponent<Image>().sprite == originalSprite_easyRankingButton){
             totalRankingButton.gameObject.GetComponent<Image>().sprite = originalSprite_totalRankingButton;
-            easyRankingButton.gameObject.GetComponent<Image>().sprite = null;
+            easyRankingButton.gameObject.GetComponent<Image>().sprite = blueButtonSprite;
             hardRankingButton.gameObject.GetComponent<Image>().sprite = originalSprite_hardRankingButton;
         }
     }
@@ -233,7 +237,7 @@ public class GameLobbyButtonHandler : MonoBehaviour
         if (hardRankingButton.gameObject.GetComponent<Image>().sprite == originalSprite_hardRankingButton){
             totalRankingButton.gameObject.GetComponent<Image>().sprite = originalSprite_totalRankingButton;
             easyRankingButton.gameObject.GetComponent<Image>().sprite = originalSprite_easyRankingButton;
-            hardRankingButton.gameObject.GetComponent<Image>().sprite = null;
+            hardRankingButton.gameObject.GetComponent<Image>().sprite = blueButtonSprite;
         }
     }
 

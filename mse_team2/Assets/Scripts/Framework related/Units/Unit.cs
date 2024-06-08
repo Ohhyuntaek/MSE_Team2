@@ -344,7 +344,8 @@ namespace TbsFramework.Units
         /// </summary>
         public void AttackHandler(Unit unitToAttack)
         {
-            attackAudioSource.Play();
+            // HT Attack Sound
+            attackAudioSource.PlayOneShot(GameObject.Find("AttackEffectSound").GetComponent<AudioSource>().clip);
             AttackAction attackAction = DealDamage(unitToAttack);
             MarkAsAttacking(unitToAttack);
             unitToAttack.DefendHandler(this, attackAction.Damage);
@@ -433,7 +434,9 @@ namespace TbsFramework.Units
         /// <param name="path">A list of cells, path from source to destination cell</param>
         public virtual IEnumerator Move(Cell destinationCell, IList<Cell> path)
         {
-            movementAudioSource.Play();
+            // HT Movement Sound
+            movementAudioSource.PlayOneShot(GameObject.Find("MovementEffectSound").GetComponent<AudioSource>().clip);
+
             // Calculate distance that animals can move
             var totalMovementCost = path.Sum(h => h.MovementCost);
             MovementPoints -= totalMovementCost;

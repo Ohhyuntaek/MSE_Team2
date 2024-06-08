@@ -1350,7 +1350,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 245081159}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 194075148}
+        m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
+        m_MethodName: OnClickMuteButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &245081159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2722,6 +2734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6923627968342704428, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
+      propertyPath: connectSceneSound
+      value: 
+      objectReference: {fileID: 2015810365}
+    - target: {fileID: 6923627968342704428, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
+        type: 3}
       propertyPath: _networkConnection
       value: 
       objectReference: {fileID: 1746062233}
@@ -3098,7 +3115,7 @@ PrefabInstance:
       addedObject: {fileID: 1547428892}
     - targetCorrespondingSourceObject: {fileID: 2316626614595745745, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 245081157}
     - targetCorrespondingSourceObject: {fileID: 3917392573812904467, guid: 5fc06fdd83d76e245b5eb11a6b6c3ad1,
         type: 3}
@@ -4294,9 +4311,19 @@ PrefabInstance:
       objectReference: {fileID: 384340002}
     - target: {fileID: 870935720680642341, guid: 14dcfdb1d4a2db44dbb4efd007b5c7dd,
         type: 3}
+      propertyPath: connectSceneSound
+      value: 
+      objectReference: {fileID: 2015810365}
+    - target: {fileID: 870935720680642341, guid: 14dcfdb1d4a2db44dbb4efd007b5c7dd,
+        type: 3}
       propertyPath: inGameMusicObject
       value: 
       objectReference: {fileID: 1518894110}
+    - target: {fileID: 870935720680642341, guid: 14dcfdb1d4a2db44dbb4efd007b5c7dd,
+        type: 3}
+      propertyPath: destroySoundObject
+      value: 
+      objectReference: {fileID: 387290276}
     - target: {fileID: 972415870964718513, guid: 14dcfdb1d4a2db44dbb4efd007b5c7dd,
         type: 3}
       propertyPath: IsTaken
@@ -14999,11 +15026,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1ed8fb76fc64e4e46847348138782234, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1914a061ecc8e0d43a8839d5e9569ec4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

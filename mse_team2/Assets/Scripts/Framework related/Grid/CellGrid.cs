@@ -117,6 +117,13 @@ namespace TbsFramework.Grid
         [SerializeField]
         public GameObject inGameMusicObject;
 
+        [SerializeField]
+        private GameObject destroySoundObject;
+
+        [SerializeField]
+        private GameObject connectSceneSound;
+
+
         private void Start()
         {
             cardManager = FindObjectOfType<CardManager>();
@@ -130,7 +137,10 @@ namespace TbsFramework.Grid
 
         public void InitializeAndStart()
         {
+            // HT connectSound Pause
+            connectSceneSound.GetComponent<AudioSource>().Pause();
             inGameMusicObject.GetComponent<AudioSource>().Play();
+
             cardManager.SendNickname();
             Initialize();   // 초기화
             StartGame();    // 게임 시작
@@ -246,8 +256,10 @@ namespace TbsFramework.Grid
 
         private void OnUnitDestroyed(object sender, AttackEventArgs e)
         {
+            // HT destroy Sound
+            destroySoundObject.GetComponent<AudioSource>().PlayOneShot(destroySoundObject.GetComponent<AudioSource>().clip);
+
             // HT When animal was destroyed
-            GameObject.Find("DestroySound").GetComponent<AudioSource>().Play();
             Units.Remove(e.Defender);   // 유닛 제거
             e.Defender.GetComponents<Ability>().ToList().ForEach(a => a.OnUnitDestroyed(this)); // 유닛 파괴 이벤트 처리
             e.Defender.UnitClicked -= OnUnitClicked;
@@ -435,9 +447,6 @@ namespace TbsFramework.Grid
         // 게임이 끝났는지 확인하는 메서드
         public bool CheckGameFinished()
         {
-            // HT Pause the InGame music
-            GameObject.Find("InGameMusicObject").GetComponent<AudioSource>().Pause();
-
             List<GameResult> gameResults =
                 GetComponents<GameEndCondition>()       // 게임 종료 조건 컴포넌트를 모두 가져옴
                 .Select(c => c.CheckCondition(this))    // 각 조건에 대해 현재 게임 상태를 검사
@@ -450,6 +459,10 @@ namespace TbsFramework.Grid
                 {
                     cellGridState = new CellGridStateGameOver(this);    // 게임 오버 상태로 전환
                     GameFinished = true;        // 게임 종료 플래그를 참으로 설정
+
+                    // HT Pause the InGame music
+                    GameObject.Find("InGameMusicObject").GetComponent<AudioSource>().Pause();
+
                     if (GameEnded != null)
                     {
                         // 게임 종료 이벤트 발생

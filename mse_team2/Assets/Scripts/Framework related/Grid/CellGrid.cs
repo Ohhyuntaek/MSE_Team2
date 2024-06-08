@@ -114,8 +114,8 @@ namespace TbsFramework.Grid
         public List<Unit> Units { get; private set; }       // 유닛 리스트
         public Func<List<Unit>> PlayableUnits = () => new List<Unit>(); // 플레이어블 유닛 반환 함수
 
-        [SerializeField]
-        public GameObject inGameMusicObject;
+        //[SerializeField]
+        //public GameObject inGameMusicObject;
 
         private void Start()
         {
@@ -130,7 +130,8 @@ namespace TbsFramework.Grid
 
         public void InitializeAndStart()
         {
-            inGameMusicObject.GetComponent<AudioSource>().Play();
+            //inGameMusicObject.GetComponent<AudioSource>().Play();
+            AudioManager.Instance.PlayBackgroundMusicByName("inGameBgm");
             cardManager.SendNickname();
             Initialize();   // 초기화
             StartGame();    // 게임 시작
@@ -247,7 +248,8 @@ namespace TbsFramework.Grid
         private void OnUnitDestroyed(object sender, AttackEventArgs e)
         {
             // HT When animal was destroyed
-            GameObject.Find("DestroySound").GetComponent<AudioSource>().Play();
+            //GameObject.Find("DestroySound").GetComponent<AudioSource>().Play();
+            AudioManager.Instance.PlaySFX("Destroy");
             Units.Remove(e.Defender);   // 유닛 제거
             e.Defender.GetComponents<Ability>().ToList().ForEach(a => a.OnUnitDestroyed(this)); // 유닛 파괴 이벤트 처리
             e.Defender.UnitClicked -= OnUnitClicked;
@@ -436,8 +438,7 @@ namespace TbsFramework.Grid
         public bool CheckGameFinished()
         {
             // HT Pause the InGame music
-            GameObject.Find("InGameMusicObject").GetComponent<AudioSource>().Pause();
-
+            //GameObject.Find("InGameMusicObject").GetComponent<AudioSource>().Pause();
             List<GameResult> gameResults =
                 GetComponents<GameEndCondition>()       // 게임 종료 조건 컴포넌트를 모두 가져옴
                 .Select(c => c.CheckCondition(this))    // 각 조건에 대해 현재 게임 상태를 검사

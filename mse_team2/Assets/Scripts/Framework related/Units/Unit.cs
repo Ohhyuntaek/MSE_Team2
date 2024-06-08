@@ -184,21 +184,21 @@ namespace TbsFramework.Units
         public int PlayerNumber;
 
         // HT add effect sounds
-        [SerializeField]
-        private GameObject movementEffectSoundObject;
-        [SerializeField]
-        private GameObject attackEffectSoundObject;
+        //[SerializeField]
+        //private GameObject movementEffectSoundObject;
+        //[SerializeField]
+        //private GameObject attackEffectSoundObject;
 
-        public AudioSource movementAudioSource;
-        public AudioSource attackAudioSource;
+        //public AudioSource movementAudioSource;
+        //public AudioSource attackAudioSource;
 
         private static DijkstraPathfinding _pathfinder = new DijkstraPathfinding();
         private bool isChildBuffEffectActived;
         private int buffedAttackFactor;
 
         void Start() {
-            movementAudioSource = GameObject.Find("MovementEffectSound").GetComponent<AudioSource>(); 
-            attackAudioSource = GameObject.Find("AttackEffectSound").GetComponent<AudioSource>();
+            //movementAudioSource = GameObject.Find("MovementEffectSound").GetComponent<AudioSource>(); 
+            //attackAudioSource = GameObject.Find("AttackEffectSound").GetComponent<AudioSource>();
 
             originAttackFactor = AttackFactor;
 
@@ -344,7 +344,9 @@ namespace TbsFramework.Units
         /// </summary>
         public void AttackHandler(Unit unitToAttack)
         {
-            attackAudioSource.Play();
+            //attackAudioSource.Play();
+            AudioManager.Instance.PlaySFX("Attack");
+
             AttackAction attackAction = DealDamage(unitToAttack);
             MarkAsAttacking(unitToAttack);
             unitToAttack.DefendHandler(this, attackAction.Damage);
@@ -433,7 +435,9 @@ namespace TbsFramework.Units
         /// <param name="path">A list of cells, path from source to destination cell</param>
         public virtual IEnumerator Move(Cell destinationCell, IList<Cell> path)
         {
-            movementAudioSource.Play();
+            //movementAudioSource.Play();
+            AudioManager.Instance.PlaySFX("Movement");
+
             // Calculate distance that animals can move
             var totalMovementCost = path.Sum(h => h.MovementCost);
             MovementPoints -= totalMovementCost;

@@ -48,11 +48,13 @@ public class AudioManager : MonoBehaviour
         currentBgm = lobbyBgm;
     }
 
+    // Play the default BGM at the start of the game.
     private void Start()
     {
         PlayBackgroundMusic(currentBgm);
     }
 
+    // Initialising the SFX Dictionary, Prepare for the call.
     private void InitSFXClips()
     {
         sfxClips = new Dictionary<string, AudioClip>
@@ -70,6 +72,7 @@ public class AudioManager : MonoBehaviour
         };
     }
 
+    // Play background music.
     public void PlayBackgroundMusic(AudioClip audioClip)
     {
         if (backgroundMusicSource != null && audioClip != null)
@@ -80,6 +83,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // Match the BGM to the name and play it.
     public void PlayBackgroundMusicByName(string name)
     {
         switch (name)
@@ -104,6 +108,7 @@ public class AudioManager : MonoBehaviour
         PlayBackgroundMusic(currentBgm);
     }
 
+    // Play the required sound effect.
     public void PlaySFX(string clipName)
     {
         if (sfxClips.ContainsKey(clipName) && sfxSource != null)
@@ -112,6 +117,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // Calling the UI slider for BGM volume adjustment.
     public void SetBackgroundMusicVolume(float volume)
     {
         if (backgroundMusicSource != null)
@@ -121,6 +127,7 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat("BackgroundMusicVolume", volume);
     }
 
+    // Calling the UI slider for tone SFX volume adjustment.
     public void SetSFXVolume(float volume)
     {
         if (sfxSource != null)
@@ -130,6 +137,7 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat("SFXVolume", volume);
     }
 
+    // Storing Volume Settings on the Client.
     private void LoadVolumeSettings()
     {
         if (backgroundMusicSource != null)

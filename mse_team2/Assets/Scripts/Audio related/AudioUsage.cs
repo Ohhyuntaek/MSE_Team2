@@ -9,6 +9,7 @@ public class AudioUsage : MonoBehaviour
         AudioManager.Instance.PlayBackgroundMusicByName("lobbyBgm");
     }
 
+    // Provides SFX playback methods(the same as below)
     public void OnButtonClick()
     {
         AudioManager.Instance.PlaySFX("ButtonClick");

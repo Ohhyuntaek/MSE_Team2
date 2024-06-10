@@ -312,9 +312,6 @@ namespace TbsFramework.Network
             _lobbyPanel.SetActive(true);
         }
 
-        [SerializeField]
-        private GameObject connectSceneSound;
-
         /// <summary>
         /// 매치 설정을 위한 코루틴
         /// </summary>
@@ -377,9 +374,6 @@ namespace TbsFramework.Network
             // 한 프레임을 기다린 후 게임 오브젝트 비활성화
             yield return new WaitForEndOfFrame();
             gameObject.SetActive(false);
-
-            // HT connectSound Pause
-            connectSceneSound.GetComponent<AudioSource>().Pause();
 
             // 셀 그리도 초기화 및 시작
             _cellGrid.InitializeAndStart();

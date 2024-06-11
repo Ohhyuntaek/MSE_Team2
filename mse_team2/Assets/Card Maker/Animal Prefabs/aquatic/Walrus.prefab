@@ -718,4 +718,4 @@ MonoBehaviour:
   habitat: aquatic
   role: Buffer
   HP: 40
-  AP: 15
+  AP: 5

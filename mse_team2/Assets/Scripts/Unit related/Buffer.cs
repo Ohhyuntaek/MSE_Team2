@@ -1,4 +1,5 @@
 ﻿using TbsFramework.Units;
+using UnityEngine;
 
 namespace TbsFramework.Example1
 {
@@ -8,9 +9,11 @@ namespace TbsFramework.Example1
         {
             var realDamage = damage;
             if (other is Tanker)
-                realDamage *= 2;//Archer deals double damage to spearman.
+                realDamage *= 2;
 
             return realDamage - DefenceFactor;
         }
+
+        
     }
 }

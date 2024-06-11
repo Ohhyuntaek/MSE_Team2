@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TbsFramework.Grid;
 using TbsFramework.Players;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
@@ -41,6 +42,9 @@ namespace TbsFramework.Network
 
         [SerializeField] private Transform _playersParent;          // 플레이어 UI 항목들을 담을 부모 트랜스폼
 
+        // HT added
+        [SerializeField] private GameObject _storyPanel; 
+
         // JY added
         [SerializeField] public List<GameObject> _maps; // 각 map 별 game object
 
@@ -75,6 +79,15 @@ namespace TbsFramework.Network
             _createRoomButton.onClick.AddListener(() => _networkConnection.CreateRoom(_createRoomNameInput.text, _maxPlayers, _isPrivateToggle.isOn, new Dictionary<string, string>()));
             _joinRoomButton.onClick.AddListener(() => _networkConnection.JoinRoomByName(_joinRoomNameInput.text));
             _leaveRoomButton.onClick.AddListener(() => { _networkConnection.LeaveRoom(); });
+        }
+
+        private void Update()
+        {
+            // HT _storyPanel is not visible when the mouse is clicked
+            if (Input.GetMouseButtonDown(0))
+            {
+                _storyPanel.SetActive(false);
+            }
         }
 
         /// <summary>

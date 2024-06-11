@@ -588,14 +588,15 @@ MonoBehaviour:
   modelTransform: {fileID: 0}
   Obstructable: 0
   habitat_property: 2
-  buff_effect: {fileID: 1015780934767744, guid: f20bc82562328d04cb7f1c5c0fe50fdb,
+  Habitat_buff_effect: {fileID: 1015780934767744, guid: f20bc82562328d04cb7f1c5c0fe50fdb,
+    type: 3}
+  Buffer_buff_effect: {fileID: 7155335147208632822, guid: 97c43495f80a3244fad1301dfafbe252,
     type: 3}
   cell: {fileID: 0}
   HitPoints: 35
   AttackRange: 1
-  AttackFactor: 15
-  DefenceFactor: 1
-  originAttackFactor: 0
+  AttackFactor: 18
+  DefenceFactor: 0
   movementPoints: 3
   MovementAnimationSpeed: 7
   actionPoints: 1

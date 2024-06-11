@@ -546,7 +546,7 @@ MonoBehaviour:
   habitat: aquatic
   role: Buffer
   HP: 25
-  AP: 30
+  AP: 7
 --- !u!1 &8047628689622576741
 GameObject:
   m_ObjectHideFlags: 0

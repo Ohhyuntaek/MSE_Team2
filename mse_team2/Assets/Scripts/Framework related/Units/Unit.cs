@@ -12,6 +12,7 @@ using TbsFramework.Players.AI.Actions;
 using TbsFramework.Players.AI.Evaluators;
 using TbsFramework.Units.Abilities;
 using UnityEngine.Experimental.GlobalIllumination;
+using TbsFramework.Example1;
 
 namespace TbsFramework.Units
 {
@@ -88,8 +89,12 @@ namespace TbsFramework.Units
 
         // JY add for habitat buff effect
         [SerializeField] public Cell.CellProperty habitat_property;
-        [SerializeField] private GameObject buff_effect;
-        private GameObject child_buffeffect;
+        [SerializeField] private GameObject Habitat_buff_effect;
+        [SerializeField] private GameObject Buffer_buff_effect;
+
+        private GameObject child_habitat_buff_effect; 
+        private GameObject child_buffer_buff_effect;
+
 
 
         public void SetState(UnitState state)
@@ -139,7 +144,9 @@ namespace TbsFramework.Units
         public int AttackRange;
         public int AttackFactor;
         public int DefenceFactor;
-        public int originAttackFactor;
+
+        private int originAttackFactor;
+        private int originHitPoints;
         /// <summary>
         /// Determines how far on the grid the unit can move.
         /// </summary>
@@ -197,15 +204,17 @@ namespace TbsFramework.Units
         private int buffedAttackFactor;
 
         void Start() {
-            //movementAudioSource = GameObject.Find("MovementEffectSound").GetComponent<AudioSource>(); 
-            //attackAudioSource = GameObject.Find("AttackEffectSound").GetComponent<AudioSource>();
-
             originAttackFactor = AttackFactor;
+            originHitPoints = HitPoints;
 
             // JY add for buff effect
-            child_buffeffect = Instantiate(buff_effect, transform);
-            child_buffeffect.transform.position = new Vector3(child_buffeffect.transform.position.x, child_buffeffect.transform.position.y + 1, child_buffeffect.transform.position.z);
-            child_buffeffect.gameObject.SetActive(false);
+            child_habitat_buff_effect = Instantiate(Habitat_buff_effect, transform);
+            child_habitat_buff_effect.transform.position = new Vector3(child_habitat_buff_effect.transform.position.x, child_habitat_buff_effect.transform.position.y + 1, child_habitat_buff_effect.transform.position.z);
+            child_habitat_buff_effect.gameObject.SetActive(false);
+
+            child_buffer_buff_effect = Instantiate(Buffer_buff_effect, transform);
+            child_buffer_buff_effect.transform.position = new Vector3(child_buffer_buff_effect.transform.position.x, child_buffer_buff_effect.transform.position.y + 1, child_buffer_buff_effect.transform.position.z);
+            child_buffer_buff_effect.gameObject.SetActive(false);
         }
 
         /// <summary>
@@ -344,7 +353,6 @@ namespace TbsFramework.Units
         /// </summary>
         public void AttackHandler(Unit unitToAttack)
         {
-            //attackAudioSource.Play();
             AudioManager.Instance.PlaySFX("Attack");
 
             AttackAction attackAction = DealDamage(unitToAttack);
@@ -474,7 +482,6 @@ namespace TbsFramework.Units
                 var currentCell = path[i];
 
                 //JY
-                // Vector3 destination_pos = FindObjectOfType<CellGrid>().Is2D ? new Vector3(currentCell.transform.localPosition.x, currentCell.transform.localPosition.y, transform.localPosition.z) : new Vector3(currentCell.transform.localPosition.x, currentCell.transform.localPosition.y, currentCell.transform.localPosition.z);
                 Vector3 destination_pos = FindObjectOfType<CellGrid>().Is2D ? new Vector3(currentCell.transform.position.x, currentCell.transform.position.y, transform.position.z) : new Vector3(currentCell.transform.position.x, currentCell.transform.position.y, currentCell.transform.position.z);
                 
                 // while (transform.localPosition != destination_pos)
@@ -482,8 +489,6 @@ namespace TbsFramework.Units
                 {
                     if(modelTransform)
                     {
-                        // HT Calculate rotation value when animals are moveing
-                        // Vector3 direction = (destination_pos - transform.localPosition);
                         Vector3 direction = (destination_pos - transform.position);
                         direction.y = 0;
                         direction.Normalize();
@@ -492,7 +497,6 @@ namespace TbsFramework.Units
                     }
 
                     // HT The part that animals are real moving
-                    //transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination_pos, Time.deltaTime * MovementAnimationSpeed);
                     transform.position = Vector3.MoveTowards(transform.position, destination_pos, Time.deltaTime * MovementAnimationSpeed);
                     yield return null;
                 }
@@ -504,31 +508,82 @@ namespace TbsFramework.Units
         /// Method called after movement animation has finished.
         /// </summary>
         protected virtual void OnMoveFinished() {
-            bool isBuffOn = false;
-            bool isBuffing = false;
+            bool isHabitatBuffOn = false;
+            bool isHabitatBuffing = false;
 
             // JY add for buff effect
             if (Cell._Property != habitat_property){
                 // No Buff
-                Debug.Log("No, " + "Cell Propert : " + Cell._Property + ", " + "Habitot Property : " + habitat_property);
-                child_buffeffect.gameObject.SetActive(false);
+                child_habitat_buff_effect.gameObject.SetActive(false);
                 isChildBuffEffectActived = false;
+
                 AttackFactor = originAttackFactor;
-                isBuffing = false;
+
+                // HT If buffer animal's position is not 'Acuatic'
+                switch (habitat_property)
+                {
+                    case Cell.CellProperty.Acuatic:
+                        for (int i = 0; i < FindObjectsOfType<Unit>().Length; i++)
+                        {
+                            if (FindObjectsOfType<Unit>()[i].PlayerNumber == this.PlayerNumber)
+                            {
+                                FindObjectsOfType<Unit>()[i].returnHitPointsWithoutBuffer();
+                                FindObjectsOfType<Unit>()[i].child_buffer_buff_effect.SetActive(false);
+                            }
+                        }
+                        break;
+                }
+                isHabitatBuffing = false;
             }
             else {
                 // Add Buff
-                Debug.Log("Yes, " + "Cell Propert : " + Cell._Property + ", " + "Habitot Property : " + habitat_property);
-                child_buffeffect.gameObject.SetActive(true);
+                child_habitat_buff_effect.gameObject.SetActive(true);
                 isChildBuffEffectActived = true;
-                isBuffOn = true;
+                isHabitatBuffOn = true;
 
-                if (isBuffOn && isBuffing == false)
+                if (isHabitatBuffOn && isHabitatBuffing == false)
                 {
-                    AttackFactor = originAttackFactor + 5;
-                    isBuffOn = false;
-                    isBuffing = true;
+                    // HT If buffer animal's position is 'Acuatic'
+                    if (this as TbsFramework.Example1.Buffer != null)
+                    {
+                        switch (habitat_property)
+                        {
+                            case Cell.CellProperty.Acuatic:
+                                for (int i = 0; i < FindObjectsOfType<Unit>().Length; i++)
+                                {
+                                    if (FindObjectsOfType<Unit>()[i].PlayerNumber == this.PlayerNumber)
+                                    {
+                                        FindObjectsOfType<Unit>()[i].addHitPointsWithBuffer();
+                                        FindObjectsOfType<Unit>()[i].child_buffer_buff_effect.SetActive(true);
+                                    }
+                                }
+                                break;
+                        }
+                    } else
+                    {
+                        AttackFactor = originAttackFactor + 3;
+                    }
+                    isHabitatBuffOn = false;
+                    isHabitatBuffing = true;
                 }
+            }
+        }
+
+        // HT Increasing Hit Points
+        public void addHitPointsWithBuffer()
+        {
+            HitPoints = originHitPoints + 5;
+        }
+
+        // HT Returning Hit Points to origin hit points
+        public void returnHitPointsWithoutBuffer()
+        {
+            if (HitPoints <= 5)
+            {
+                HitPoints = 1;
+            } else
+            {
+                HitPoints = originHitPoints;
             }
         }
 

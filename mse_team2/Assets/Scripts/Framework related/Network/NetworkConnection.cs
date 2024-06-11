@@ -443,6 +443,7 @@ namespace TbsFramework.Network
 
     public enum OpCode : long
     {
+        // HT : SelectCard, SpawnUnit, Play, SendNickname
         TurnEnded,              // 턴이 종료되었음
         AbilityUsed,            // 능력이 사용되었음
         PlayerNumberChanged,    // 플레이어 수가 변경되었음
@@ -451,6 +452,6 @@ namespace TbsFramework.Network
         SpawnUnit,              // 카드 선택 완료 후 스폰
         Play,                   // 게임 시작
         Else,
-        SendNickname
+        SendNickname            // 닉네임 전송
     }
 }

@@ -247,8 +247,6 @@ namespace TbsFramework.Grid
 
         private void OnUnitDestroyed(object sender, AttackEventArgs e)
         {
-            // HT When animal was destroyed
-            //GameObject.Find("DestroySound").GetComponent<AudioSource>().Play();
             AudioManager.Instance.PlaySFX("Destroy");
             Units.Remove(e.Defender);   // 유닛 제거
             e.Defender.GetComponents<Ability>().ToList().ForEach(a => a.OnUnitDestroyed(this)); // 유닛 파괴 이벤트 처리
@@ -343,11 +341,9 @@ namespace TbsFramework.Grid
             {
                 case GameState.SelectCard:
                     cardManager.EndTurn();
-
                     break;
 
                 case GameState.Spawn:
-
                     // 턴 종료
                     _cellGridState.EndTurn(isNetworkInvoked);
                     break;
@@ -437,8 +433,6 @@ namespace TbsFramework.Grid
         // 게임이 끝났는지 확인하는 메서드
         public bool CheckGameFinished()
         {
-            // HT Pause the InGame music
-            //GameObject.Find("InGameMusicObject").GetComponent<AudioSource>().Pause();
             List<GameResult> gameResults =
                 GetComponents<GameEndCondition>()       // 게임 종료 조건 컴포넌트를 모두 가져옴
                 .Select(c => c.CheckCondition(this))    // 각 조건에 대해 현재 게임 상태를 검사

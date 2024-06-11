@@ -45,6 +45,7 @@ namespace TbsFramework.Example1
 
         private void OnGameEnded(object sender, EventArgs e)
         {
+            // HT Set player nickname
             InfoText.text = "Player " + ((sender as CellGrid).CurrentPlayerNumber + 1) + " wins!";
 
             CellGrid.TurnEnded -= OnTurnEnded;

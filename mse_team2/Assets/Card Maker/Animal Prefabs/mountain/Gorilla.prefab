@@ -418,7 +418,7 @@ MonoBehaviour:
   habitat: mountain
   role: Tanker
   HP: 85
-  AP: 5
+  AP: 11
 --- !u!1 &5331078080262726930
 GameObject:
   m_ObjectHideFlags: 0

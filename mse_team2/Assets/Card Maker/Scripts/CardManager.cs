@@ -17,73 +17,58 @@ using TMPro;
 /// </summary>
 public class CardManager : MonoBehaviour
 {
-    [SerializeField]
-    List<int> cardArray = new List<int>();
+    [SerializeField] private List<int> cardArray = new List<int>();
 
-    [SerializeField]
-    Transform parent;
+    [SerializeField] private Transform parent;
+    [SerializeField] private Transform initPos;
 
-    [SerializeField]
-    Transform initPos;
+    [SerializeField] private float yInterval;
+    [SerializeField] private List<GameObject> spawnedCards = new List<GameObject>();
 
-    [SerializeField]
-    float yInterval;
-    public bool isAbleSpawn = false;
-    public int spawnNumber = 0;
+    [SerializeField] private LayerMask cellLayer;
 
-    [SerializeField]
-    List<GameObject> spawnedCards = new List<GameObject>();
+    [SerializeField] private Player[] players;
 
-    [SerializeField]
-    LayerMask cellLayer;
+    [SerializeField] private Camera cardUICamera;
 
-    [SerializeField]
-    Player[] players;
-    public int index = 0;
+    [SerializeField] private GameObject scrollView;
+    [SerializeField] private GameObject showButton;
+    [SerializeField] private GameObject hideButton;
 
-    [SerializeField]
-    public Camera cardUICamera;
+    [SerializeField] private TMP_Text nicknameUIText;
 
-    [SerializeField]
-    public GameObject scrollView;
-    [SerializeField]
-    public GameObject showButton;
-    [SerializeField]
-    public GameObject hideButton;
+    [SerializeField] private Button nextTurnButton;
 
-    [SerializeField]
-    public TMP_Text nicknameUIText;
+    private bool isAbleSpawn = false;
 
+    private int turnNumber = 0;
+    private int index = 0;
+
+    private bool isLocalSelectEnd = false;
+    private bool isRemoteSelectEnd = false;
+
+    private int spawnNumber = 0;
+
+    private string currentNickname = "";
+    private string remoteNickname = "";
+
+    public string[] nicknames;
     public int localPlayerNum = -1;
 
-    public int turnNumber = 0;
-
-    bool isLocalSelectEnd = false;
-    bool isRemoteSelectEnd = false;
-
-    bool isLocalSpawnEnd = false;
-    bool isRemoteSpawnEnd = false;
-
-    CellGrid cellGrid
+    private CellGrid cellGrid
     {
         get { return FindObjectOfType<CellGrid>(); }
     }
 
-    PrefabManager prefabManager
+    private PrefabManager prefabManager
     {
         get { return FindObjectOfType<PrefabManager>(); }
     }
-    GuiController guiController
+    private GuiController guiController
     {
         get { return FindObjectOfType<GuiController>(); }
     }
 
-    public Button nextTurnButton;
-
-    public string currentNickname = "";
-    public string remoteNickname = "";
-
-    public string[] nicknames;
 
     // Start is called before the first frame update
     private void Start()
@@ -214,7 +199,6 @@ public class CardManager : MonoBehaviour
     public void EndTurn()
     {
         // When the player finish selecting 3 animal cards
-
         if (cardArray.Count == 3)
         {
             isLocalSelectEnd = true;
@@ -259,9 +243,6 @@ public class CardManager : MonoBehaviour
         string[] s = coordStr.Split(',');
         Vector2 coord = new Vector2(float.Parse(s[0]), float.Parse(s[1]));
         Cell cell = FindObjectsOfType<Cell>().ToList().Find(a => a.OffsetCoord == coord);
-
-        // Debug.Log($"{player} {prefabNum} {coordStr} {isAbleSpawn}");
-        // consoleText.text = $"{player} {prefabNum} {coordStr} {isAbleSpawn}";
 
         Unit unit = Instantiate(prefabManager.unitPrefabs[prefabNum], cell.transform.position, Quaternion.identity);
         
@@ -308,7 +289,6 @@ public class CardManager : MonoBehaviour
     public void OnCellClicked(Cell cell)
     {
         // Store player information, animal information, cell information, and send it to your opponent's computer
-
         if (turnNumber != localPlayerNum) return;
 
         if (isAbleSpawn == true)

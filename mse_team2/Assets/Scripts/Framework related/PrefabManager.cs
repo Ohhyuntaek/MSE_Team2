@@ -7,6 +7,6 @@ using TbsFramework.Cells;
 
 public class PrefabManager : MonoBehaviour
 {
-    // 카드 종류
+    // All cards list
     public List<Unit> unitPrefabs;
 }

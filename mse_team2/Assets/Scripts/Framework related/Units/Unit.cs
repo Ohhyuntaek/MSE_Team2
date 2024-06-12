@@ -146,7 +146,6 @@ namespace TbsFramework.Units
         public int DefenceFactor;
 
         private int originAttackFactor;
-        private int originHitPoints;
         /// <summary>
         /// Determines how far on the grid the unit can move.
         /// </summary>
@@ -205,7 +204,6 @@ namespace TbsFramework.Units
 
         void Start() {
             originAttackFactor = AttackFactor;
-            originHitPoints = HitPoints;
 
             // JY add for buff effect
             child_habitat_buff_effect = Instantiate(Habitat_buff_effect, transform);
@@ -443,7 +441,6 @@ namespace TbsFramework.Units
         /// <param name="path">A list of cells, path from source to destination cell</param>
         public virtual IEnumerator Move(Cell destinationCell, IList<Cell> path)
         {
-            //movementAudioSource.Play();
             AudioManager.Instance.PlaySFX("Movement");
 
             // Calculate distance that animals can move
@@ -567,23 +564,28 @@ namespace TbsFramework.Units
                     isHabitatBuffing = true;
                 }
             }
+            // Update HP bar
+            for (int i = 0; i < FindObjectsOfType<Unit>().Length; i++)
+            {
+                FindObjectsOfType<Unit>()[i].DefenceActionPerformed();
+            }
         }
 
         // HT Increasing Hit Points
-        public void addHitPointsWithBuffer()
+        private void addHitPointsWithBuffer()
         {
-            HitPoints = originHitPoints + 5;
+            HitPoints = HitPoints + 5;
         }
 
         // HT Returning Hit Points to origin hit points
-        public void returnHitPointsWithoutBuffer()
+        private void returnHitPointsWithoutBuffer()
         {
             if (HitPoints <= 5)
             {
                 HitPoints = 1;
             } else
             {
-                HitPoints = originHitPoints;
+                HitPoints = HitPoints - 5;
             }
         }
 

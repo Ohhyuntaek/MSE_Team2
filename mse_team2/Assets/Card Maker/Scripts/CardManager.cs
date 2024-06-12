@@ -18,12 +18,12 @@ using TMPro;
 public class CardManager : MonoBehaviour
 {
     [SerializeField] private List<int> cardArray = new List<int>();
+    [SerializeField] private List<GameObject> spawnedCards = new List<GameObject>();
 
     [SerializeField] private Transform parent;
     [SerializeField] private Transform initPos;
 
     [SerializeField] private float yInterval;
-    [SerializeField] private List<GameObject> spawnedCards = new List<GameObject>();
 
     [SerializeField] private LayerMask cellLayer;
 
@@ -40,20 +40,16 @@ public class CardManager : MonoBehaviour
     [SerializeField] private Button nextTurnButton;
 
     private bool isAbleSpawn = false;
+    private bool isLocalSelectEnd = false;
+    private bool isRemoteSelectEnd = false;
 
     private int turnNumber = 0;
     private int index = 0;
-
-    private bool isLocalSelectEnd = false;
-    private bool isRemoteSelectEnd = false;
 
     private int spawnNumber = 0;
 
     private string currentNickname = "";
     private string remoteNickname = "";
-
-    public string[] nicknames;
-    public int localPlayerNum = -1;
 
     private CellGrid cellGrid
     {
@@ -69,6 +65,8 @@ public class CardManager : MonoBehaviour
         get { return FindObjectOfType<GuiController>(); }
     }
 
+    public string[] nicknames;
+    public int localPlayerNum = -1;
 
     // Start is called before the first frame update
     private void Start()
@@ -83,18 +81,7 @@ public class CardManager : MonoBehaviour
         currentNickname = PlayerServer.Player.nickname;
         nicknameUIText.text = currentNickname;
     }
-
-    public void SendNickname()
-    {
-        // Send my nickname to the other computer
-
-        Dictionary<string, string> dict = new Dictionary<string, string>();
-        dict.Add("nickname", currentNickname);
-
-        FindObjectOfType<NetworkConnection>().SendMatchState((long)TbsFramework.Network.OpCode.SendNickname, dict);
-    }
-
-    void Update()
+    private void Update()
     {
         GetInput();
 
@@ -112,7 +99,17 @@ public class CardManager : MonoBehaviour
         }
     }
 
-    void GetInput()
+    public void SendNickname()
+    {
+        // Send my nickname to the other computer
+
+        Dictionary<string, string> dict = new Dictionary<string, string>();
+        dict.Add("nickname", currentNickname);
+
+        FindObjectOfType<NetworkConnection>().SendMatchState((long)TbsFramework.Network.OpCode.SendNickname, dict);
+    }
+
+    public void GetInput()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -186,7 +183,7 @@ public class CardManager : MonoBehaviour
         spawnedBtn.onClick.AddListener(NumBtn);
     }
 
-    void InitCardsPositions()
+    public void InitCardsPositions()
     {
         int i = 0;
         foreach(GameObject card in spawnedCards)
@@ -236,19 +233,24 @@ public class CardManager : MonoBehaviour
 
     public void SpawnUnit(Dictionary<string, string> dict)
     {
+        // In order to spawn, player information and prefetch information are received.
         int player = int.Parse(dict["player"]);
         int prefabNum = int.Parse(dict["prefabNum"]);
 
+        // Save the cells corresponding to the coordinates of the cells
         string coordStr = dict["Cell"];
         string[] s = coordStr.Split(',');
         Vector2 coord = new Vector2(float.Parse(s[0]), float.Parse(s[1]));
         Cell cell = FindObjectsOfType<Cell>().ToList().Find(a => a.OffsetCoord == coord);
 
+        // Unit instantiate
         Unit unit = Instantiate(prefabManager.unitPrefabs[prefabNum], cell.transform.position, Quaternion.identity);
-        
+
+        // Add instantiated units as playable units
         cellGrid.AddUnit(unit.transform, cell,  players[player]);
         unit.PlayerNumber = player;
 
+        // Separate the player's units by red and blue.
         MeshRenderer mr = unit.transform.GetComponentsInChildren<MeshRenderer>().ToList().Find(a => a.gameObject.name == "Highlighter");
         Color color = (unit.PlayerNumber == 1) ? Color.red : Color.blue;
         color.a = 0.6f;
@@ -260,8 +262,10 @@ public class CardManager : MonoBehaviour
 
         isAbleSpawn = false;
 
+        // Do not spawn again on the cell where the spawn unit is located.
         cell.IsTaken = true;
 
+        // After 3 Spawn finishes, the turn goes to the next player.
         if (spawnNumber >= 3)
         {
             switch (turnNumber)
@@ -276,7 +280,7 @@ public class CardManager : MonoBehaviour
                     cellGrid.currentState = CellGrid.GameState.Play;
                     cellGrid.InitializeAndStart();
 
-
+                    // When the game starts, cardUICamera disappears.
                     scrollView.SetActive(true);
                     showButton.SetActive(true);
                     hideButton.SetActive(true);

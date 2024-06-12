@@ -53,6 +53,7 @@ namespace TbsFramework.Example1
         {
             endingPannel.SetActive(true);
 
+            // HT set player's nickname
             InfoText.text = $"{cardManager.nicknames[(sender as CellGrid).CurrentPlayerNumber]} wins!";
 
             CellGrid.TurnEnded -= OnTurnEnded;

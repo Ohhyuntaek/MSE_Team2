@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class AudioUsage : MonoBehaviour
 {
+    public VisualEffectManager visualEffectManager;
+
     private void Start()
     {
         AudioManager.Instance.PlayBackgroundMusicByName("lobbyBgm");
+
+        //if (visualEffectManager == null)
+        //{
+        //    visualEffectManager = Camera.main.GetComponent<VisualEffectManager>();
+        //}
     }
 
     public void OnButtonClick()
@@ -57,5 +64,8 @@ public class AudioUsage : MonoBehaviour
     public void OnUnitDestory()
     {
         AudioManager.Instance.PlaySFX("Destroy");
+
+        if (visualEffectManager != null)
+            visualEffectManager.TriggerShake(0.5f, 0.3f); // Call screen jitter, set duration and jitter amplitude.
     }
 }

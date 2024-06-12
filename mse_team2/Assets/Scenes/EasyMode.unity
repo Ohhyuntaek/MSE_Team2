@@ -5205,6 +5205,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 870935720680642341, guid: 14dcfdb1d4a2db44dbb4efd007b5c7dd,
         type: 3}
+      propertyPath: audioUsage
+      value: 
+      objectReference: {fileID: 1373163765}
+    - target: {fileID: 870935720680642341, guid: 14dcfdb1d4a2db44dbb4efd007b5c7dd,
+        type: 3}
       propertyPath: PlayersParent
       value: 
       objectReference: {fileID: 384340002}
@@ -13899,6 +13904,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioUsage
       objectReference: {fileID: 0}
+    - target: {fileID: 7257513084543455458, guid: e5097e4940694b241adda2837adcb6c9,
+        type: 3}
+      propertyPath: visualEffectManager
+      value: 
+      objectReference: {fileID: 1114910443}
     - target: {fileID: 8447633461328625392, guid: e5097e4940694b241adda2837adcb6c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14697,6 +14707,7 @@ GameObject:
   - component: {fileID: 1114910439}
   - component: {fileID: 1114910441}
   - component: {fileID: 1114910442}
+  - component: {fileID: 1114910443}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14823,6 +14834,21 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114910438}
   m_Enabled: 1
+--- !u!114 &1114910443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114910438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5641420063e94b48872303adc1abfc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 1114910440}
+  shakeDuration: 0.5
+  shakeMagnitude: 0.2
 --- !u!1 &1152272451
 GameObject:
   m_ObjectHideFlags: 0

@@ -99,6 +99,10 @@ public class AudioManager : MonoBehaviour
             case "loseBgm":
                 currentBgm = loseBgm;
                 break;
+
+            default:
+                Debug.LogError("Undefined command!");
+                break;
         }
 
         PlayBackgroundMusic(currentBgm);

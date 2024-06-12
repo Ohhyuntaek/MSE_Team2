@@ -117,6 +117,12 @@ namespace TbsFramework.Grid
         //[SerializeField]
         //public GameObject inGameMusicObject;
 
+        /// <summary>
+        /// Special Effects Controller. 
+        /// Used to call the special effects method group.
+        /// </summary>
+        public AudioUsage audioUsage;
+
         private void Start()
         {
             cardManager = FindObjectOfType<CardManager>();
@@ -247,7 +253,7 @@ namespace TbsFramework.Grid
 
         private void OnUnitDestroyed(object sender, AttackEventArgs e)
         {
-            AudioManager.Instance.PlaySFX("Destroy");
+            audioUsage.OnUnitDestory();
             Units.Remove(e.Defender);   // 유닛 제거
             e.Defender.GetComponents<Ability>().ToList().ForEach(a => a.OnUnitDestroyed(this)); // 유닛 파괴 이벤트 처리
             e.Defender.UnitClicked -= OnUnitClicked;

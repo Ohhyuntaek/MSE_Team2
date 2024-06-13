@@ -1,4 +1,5 @@
-﻿using TbsFramework.Units;
+﻿using System.Collections;
+using TbsFramework.Units;
 using UnityEngine;
 
 namespace TbsFramework.Example1
@@ -14,6 +15,24 @@ namespace TbsFramework.Example1
             return realDamage - DefenceFactor;
         }
 
-        
+        protected override void InjectBuff()
+        {
+            Debug.Log("InjectBuff");
+
+            if (Cell._Property == habitat_property)
+            {
+                for (int i = 0; i < FindObjectsOfType<Unit>().Length; i++)
+                {
+                    if (FindObjectsOfType<Unit>()[i].PlayerNumber == this.PlayerNumber)
+                    {
+                        HealingBuff healingBuff = new HealingBuff(-1, 5);
+                        FindObjectsOfType<Unit>()[i].AddBuff(healingBuff);
+                        FindObjectsOfType<Unit>()[i].OnBufferEffect();
+                    }
+                }
+            }
+        }
+
+
     }
 }

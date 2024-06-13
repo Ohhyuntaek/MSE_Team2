@@ -95,8 +95,6 @@ namespace TbsFramework.Units
         private GameObject child_habitat_buff_effect; 
         private GameObject child_buffer_buff_effect;
 
-
-
         public void SetState(UnitState state)
         {
             UnitState.MakeTransition(state);
@@ -287,6 +285,13 @@ namespace TbsFramework.Units
 
             MovementPoints = TotalMovementPoints;
             ActionPoints = TotalActionPoints;
+
+            InjectBuff();
+
+            for (int i = 0; i < FindObjectsOfType<Unit>().Length; i++)
+            {
+                FindObjectsOfType<Unit>()[i].DefenceActionPerformed();
+            }
 
             SetState(new UnitStateNormal(this));
         }
@@ -505,6 +510,7 @@ namespace TbsFramework.Units
 
             OnMoveFinished();
         }
+
         /// <summary>
         /// Method called after movement animation has finished.
         /// </summary>
@@ -513,30 +519,16 @@ namespace TbsFramework.Units
             bool isHabitatBuffing = false;
 
             // JY add for buff effect
-            if (Cell._Property != habitat_property){
+            if (Cell._Property != habitat_property)
+            {
                 // No Buff
                 child_habitat_buff_effect.gameObject.SetActive(false);
                 isChildBuffEffectActived = false;
-
                 AttackFactor = originAttackFactor;
-
-                // HT If buffer animal's position is not 'Acuatic'
-                switch (habitat_property)
-                {
-                    case Cell.CellProperty.Acuatic:
-                        for (int i = 0; i < FindObjectsOfType<Unit>().Length; i++)
-                        {
-                            if (FindObjectsOfType<Unit>()[i].PlayerNumber == this.PlayerNumber)
-                            {
-                                FindObjectsOfType<Unit>()[i].returnHitPointsWithoutBuffer();
-                                FindObjectsOfType<Unit>()[i].child_buffer_buff_effect.SetActive(false);
-                            }
-                        }
-                        break;
-                }
                 isHabitatBuffing = false;
             }
-            else {
+            else
+            {
                 // Add Buff
                 child_habitat_buff_effect.gameObject.SetActive(true);
                 isChildBuffEffectActived = true;
@@ -544,54 +536,30 @@ namespace TbsFramework.Units
 
                 if (isHabitatBuffOn && isHabitatBuffing == false)
                 {
-                    // HT If buffer animal's position is 'Acuatic'
-                    if (this as TbsFramework.Example1.Buffer != null)
-                    {
-                        switch (habitat_property)
-                        {
-                            case Cell.CellProperty.Acuatic:
-                                for (int i = 0; i < FindObjectsOfType<Unit>().Length; i++)
-                                {
-                                    if (FindObjectsOfType<Unit>()[i].PlayerNumber == this.PlayerNumber)
-                                    {
-                                        FindObjectsOfType<Unit>()[i].addHitPointsWithBuffer();
-                                        FindObjectsOfType<Unit>()[i].child_buffer_buff_effect.SetActive(true);
-                                    }
-                                }
-                                break;
-                        }
-                    } else
-                    {
-                        AttackFactor = originAttackFactor + 3;
-                    }
+                    AttackFactor = originAttackFactor + 3;
                     isHabitatBuffOn = false;
                     isHabitatBuffing = true;
                 }
             }
-            // Update HP bar
+
             for (int i = 0; i < FindObjectsOfType<Unit>().Length; i++)
             {
                 FindObjectsOfType<Unit>()[i].DefenceActionPerformed();
             }
         }
 
-        // HT Increasing Hit Points
-        private void addHitPointsWithBuffer()
+        private void OffBufferEffect()
         {
-            HitPoints = HitPoints + 5;
+            child_buffer_buff_effect.SetActive(false);
         }
 
-        // HT Returning Hit Points to origin hit points
-        private void returnHitPointsWithoutBuffer()
+        public void OnBufferEffect()
         {
-            if (HitPoints <= 5)
-            {
-                HitPoints = 1;
-            } else
-            {
-                HitPoints = HitPoints - 5;
-            }
+            child_buffer_buff_effect.SetActive(true);
+            Invoke("OffBufferEffect", 1.5f);
         }
+
+        protected virtual void InjectBuff() {  }
 
         ///<summary>
         /// Method indicates if unit is capable of moving to cell given as parameter.

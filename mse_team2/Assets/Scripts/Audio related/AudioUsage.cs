@@ -15,7 +15,7 @@ public class AudioUsage : MonoBehaviour
         }
         else
         {
-            if (AudioManager.Instance.backgroundMusicSource.clip == null)
+            if (AudioManager.Instance.backgroundMusicSource.clip != AudioManager.Instance.lobbyBgm)
                 AudioManager.Instance.PlayBackgroundMusicByName("lobbyBgm");
         }
 

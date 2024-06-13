@@ -250,6 +250,8 @@ namespace TbsFramework.Units
             {
                 UnitHighlighted.Invoke(this, EventArgs.Empty);
             }
+
+            AudioManager.Instance.PlaySFX("ButtonHover");
         }
         public virtual void OnMouseExit()
         {
@@ -312,6 +314,8 @@ namespace TbsFramework.Units
             {
                 UnitSelected.Invoke(this, EventArgs.Empty);
             }
+
+            AudioManager.Instance.PlaySFX("UnitClick");
         }
         /// <summary>
         /// Method is called when unit is deselected.

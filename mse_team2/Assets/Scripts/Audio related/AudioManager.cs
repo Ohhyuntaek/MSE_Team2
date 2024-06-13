@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
     [Header("BGM")]
     public AudioClip lobbyBgm;
+    public AudioClip roomMatchingBgm;
     public AudioClip inGameBgm;
     public AudioClip winBgm;
     public AudioClip loseBgm;
@@ -25,6 +26,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip mapClickClip;
     public AudioClip movementClip;
     public AudioClip attackClip;
+    public AudioClip addClip;
     public AudioClip destroyClip;
 
     private Dictionary<string, AudioClip> sfxClips;
@@ -66,6 +68,7 @@ public class AudioManager : MonoBehaviour
             { "MapClick", mapClickClip },
             { "Movement", movementClip },
             { "Attack", attackClip },
+            { "Add", addClip },
             { "Destroy", destroyClip }
         };
     }
@@ -98,6 +101,10 @@ public class AudioManager : MonoBehaviour
 
             case "loseBgm":
                 currentBgm = loseBgm;
+                break;
+
+            case "roomMatchingBgm":
+                currentBgm = roomMatchingBgm;
                 break;
 
             default:

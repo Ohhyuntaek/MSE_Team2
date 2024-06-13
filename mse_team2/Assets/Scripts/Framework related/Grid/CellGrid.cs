@@ -310,8 +310,10 @@ namespace TbsFramework.Grid
             if (UnitAdded != null)
             {
                 // 유닛 추가 이벤트 호출
-                UnitAdded.Invoke(this, new UnitCreatedEventArgs(unit));
+                UnitAdded.Invoke(this, new UnitCreatedEventArgs(unit));           
             }
+
+            audioUsage.OnUnitAdd();
         }
 
         private void OnUnitMoved(object sender, MovementEventArgs e)

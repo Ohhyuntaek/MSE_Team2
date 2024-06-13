@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioUsage : MonoBehaviour
 {
@@ -8,7 +9,15 @@ public class AudioUsage : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.PlayBackgroundMusicByName("lobbyBgm");
+        if (SceneManager.GetActiveScene().name == "EasyMode")
+        {
+            AudioManager.Instance.PlayBackgroundMusicByName("roomMatchingBgm");
+        }
+        else
+        {
+            if (AudioManager.Instance.backgroundMusicSource.clip == null)
+                AudioManager.Instance.PlayBackgroundMusicByName("lobbyBgm");
+        }
 
         //if (visualEffectManager == null)
         //{
@@ -59,6 +68,11 @@ public class AudioUsage : MonoBehaviour
     public void OnAttack()
     {
         AudioManager.Instance.PlaySFX("Attack");
+    }
+
+    public void OnUnitAdd()
+    {
+        AudioManager.Instance.PlaySFX("Add");
     }
 
     public void OnUnitDestory()

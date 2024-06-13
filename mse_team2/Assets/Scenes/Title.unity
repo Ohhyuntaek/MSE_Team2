@@ -3755,6 +3755,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5665521727736523784, guid: 57467ca065182d84d97b6927b1184cbe,
+        type: 3}
+      propertyPath: addClip
+      value: 
+      objectReference: {fileID: 8300000, guid: eaae8fe8d600e1f459f34aa5757fa3b8, type: 3}
+    - target: {fileID: 5665521727736523784, guid: 57467ca065182d84d97b6927b1184cbe,
+        type: 3}
+      propertyPath: unitClickClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 60f9efe3d97bc8f47bea1af7f7093d41, type: 3}
+    - target: {fileID: 5665521727736523784, guid: 57467ca065182d84d97b6927b1184cbe,
+        type: 3}
+      propertyPath: buttonHoverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
+    - target: {fileID: 5665521727736523784, guid: 57467ca065182d84d97b6927b1184cbe,
+        type: 3}
+      propertyPath: roomMatchingBgm
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a71cf97841cfe34481df38e6c26b136, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
